@@ -91,5 +91,93 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 7,
+      name: '功能类-闲鱼币',
+      desc: '领取奖励-扱骰子',
+      activityIds: '.webview.WebHybridActivity',
+      rules: [
+        {
+          key: 1,
+          name: '点击x[关闭]-弹窗',
+          matches: 'View[childCount=3] > Image[index=2][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/17606064',
+        },
+        {
+          key: 2,
+          actionDelay: 5000,
+          name: '点击[扱骰子寻宝]',
+          matches: '@View[id="mapDiceBtn"] > View[text.length>1]',
+          snapshotUrls: 'https://i.gkd.li/i/17606060',
+        },
+        {
+          key: 3,
+          actionDelay: 1500,
+          name: '点击[赚骰子]-有领取奖励',
+          matches:
+            'View[text="领"] <2 @View[index=1] +3 View > View[text="赚"]',
+          snapshotUrls: 'https://i.gkd.li/i/17634886',
+        },
+        {
+          key: 4,
+          actionMaximum: 1,
+          name: '签到',
+          matches: 'View[text="签到"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/17606057',
+        },
+        {
+          key: 5,
+          actionDelay: 300,
+          name: '领取任务',
+          matches: 'View[index=9 || index=5][text="领取奖励"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17606051',
+            'https://i.gkd.li/i/17606057',
+          ],
+        },
+        {
+          preKeys: [5],
+          key: 6,
+          name: '点击x[关闭底部弹窗]',
+          matches:
+            'View[id="taskWrap"] > @View[index=1] +3 View[index=4] >2 View[index=9 || index=5][text!="领取奖励"]',
+          snapshotUrls: 'https://i.gkd.li/i/17606054',
+        },
+        {
+          key: 7,
+          name: '点击[全部收下]',
+          matches: 'View[text^="全部收下"]',
+          snapshotUrls: 'https://i.gkd.li/i/17606050',
+        },
+      ],
+    },
+    {
+      key: 8,
+      name: '功能类-点击背包使用道具',
+      desc: '使用道具',
+      activityIds: '.webview.WebHybridActivity',
+      rules: [
+        {
+          key: 1,
+          actionDelay: 2000,
+          name: '点击[背包]',
+          matches:
+            'View[text!="领"] <2 View +3 View > View[text="赚"] <2 View - View > Image',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17606060',
+            'https://i.gkd.li/i/17606487',
+          ],
+        },
+        {
+          preKeys: [1],
+          key: 2,
+          actionDelay: 200,
+          name: '点击[道具]',
+          matches:
+            'View > View[index=1 || index=0] > View[index=1][text!="加点卡"] + View[index=2][text="使用"]',
+          snapshotUrls: 'https://i.gkd.li/i/17606047',
+        },
+      ],
+    },
   ],
 });
