@@ -5,29 +5,35 @@ export default defineGkdApp({
   name: '百度网盘',
   groups: [
     {
-      name: '开屏广告',
       key: 1,
-      quickFind: true,
+      name: '开屏广告',
+      fastQuery: true,
       actionMaximum: 1,
       matchTime: 10000,
       resetMatch: 'app',
       rules: [
         {
-          key: 2,
+          key: 0,
           action: 'clickCenter',
           matches: ['TextView[text*="跳过"][text.length<=10]'],
           snapshotUrls: ['https://i.gkd.li/i/17405893'],
         },
+        {
+          key: 1,
+          action: 'clickCenter',
+          matches: ['ImageView[clickable=true] +5 View[vid="ms_skipView"]'],
+          snapshotUrls: ['https://i.gkd.li/i/17546726'],
+        },
       ],
     },
     {
-      key: 3,
+      key: 2,
       name: '全屏广告-弹窗广告',
       desc: '点击关闭',
       fastQuery: true,
       rules: [
         {
-          key: 4,
+          key: 3,
           activityIds: [
             'com.baidu.netdisk.business.guide.dialog.lifeproduct.',
             'com.baidu.netdisk.ui.MainActivity',
@@ -44,7 +50,7 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 5,
+          key: 4,
           name: '相册页面激活无限空间弹窗',
           activityIds:
             'com.baidu.netdisk.cloudimage.ui.album.AlbumGuideOneImageDialog',
@@ -55,7 +61,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 2,
+      key: 3,
       name: '局部广告-卡片广告',
       desc: '点击关闭',
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
@@ -99,7 +105,7 @@ export default defineGkdApp({
       snapshotUrls: 'https://i.gkd.li/i/16118181',
     },
     {
-      key: 7,
+      key: 8,
       name: '权限提示-通知权限',
       desc: '自动点击关闭',
       matchTime: 10000,
@@ -110,7 +116,7 @@ export default defineGkdApp({
       snapshotUrls: 'https://i.gkd.li/i/12923936',
     },
     {
-      key: 8,
+      key: 9,
       name: '评价提示',
       fastQuery: true,
       actionMaximum: 1,
@@ -119,7 +125,7 @@ export default defineGkdApp({
       snapshotUrls: 'https://i.gkd.li/i/14317054',
     },
     {
-      key: 9,
+      key: 12,
       name: '局部广告-悬浮广告',
       desc: '点击关闭',
       rules: [
