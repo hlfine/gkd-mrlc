@@ -71,6 +71,7 @@ export default defineGkdApp({
       snapshotUrls: ['https://i.gkd.li/i/12640287'],
     },
     {
+<<<<<<< HEAD
       key: 8,
       name: '局部广告-书架顶部广告',
       fastQuery: true,
@@ -79,6 +80,8 @@ export default defineGkdApp({
       snapshotUrls: ['https://i.gkd.li/i/13489942'],
     },
     {
+=======
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       key: 5,
       name: '全屏广告-字节视频广告',
       desc: '此规则有概率误触或失效，请谨慎选择开启。',
@@ -136,6 +139,30 @@ export default defineGkdApp({
       ],
     },
     {
+<<<<<<< HEAD
+=======
+      key: 8,
+      name: '局部广告-卡片广告',
+      rules: [
+        {
+          key: 1,
+          fastQuery: true,
+          activityIds: 'com.kmxs.reader.home.ui.HomeActivity',
+          matches: '[id="com.kmxs.reader:id/bookshelf_book_item_direct_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/13489942',
+        },
+        {
+          key: 2,
+          fastQuery: true,
+          activityIds: 'org.geometerplus.android.fbreader.FBReader',
+          matches: '[vid="iv_ad_direct_close"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/9217fd14-1ca6-49b8-8f8b-bff7a98745dd',
+          snapshotUrls: 'https://i.gkd.li/i/17574170',
+        },
+      ],
+    },
+    {
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       key: 9,
       fastQuery: true,
       name: '全屏广告-今日专属推荐弹窗',

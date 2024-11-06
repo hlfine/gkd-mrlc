@@ -5,6 +5,28 @@ export default defineGkdApp({
   name: '淘宝',
   groups: [
     {
+<<<<<<< HEAD
+=======
+      key: -1,
+      name: '开屏广告',
+      fastQuery: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      priorityTime: 10000,
+      rules: [
+        {
+          matches:
+            '@[vid*="close"] > [text*="跳过"][text.length<10][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17576743',
+            'https://i.gkd.li/i/17578451',
+          ],
+        },
+      ],
+    },
+    {
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       key: 1,
       name: '全屏广告-弹窗广告',
       rules: [

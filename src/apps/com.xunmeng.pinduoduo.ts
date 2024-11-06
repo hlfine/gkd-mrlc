@@ -10,6 +10,7 @@ export default defineGkdApp({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+<<<<<<< HEAD
       actionMaximumKey: 0,
       rules: [
         {
@@ -21,12 +22,19 @@ export default defineGkdApp({
         {
           key: 1,
           matches: '@Image + Image +n [text="立即升级"]',
+=======
+      rules: [
+        {
+          key: 1,
+          matches: '@Image[clickable=true][text="webp"] +5 [text="立即升级"]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: 'https://i.gkd.li/i/13195645',
         },
       ],
     },
     {
       key: 2,
+<<<<<<< HEAD
       name: '全屏广告-首页优惠弹窗',
       rules: [
         {
@@ -99,6 +107,34 @@ export default defineGkdApp({
           matches:
             '@ImageView[visibleToUser=true] < * +2 * >3 [text="立即抽免单"]',
           snapshotUrls: 'https://i.gkd.li/i/14614135',
+=======
+      name: '全屏广告-弹窗广告',
+      rules: [
+        {
+          key: 3,
+          fastQuery: true,
+          action: 'back',
+          activityIds: [
+            '.ui.activity.HomeActivity',
+            '.ui.activity.MainFrameActivity',
+          ],
+          matches:
+            '[text="开心收下" || text="去抢购" || text="立即抽免单" || text="去刮奖" || text="立即领取" || text="去领大额金币" || text="送你大额现金" || text*="红包助手" || text="刮刮卡发来的消息通知"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13625441',
+            'https://i.gkd.li/i/13761182',
+            'https://i.gkd.li/i/13944165',
+            'https://i.gkd.li/i/14456101',
+            'https://i.gkd.li/i/14596990',
+            'https://i.gkd.li/i/14614135',
+            'https://i.gkd.li/i/15360330',
+            'https://i.gkd.li/i/15032649',
+            'https://i.gkd.li/i/15076322',
+            'https://i.gkd.li/i/17564786',
+            'https://i.gkd.li/i/17585645',
+            'https://i.gkd.li/i/17625608',
+          ],
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
         },
         {
           key: 4,
@@ -123,6 +159,7 @@ export default defineGkdApp({
         },
         {
           key: 6,
+<<<<<<< HEAD
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches:
             '[text="百亿补贴"] > View[childCount=2] > Image[childCount=0][text="  "]',
@@ -197,6 +234,22 @@ export default defineGkdApp({
           exampleUrls:
             'https://m.gkd.li/57941037/059c82cd-cc70-4611-b3ab-c3c6c7e35f22',
           snapshotUrls: 'https://i.gkd.li/i/14596990',
+=======
+          activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
+          matches: '[text="上滑看视频得现金"] - [text="webp"]',
+          snapshotUrls: 'https://i.gkd.li/i/13809053',
+        },
+        {
+          key: 7,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: '.ui.activity.HomeActivity',
+          matches:
+            '@ViewGroup[childCount=1][clickable=true] < ViewGroup[childCount=2] < [childCount=1] < [vid="pdd"][childCount=1] < [childCount=1] < [vid="pdd"][childCount=1] < [childCount=1] < [childCount=1] < [childCount=1] <3 [parent=null]',
+          exampleUrls: 'https://e.gkd.li/f74b5f58-e518-4e33-bbb4-0bf28e2b79d8',
+          snapshotUrls: 'https://i.gkd.li/i/17528782',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
         },
       ],
     },
@@ -210,22 +263,31 @@ export default defineGkdApp({
           key: 0,
           matches:
             '@TextView[id=null][clickable=true] + Image[id=null][text="webp"]',
+<<<<<<< HEAD
           exampleUrls:
             'https://m.gkd.li/57941037/bfe9f8d5-2c13-4dbf-a0b3-a8347068afa6',
+=======
+          exampleUrls: 'https://e.gkd.li/20f77125-b223-4d65-b61e-826871e0032b',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: 'https://i.gkd.li/i/12642058',
         },
         {
           key: 1,
           matches:
+<<<<<<< HEAD
             '@TextView[id=null][clickable=true] + View > Image[text="webp"]',
           exampleUrls:
             'https://m.gkd.li/57941037/bfe9f8d5-2c13-4dbf-a0b3-a8347068afa6',
+=======
+            '[id="unactive_watch_video_pendant"] > TextView[clickable=true][text=""][childCount=0]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: 'https://i.gkd.li/i/12642058',
         },
         {
           key: 2,
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches:
+<<<<<<< HEAD
             'RelativeLayout[childCount=2] > RelativeLayout + @FrameLayout[childCount=1][clickable=true][visibleToUser=true][text=null][vid="pdd"] > ImageView[childCount=0][visibleToUser=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/e1d297dd-b555-4c2c-b7f6-2756aadb6006',
@@ -249,6 +311,11 @@ export default defineGkdApp({
           exampleUrls:
             'https://m.gkd.li/57941037/29876836-b365-48c0-b129-4560ca193776',
           snapshotUrls: 'https://i.gkd.li/i/13804657',
+=======
+            'RelativeLayout[childCount=2] > RelativeLayout[vid="pdd"] + @FrameLayout[childCount=1][clickable=true][visibleToUser=true][text=null][vid="pdd"] > ImageView[childCount=0][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/0f850878-2b6a-46c7-86aa-28329df0993c',
+          snapshotUrls: 'https://i.gkd.li/i/15140800',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
         },
       ],
     },
@@ -261,15 +328,23 @@ export default defineGkdApp({
           fastQuery: true,
           activityIds: 'com.xunmeng.pinduoduo.activity.NewPageActivity',
           matches: '[vid="iv_float_window_close"]',
+<<<<<<< HEAD
           exampleUrls:
             'https://m.gkd.li/57941037/560162d0-940d-413a-8f2e-e40c21c976e2',
+=======
+          exampleUrls: 'https://e.gkd.li/f81a45e4-09b4-498f-be72-ca84cdd0db83',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: 'https://i.gkd.li/i/14549415',
         },
       ],
     },
     {
       key: 9,
+<<<<<<< HEAD
       name: '分段广告-多多视频每日自动签到',
+=======
+      name: '功能类-多多视频每日自动签到',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
@@ -278,19 +353,32 @@ export default defineGkdApp({
         {
           key: 0,
           name: '自动签到',
+<<<<<<< HEAD
           action: 'clickCenter',
           matches: 'FrameLayout > TextView[text="领取今日现金"]',
+=======
+          matches:
+            '@[clickable=true] >2 [text="领取今日现金"][visibleToUser=true]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: [
             'https://i.gkd.li/i/13201422',
             'https://i.gkd.li/i/13372677',
           ],
         },
         {
+<<<<<<< HEAD
           key: 1,
           preKeys: [0],
           name: '在签到后关闭弹窗',
           action: 'clickCenter',
           matches: 'FrameLayout > TextView[text="明日继续来领"]',
+=======
+          preKeys: [0],
+          key: 1,
+          name: '在签到后关闭弹窗',
+          matches:
+            '@[clickable=true] >2 [text="明日继续来领"][visibleToUser=true]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: 'https://i.gkd.li/i/13205634',
         },
       ],
@@ -303,16 +391,30 @@ export default defineGkdApp({
       activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
       rules: [
         {
+<<<<<<< HEAD
           matches: [
             'TextView[text="正在直播"]',
             '@ImageView[desc="返回"] <4 ViewGroup <<n FrameLayout[id="android:id/content"]',
+=======
+          key: 0,
+          matches: [
+            'TextView[text="正在直播"]',
+            '@ImageView[desc="返回"] <4 ViewGroup < * < * < [id="android:id/content"]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           ],
           snapshotUrls: 'https://i.gkd.li/i/13446291',
         },
         {
+<<<<<<< HEAD
           matches: [
             'TextView[text="查看更多低价商品"]',
             '@ImageView[desc="返回"] <4 ViewGroup <<n FrameLayout[id="android:id/content"]',
+=======
+          key: 1,
+          matches: [
+            'TextView[text="查看更多低价商品"]',
+            '@ImageView[desc="返回"] <4 ViewGroup < * < * < [id="android:id/content"]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           ],
           snapshotUrls: 'https://i.gkd.li/i/13791119',
         },
@@ -320,6 +422,7 @@ export default defineGkdApp({
     },
     {
       key: 11,
+<<<<<<< HEAD
       name: '功能类-自动点击原图',
       activityIds:
         'com.xunmeng.pinduoduo.app_album.album.MultiImageSelectorActivity',
@@ -328,6 +431,20 @@ export default defineGkdApp({
       snapshotUrls: [
         'https://i.gkd.li/i/13925378', // checked=false
         'https://i.gkd.li/i/13925380', // checked=true
+=======
+      name: '功能类-发送图片时自动勾选原图',
+      fastQuery: true,
+      rules: [
+        {
+          activityIds:
+            'com.xunmeng.pinduoduo.app_album.album.MultiImageSelectorActivity',
+          matches: '@[text="原图"][checked=false] + [text="发送"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13925378', // checked=false
+            'https://i.gkd.li/i/13925380', // checked=true
+          ],
+        },
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       ],
     },
     {
@@ -342,10 +459,14 @@ export default defineGkdApp({
             'com.xunmeng.pinduoduo.activity.NewPageMaskActivity',
             'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           ],
+<<<<<<< HEAD
           matches: [
             '[text^="查看订单详情"]',
             '[text="关闭弹窗"][clickable=true]',
           ],
+=======
+          matches: 'Button[text="关闭弹窗"][clickable=true]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: [
             'https://i.gkd.li/i/13927594',
             'https://i.gkd.li/i/14434154',
@@ -353,6 +474,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/13308175',
           ],
         },
+<<<<<<< HEAD
         {
           key: 1,
           name: '拼单返现弹窗',
@@ -412,15 +534,24 @@ export default defineGkdApp({
           matches: '[text="上滑看视频得现金"] - [text="webp"]',
           snapshotUrls: 'https://i.gkd.li/i/13809053',
         },
+=======
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       ],
     },
     {
       key: 16,
       name: '青少年模式',
+<<<<<<< HEAD
       desc: '点击我知道了',
       actionMaximum: 1,
       resetMatch: 'app',
       fastQuery: true,
+=======
+      desc: '点击[我知道了]',
+      fastQuery: true,
+      actionMaximum: 1,
+      resetMatch: 'app',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       rules: [
         {
           matches:
@@ -459,6 +590,7 @@ export default defineGkdApp({
       ],
     },
     {
+<<<<<<< HEAD
       key: 18,
       name: '全屏广告-看视频得现金弹窗',
       desc: '点击关闭',
@@ -477,6 +609,8 @@ export default defineGkdApp({
       ],
     },
     {
+=======
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       key: 19,
       name: '全屏广告-[个性化推荐]弹窗',
       desc: '点击[取消]',
@@ -487,8 +621,12 @@ export default defineGkdApp({
         {
           activityIds: 'com.xunmeng.pinduoduo.ui.activity.HomeActivity',
           matches: ['[text="个性化推荐未开启"]', '[text="取消"]'],
+<<<<<<< HEAD
           exampleUrls:
             'https://m.gkd.li/57941037/0dd45b10-e323-4ab0-8135-19f45115487a',
+=======
+          exampleUrls: 'https://e.gkd.li/816070f2-035d-4702-87e3-441cca8b5430',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: 'https://i.gkd.li/i/14964851',
         },
       ],

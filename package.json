@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "gkd-mrlc",
   "version": "1.1.38",
   "type": "module",
@@ -11,6 +12,18 @@
   },
   "main": "./dist/gkd.json5",
   "unpkg": "./dist/gkd.json5",
+=======
+  "name": "@aisouler/gkd_subscription",
+  "version": "0.0.149",
+  "type": "module",
+  "gkd": {
+    "outDir": "dist",
+    "file": "AIsouler_gkd.json5",
+    "versionFile": "AIsouler_gkd.version.json5",
+    "changelog": "CHANGELOG.md",
+    "README.md": "README.md"
+  },
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
   "scripts": {
     "postinstall": "simple-git-hooks",
     "format": "prettier --cache --write ./**/*.{js,cjs,mjs,ts,jsx,tsx,json}",
@@ -43,27 +56,46 @@
     "@commitlint/cli": "19.5.0",
     "@commitlint/config-conventional": "19.5.0",
     "@commitlint/types": "19.5.0",
+<<<<<<< HEAD
     "@eslint/js": "9.14.0",
+=======
+    "@eslint/js": "9.12.0",
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
     "@gkd-kit/api": "0.6.0",
     "@gkd-kit/define": "0.0.1",
     "@gkd-kit/tools": "0.5.2",
     "@types/eslint__js": "8.42.3",
+<<<<<<< HEAD
     "@types/node": "22.9.0",
     "eslint": "9.14.0",
+=======
+    "@types/node": "22.7.6",
+    "eslint": "9.12.0",
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-unused-imports": "4.1.4",
     "json5": "2.2.3",
     "lint-staged": "15.2.10",
     "prettier": "3.3.3",
     "simple-git-hooks": "2.11.1",
+<<<<<<< HEAD
     "tsx": "4.19.2",
     "typescript": "5.6.3",
     "typescript-eslint": "8.13.0"
+=======
+    "tsx": "4.19.1",
+    "typescript": "5.6.3",
+    "typescript-eslint": "8.10.0"
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
   },
   "volta": {
     "node": "20.13.1"
   },
+<<<<<<< HEAD
   "packageManager": "pnpm@9.12.3",
+=======
+  "packageManager": "pnpm@9.11.0",
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
   "engineStrict": true,
   "engines": {
     "node": ">=22"

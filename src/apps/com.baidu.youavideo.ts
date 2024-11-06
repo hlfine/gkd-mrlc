@@ -49,6 +49,7 @@ export default defineGkdApp({
     },
     {
       key: 5,
+<<<<<<< HEAD
       name: '全屏广告-会员充值提示',
       desc: '点击x关闭充值提示',
       activityIds: ['com.baidu.youavideo.home.view.HomeActivity'],
@@ -58,12 +59,26 @@ export default defineGkdApp({
           matches:
             '[id="com.baidu.youavideo:id/tv_confirm_pay"] -5 [id="com.baidu.youavideo:id/img_close_dialog"]',
           snapshotUrls: ['https://i.gkd.li/i/12970094'],
+=======
+      name: '全屏广告-会员弹窗',
+      desc: '点击关闭',
+      rules: [
+        {
+          key: 0,
+          fastQuery: true,
+          activityIds: '.vip.ui.VipPayWebDialogActivity',
+          matches:
+            '[text^="恭喜获得会员"] - View[text=""] > @Image[text!=null][visibleToUser=true] <<n [vid="fl_web_view"]',
+          exampleUrls: 'https://e.gkd.li/c149b068-7f00-4173-9000-a41fa1603ba7',
+          snapshotUrls: 'https://i.gkd.li/i/17576805',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
         },
       ],
     },
     {
       key: 6,
       name: '全屏广告-弹窗广告',
+<<<<<<< HEAD
       desc: '点击x关闭广告提示',
       fastQuery: true,
       activityIds: [
@@ -88,6 +103,26 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14217352',
             'https://i.gkd.li/i/15750684', // 排除权限申请弹窗的规则触发
           ],
+=======
+      desc: '点击关闭',
+      rules: [
+        {
+          key: 1,
+          fastQuery: true,
+          activityIds: [
+            '.preview.ui.search.SearchPreviewActivity',
+            '.preview.ui.hometimeline.TimelinePreviewActivity',
+            '.preview.ui.album.AlbumPreviewActivity',
+          ],
+          matches: '[vid="fl_ad"] - [vid="iv_close"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/6b628b65-214f-4dc0-b0b8-805ea566464b',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14133595',
+            'https://i.gkd.li/i/14217352',
+            'https://i.gkd.li/i/17580816',
+          ],
+          excludeSnapshotUrls: 'https://i.gkd.li/i/15750684',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
         },
       ],
     },

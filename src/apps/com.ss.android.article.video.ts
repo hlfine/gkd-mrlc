@@ -5,6 +5,25 @@ export default defineGkdApp({
   name: '西瓜视频',
   groups: [
     {
+<<<<<<< HEAD
+=======
+      key: -1,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      priorityTime: 10000,
+      rules: [
+        {
+          fastQuery: true,
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/6f8312b0-e110-4098-9db9-48358069601a',
+          snapshotUrls: 'https://i.gkd.li/i/17530523',
+        },
+      ],
+    },
+    {
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       key: 0,
       name: '青少年模式',
       fastQuery: true,
@@ -28,7 +47,10 @@ export default defineGkdApp({
       name: '权限提示-通知权限',
       fastQuery: true,
       actionMaximum: 1,
+<<<<<<< HEAD
       resetMatch: 'activity',
+=======
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       rules:
         '@TextView[id="com.ss.android.article.video:id/sj"][text="暂不开启"]',
       snapshotUrls: 'https://i.gkd.li/i/13456568',

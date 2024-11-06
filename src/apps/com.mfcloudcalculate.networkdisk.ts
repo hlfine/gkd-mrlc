@@ -102,12 +102,18 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: '.MainActivity',
+<<<<<<< HEAD
           matches: '@[clickable=true] - [desc^="立即"]',
           exampleUrls: 'https://e.gkd.li/02cf5d37-8808-4abb-abf9-81f7ba8a8375',
           snapshotUrls: [
             'https://i.gkd.li/i/17456852',
             'https://i.gkd.li/i/17469994',
           ],
+=======
+          matches: '@View[clickable=true] - [desc="立即更新"]',
+          exampleUrls: 'https://e.gkd.li/02cf5d37-8808-4abb-abf9-81f7ba8a8375',
+          snapshotUrls: 'https://i.gkd.li/i/17456852',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
         },
       ],
     },

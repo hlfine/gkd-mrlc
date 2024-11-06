@@ -46,11 +46,24 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
+<<<<<<< HEAD
           activityIds:
             'com.max.xiaoheihe.module.bbs.post.ui.activitys.WebNewsPostPageActivity',
           matches: '[text^="查看原图"][visibleToUser=true]',
           exampleUrls: 'https://e.gkd.li/f7222b21-7037-4614-95ab-cff19ee15d38',
           snapshotUrls: 'https://i.gkd.li/i/16646832',
+=======
+          activityIds: [
+            'com.max.xiaoheihe.module.bbs.post.ui.activitys.WebNewsPostPageActivity',
+            '.module.bbs.post.ui.activitys.PicturePostPageActivity',
+          ],
+          matches: '[text^="查看原图"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/f7222b21-7037-4614-95ab-cff19ee15d38',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16646832',
+            'https://i.gkd.li/i/17574462',
+          ],
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
         },
       ],
     },

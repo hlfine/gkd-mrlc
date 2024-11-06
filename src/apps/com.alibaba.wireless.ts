@@ -5,6 +5,7 @@ export default defineGkdApp({
   name: '阿里巴巴',
   groups: [
     {
+<<<<<<< HEAD
       key: 0,
       name: '开屏广告',
       matchTime: 10000,
@@ -15,6 +16,8 @@ export default defineGkdApp({
       snapshotUrls: 'https://i.gkd.li/i/17626421',
     },
     {
+=======
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       key: 1,
       name: '更新提示',
       fastQuery: true,

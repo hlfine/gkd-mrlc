@@ -19,12 +19,21 @@ apps.forEach((appConfig) => {
 });
 
 export default defineGkdSubscription({
+<<<<<<< HEAD
   id: 2,
   name: 'Mrlc的GKD订阅',
   version: 0,
   author: 'Mrlc',
   checkUpdateUrl: './gkd.version.json5',
   supportUri: 'https://www.npmjs.com/package/gkd-mrlc',
+=======
+  id: 666,
+  name: 'AIsouler的GKD订阅',
+  version: 0,
+  author: 'AIsouler',
+  checkUpdateUrl: './AIsouler_gkd.version.json5',
+  supportUri: 'https://github.com/AIsouler/GKD_subscription/issues/new/choose',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
   categories,
   globalGroups,
   apps: rawApps,

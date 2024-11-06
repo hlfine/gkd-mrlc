@@ -24,12 +24,17 @@ export default defineGkdApp({
     {
       key: 2,
       name: '全屏广告-弹窗广告',
+<<<<<<< HEAD
       desc: '点击[以后再说]',
+=======
+      desc: '点击[以后再说]/[不用了]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
+<<<<<<< HEAD
           key: 0,
           name: '体验 Google Play Pass',
           position: {
@@ -54,14 +59,35 @@ export default defineGkdApp({
           matches: '[text="隆重推出 Google Play Points 计划"]',
           snapshotUrls: [
             'https://i.gkd.li/i/15335350',
+=======
+          key: 1,
+          position: {
+            left: 'width * 0.5',
+            top: 'height * 0.75',
+          },
+          activityIds: 'com.google.android.finsky.activities.MainActivity',
+          matches:
+            '@LinearLayout[childCount=0][visibleToUser=true] -3 [text^="体验" || text^="隆重推出"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/15286041',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
             'https://i.gkd.li/i/16397947',
           ],
         },
         {
           key: 2,
           activityIds: 'com.google.android.finsky.activities.MainActivity',
+<<<<<<< HEAD
           matches: ['[text*="推荐内容"]', '[text="不用了"]'],
           snapshotUrls: 'https://i.gkd.li/i/16079813',
+=======
+          matches: '[text="以后再说" || text="不用了"][visibleToUser=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14958783',
+            'https://i.gkd.li/i/16079813',
+            'https://i.gkd.li/i/17622043',
+          ],
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
         },
       ],
     },

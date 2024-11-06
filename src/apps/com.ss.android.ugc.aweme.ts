@@ -316,12 +316,23 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
+<<<<<<< HEAD
+=======
+          excludeActivityIds: '.setting.ui.SettingCommonProtocolActivity',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           matches: ['[text*="青少年模式"]', '[text="关闭" || desc="关闭"]'],
           snapshotUrls: [
             'https://i.gkd.li/i/14321107',
             'https://i.gkd.li/i/14473006',
             'https://i.gkd.li/i/14567078',
+<<<<<<< HEAD
             'https://i.gkd.li/i/14917848', // 避免误触
+=======
+          ],
+          excludeSnapshotUrls: [
+            'https://i.gkd.li/i/14917848',
+            'https://i.gkd.li/i/17610958',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           ],
         },
       ],

@@ -5,6 +5,7 @@ export default defineGkdApp({
   name: '中国联通',
   groups: [
     {
+<<<<<<< HEAD
       name: '开屏广告',
       key: 0,
       fastQuery: true,
@@ -22,6 +23,8 @@ export default defineGkdApp({
       ],
     },
     {
+=======
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       key: 1,
       name: '权限提示',
       fastQuery: true,
@@ -31,7 +34,11 @@ export default defineGkdApp({
         'com.sinovatech.unicom.basic.ui.activity.MainActivity',
         'com.sinovatech.unicom.basic.ui.activity.WelcomeClient',
       ],
+<<<<<<< HEAD
       rules: '[text="去开启"] - [text="以后再说"]',
+=======
+      rules: '[text="去开启"] - [vid="custom_dialog_cancel_button"]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       snapshotUrls: [
         'https://i.gkd.li/i/13331268',
         'https://i.gkd.li/i/14751210',
@@ -40,11 +47,19 @@ export default defineGkdApp({
     {
       key: 2,
       name: '更新提示',
+<<<<<<< HEAD
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules:
         'ImageView[id="com.sinovatech.unicom.ui:id/custom_dialog_cancel_button"]',
+=======
+      fastQuery: true,
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: '[id="com.sinovatech.unicom.ui:id/custom_dialog_cancel_button"]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       snapshotUrls: 'https://i.gkd.li/i/13511386',
     },
     {
@@ -57,14 +72,22 @@ export default defineGkdApp({
           forcedTime: 10000,
           activityIds: 'com.sinovatech.unicom.basic.ui.activity.MainActivity',
           matches:
+<<<<<<< HEAD
             '[text="首页弹窗"] >3 View > Image[clickable=true][text!=null]',
+=======
+            '[text="首页弹窗"] >2 View > @Image[clickable=true][text!=null] <<n [vid="main_fragment_layout"]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: 'https://i.gkd.li/i/14504242',
         },
         {
           key: 1,
           activityIds: 'com.sinovatech.unicom.basic.ui.activity.MainActivity',
           matches:
+<<<<<<< HEAD
             '@TextView[id="home_popup_close"] <<n [vid="main_fragment_layout_haoka"]',
+=======
+            '@TextView[childCount=0][clickable=true][id="home_popup_close"] <<n [vid="main_fragment_layout_haoka"]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: 'https://i.gkd.li/i/15971964',
         },
       ],
@@ -77,7 +100,11 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'com.sinovatech.unicom.basic.ui.activity.MainActivity',
+<<<<<<< HEAD
           matches: 'ImageView[vid="home_xuanfu_close"]',
+=======
+          matches: '[id="com.sinovatech.unicom.ui:id/home_xuanfu_close"]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           snapshotUrls: 'https://i.gkd.li/i/13930543',
         },
       ],

@@ -126,12 +126,22 @@ export default defineGkdApp({
           matches: '[vid="close"]',
           snapshotUrls: 'https://i.gkd.li/i/15433289',
         },
+<<<<<<< HEAD
         {
           key: 1,
           activityIds: 'com.alicloud.databox.MainActivity',
           matches: '[vid="ivTitleAction"]',
           snapshotUrls: 'https://i.gkd.li/i/15524767',
         },
+=======
+        // {
+        //   误触，无法解决 https://i.gkd.li/i/17556779
+        //   key: 1,
+        //   activityIds: 'com.alicloud.databox.MainActivity',
+        //   matches: '[vid="ivTitleAction"]',
+        //   snapshotUrls: 'https://i.gkd.li/i/15524767',
+        // },
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       ],
     },
   ],

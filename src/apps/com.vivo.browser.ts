@@ -5,6 +5,26 @@ export default defineGkdApp({
   name: 'vivo浏览器',
   groups: [
     {
+<<<<<<< HEAD
+=======
+      key: 0,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      priorityTime: 10000,
+      rules: [
+        {
+          fastQuery: true,
+          matches:
+            '[text*="跳过"][text.length<10][visibleToUser=true][clickable=true]',
+          exampleUrls: 'https://e.gkd.li/ae56bdf6-1de3-4a19-bcd3-233212aeffc0',
+          snapshotUrls: 'https://i.gkd.li/i/16739023',
+        },
+      ],
+    },
+    {
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       key: 1,
       name: '功能类-免流提示',
       activityIds: 'com.vivo.browser.pendant.PendantActivity',

@@ -91,6 +91,7 @@ export default defineGkdApp({
         },
       ],
     },
+<<<<<<< HEAD
     {
       key: 7,
       name: '功能类-闲鱼币',
@@ -179,5 +180,7 @@ export default defineGkdApp({
         },
       ],
     },
+=======
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
   ],
 });

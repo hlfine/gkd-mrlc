@@ -6,6 +6,7 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
+<<<<<<< HEAD
       name: '开屏广告',
       fastQuery: true,
       actionMaximum: 1,
@@ -28,6 +29,8 @@ export default defineGkdApp({
     },
     {
       key: 2,
+=======
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       name: '全屏广告-弹窗广告',
       desc: '点击关闭',
       fastQuery: true,
@@ -61,7 +64,11 @@ export default defineGkdApp({
       ],
     },
     {
+<<<<<<< HEAD
       key: 3,
+=======
+      key: 2,
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       name: '局部广告-卡片广告',
       desc: '点击关闭',
       activityIds: 'com.baidu.netdisk.ui.MainActivity',

@@ -27,6 +27,7 @@ export default defineGkdApp({
       ],
     },
     {
+<<<<<<< HEAD
       key: 8,
       name: '功能类-安装来源不可信',
       desc: '点击[授权本次安装]',
@@ -64,10 +65,15 @@ export default defineGkdApp({
       key: 9,
       name: '功能类-自动第三方安装应用',
       desc: '自动允许第三方应用调用安装，安装应用',
+=======
+      key: 13,
+      name: '功能类-自动安装/更新应用',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       fastQuery: true,
       rules: [
         {
           key: 0,
+<<<<<<< HEAD
           activityIds: [],
           matches:
             'TextView[text*="尝试安装应用"] < LinearLayout +2n LinearLayout > Button[text="继续"]',
@@ -305,6 +311,20 @@ export default defineGkdApp({
         // 完成
         {
           key: 5,
+=======
+          name: '点击[安装]/[更新]',
+          activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
+          matches:
+            '@FrameLayout[clickable=true] > LinearLayout[childCount=1] > [text^="继续"][text.length=4]',
+          exampleUrls: 'https://e.gkd.li/bd3e2764-4978-44ed-93d3-f176c23c3ec4',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16487278',
+            'https://i.gkd.li/i/16487282',
+          ],
+        },
+        {
+          // preKeys: [0], 有概率不触发
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
           name: '点击[完成]',
           activityIds:
             'com.miui.packageInstaller.ui.normalmode.InstallProgressActivity',
@@ -314,5 +334,36 @@ export default defineGkdApp({
         },
       ],
     },
+<<<<<<< HEAD
+=======
+    {
+      key: 14,
+      name: '功能类-自动允许应用安装软件',
+      fastQuery: true,
+      activityIds: 'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
+      rules: [
+        {
+          key: 0,
+          name: '点击[记住我的选择]',
+          matches: [
+            '[text$="安装应用？"]',
+            'CheckBox[text="记住我的选择"][checked=false]',
+          ],
+          exampleUrls: 'https://e.gkd.li/af834ca4-744a-485f-bec6-9802979fe949',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16487366',
+            'https://i.gkd.li/i/16487389',
+          ],
+        },
+        {
+          preKeys: [0],
+          name: '点击[允许]',
+          matches: '[text="允许"]',
+          exampleUrls: 'https://e.gkd.li/4f4ce827-6b74-4b55-8fed-5e009acd4bbd',
+          snapshotUrls: 'https://i.gkd.li/i/16487365',
+        },
+      ],
+    },
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
   ],
 });

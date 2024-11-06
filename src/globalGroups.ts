@@ -1,4 +1,8 @@
 import { defineGkdGlobalGroups } from '@gkd-kit/define';
+<<<<<<< HEAD
+=======
+import * as appList from './globalDefaultApps';
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
 
 export const OPEN_AD_ORDER = -10; // 开屏广告
 export const UPDATE_PROMPT_ORDER = -9; // 更新提示
@@ -11,7 +15,11 @@ export default defineGkdGlobalGroups([
     order: OPEN_AD_ORDER,
     fastQuery: true,
     matchRoot: true,
+<<<<<<< HEAD
     matchTime: 2000,
+=======
+    matchTime: 10000,
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
     actionMaximum: 1,
     resetMatch: 'app',
     actionMaximumKey: 0,
@@ -24,7 +32,11 @@ export default defineGkdGlobalGroups([
           '[text*="搜索"][text.length<6][visibleToUser=true]',
           '[(text.length<6 && text*="搜索") || vid~="(?is).*search.*" || (desc.length<6 && desc*="搜索")][visibleToUser=true]',
         ],
+<<<<<<< HEAD
         matches: '[text^="跳过"][text.length<=6][visibleToUser=true]',
+=======
+        matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
       },
       {
         key: 1,
@@ -47,6 +59,14 @@ export default defineGkdGlobalGroups([
           'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[visibleToUser=true][text=null]', // 字节SDK
       },
     ],
+<<<<<<< HEAD
+=======
+    apps: [...appList.openAdBlackListAppIDs]
+      .map((id) => ({ id, enable: false }))
+      .concat(
+        [...appList.openAdWhiteListAppIDs].map((id) => ({ id, enable: true })),
+      ),
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
   },
   {
     key: 1,
@@ -66,6 +86,14 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
+<<<<<<< HEAD
+=======
+    apps: [...appList.updateBlackListAppIDs]
+      .map((id) => ({ id, enable: false }))
+      .concat(
+        [...appList.updateWhiteListAppIDs].map((id) => ({ id, enable: true })),
+      ),
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
   },
   {
     key: 2,
@@ -84,5 +112,13 @@ export default defineGkdGlobalGroups([
         ],
       },
     ],
+<<<<<<< HEAD
+=======
+    apps: [...appList.yongBlackListAppIDs]
+      .map((id) => ({ id, enable: false }))
+      .concat(
+        [...appList.yongWhiteListAppIDs].map((id) => ({ id, enable: true })),
+      ),
+>>>>>>> bfe3f98795eadca621be6cb0d2359e624d0623d7
   },
 ]);
