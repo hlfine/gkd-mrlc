@@ -20,9 +20,9 @@ npmmirror源
 https://registry.npmmirror.com/gkd-mrlc/latest/files
 ```
 
-当前版本: v9
+当前版本: v10
 
-当前订阅文件已适配 805 个应用，共有 1896 应用规则组，3 全局规则组
+当前订阅文件已适配 805 个应用，共有 1898 应用规则组，3 全局规则组
 
 查看 [适配 APP 列表](./dist/README.md)
 
