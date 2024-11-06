@@ -6,28 +6,6 @@ export default defineGkdApp({
   groups: [
     {
       key: 1,
-      name: '开屏广告',
-      fastQuery: true,
-      actionMaximum: 1,
-      matchTime: 10000,
-      resetMatch: 'app',
-      rules: [
-        {
-          key: 0,
-          action: 'clickCenter',
-          matches: ['TextView[text*="跳过"][text.length<=10]'],
-          snapshotUrls: ['https://i.gkd.li/i/17405893'],
-        },
-        {
-          key: 1,
-          action: 'clickCenter',
-          matches: ['ImageView[clickable=true] +5 View[vid="ms_skipView"]'],
-          snapshotUrls: ['https://i.gkd.li/i/17546726'],
-        },
-      ],
-    },
-    {
-      key: 2,
       name: '全屏广告-弹窗广告',
       desc: '点击关闭',
       fastQuery: true,
@@ -61,7 +39,7 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 3,
+      key: 2,
       name: '局部广告-卡片广告',
       desc: '点击关闭',
       activityIds: 'com.baidu.netdisk.ui.MainActivity',
