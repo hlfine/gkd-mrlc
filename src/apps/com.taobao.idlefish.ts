@@ -105,14 +105,14 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          actionDelay: 5000,
+          actionDelay: 3000,
           name: '点击[扱骰子寻宝]',
           matches: '@View[id="mapDiceBtn"] > View[text.length>1]',
           snapshotUrls: 'https://i.gkd.li/i/17606060',
         },
         {
           key: 3,
-          actionDelay: 1500,
+          actionDelay: 1000,
           name: '点击[赚骰子]-有领取奖励',
           matches:
             'View[text="领"] <2 @View[index=1] +3 View > View[text="赚"]',
@@ -127,7 +127,7 @@ export default defineGkdApp({
         },
         {
           key: 5,
-          actionDelay: 300,
+          actionDelay: 200,
           name: '领取任务',
           matches: 'View[index=9 || index=5][text="领取奖励"]',
           snapshotUrls: [
@@ -162,7 +162,7 @@ export default defineGkdApp({
           actionDelay: 2000,
           name: '点击[背包]',
           matches:
-            'View[text!="领"] <2 View +3 View > View[text="赚"] <2 View - View > Image',
+            'View[childCount=5] > View[index=1][childCount=1] +3 View > View[text="赚"] <2 View - View > Image',
           snapshotUrls: [
             'https://i.gkd.li/i/17606060',
             'https://i.gkd.li/i/17606487',
@@ -172,9 +172,9 @@ export default defineGkdApp({
           preKeys: [1],
           key: 2,
           actionDelay: 200,
-          name: '点击[道具]',
+          name: '使用[道具]',
           matches:
-            'View > View[index=1 || index=0] > View[index=1][text!="加点卡"] + View[index=2][text="使用"]',
+            'View[index=2] >3 View[index=1 || index=0] > View[index=1][text!="加点卡"] + [text="使用"]',
           snapshotUrls: 'https://i.gkd.li/i/17606047',
         },
       ],

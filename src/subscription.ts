@@ -24,7 +24,7 @@ export default defineGkdSubscription({
   version: 0,
   author: 'Mrlc',
   checkUpdateUrl: './gkd.version.json5',
-  supportUri: 'https://www.npmjs.com/package/gkd-mrlc',
+  supportUri: 'https://github.com/mrlctate/gkd-mrlc/issues/new/choose',
   categories,
   globalGroups,
   apps: rawApps,
