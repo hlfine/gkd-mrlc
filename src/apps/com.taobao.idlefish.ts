@@ -52,15 +52,16 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '分段广告-搜索结果页广告',
+      name: '分段广告-搜索页面广告',
       activityIds:
         'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
       rules: [
         {
           key: 0,
-          matches: '@View[clickable=true] > ImageView[index=2][desc$="广告"]',
-          excludeMatches: '@[clickable=true] > [desc^="反馈成功"]',
+          actionDelay: 900,
           action: 'longClick',
+          matches: '@View[clickable=true] > [clickable=true][desc$="广告"]',
+          excludeMatches: '@View[clickable=true] > [desc^="反馈成功"]',
           snapshotUrls: [
             'https://i.gkd.li/i/14723597',
             'https://i.gkd.li/i/14723718', // excludeMatches
@@ -70,7 +71,7 @@ export default defineGkdApp({
           preKeys: [0],
           key: 1,
           matches:
-            'View[desc^="不喜欢该商品"] > ImageView[index=1][visibleToUser=true]',
+            'View[desc.length=25][desc^="不喜欢该商品"] > ImageView[index=1][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/14723632',
         },
       ],
@@ -96,7 +97,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          actionDelay: 1200,
+          actionDelay: 2000,
           name: '点击[赚骰子]-有领取奖励',
           matches:
             'View[text="领"] <2 @View[index=1] +3 View > View[text="赚"]',
@@ -111,7 +112,7 @@ export default defineGkdApp({
         },
         {
           key: 3,
-          actionDelay: 1000,
+          actionDelay: 800,
           name: '领取任务',
           matches: '[id="taskWrap"] >3 [text="领取奖励"]',
           snapshotUrls: [
@@ -122,6 +123,7 @@ export default defineGkdApp({
         {
           preKeys: [3],
           key: 4,
+          actionDelay: 500,
           name: '点击x[关闭底部弹窗]',
           matches:
             'View[id="taskWrap"] > @View[index=1] +3 View >2 View[text!="领取奖励"]',
@@ -170,9 +172,9 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          actionDelay: 3000,
+          actionDelay: 2000,
           name: '点击[扱骰子]',
-          matches: '@View[id="mapDiceBtn"] > View[text.length>1]',
+          matches: '@View[id="mapDiceBtn"] > View[text!="赚"]',
           snapshotUrls: 'https://i.gkd.li/i/17606060',
         },
         {
@@ -190,6 +192,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
+          actionDelay: 1200,
           matches:
             'ScrollView > @* > [desc="关注上新" || desc$="俱乐部" || desc="闲鱼精选"]',
           action: 'longClick',
@@ -197,6 +200,7 @@ export default defineGkdApp({
           exampleUrls: 'https://e.gkd.li/da3b020c-b649-434f-a984-35b9e025023b',
         },
         {
+          preKeys: [0],
           key: 1,
           matches: '[vid="id_pager"] >9 [desc="删除"]',
           snapshotUrls: 'https://i.gkd.li/i/17690302',

@@ -732,21 +732,20 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          actionDelay: 500,
+          actionDelay: 300,
           name: '点击[打卡]',
           matches: '@LinearLayout[clickable=true] > TextView[text^="打卡"]',
           snapshotUrls: 'https://i.gkd.li/i/17566121',
         },
         {
           key: 2,
-          actionDelay: 100,
           name: '点击[立即打卡]',
           matches: '[text="立即打卡"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17552369',
         },
         {
           preKeys: [2],
-          actionDelay: 300,
+          actionDelay: 350,
           name: '点击[返回]',
           matches: 'TextView[desc="返回"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17568038',
