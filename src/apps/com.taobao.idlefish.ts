@@ -53,12 +53,12 @@ export default defineGkdApp({
     {
       key: 5,
       name: '分段广告-搜索结果页广告',
+      activityIds:
+        'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
       rules: [
         {
           key: 0,
-          activityIds:
-            'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
-          matches: '@[clickable=true] > [desc$="广告"]',
+          matches: '@View[clickable=true] > ImageView[index=2][desc$="广告"]',
           excludeMatches: '@[clickable=true] > [desc^="反馈成功"]',
           action: 'longClick',
           snapshotUrls: [
@@ -67,12 +67,10 @@ export default defineGkdApp({
           ],
         },
         {
+          preKeys: [0],
           key: 1,
-          preKeys: 0,
-          activityIds:
-            'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
           matches:
-            '[desc^="不喜欢该商品"] > ImageView[index=1][visibleToUser=true]',
+            'View[desc^="不喜欢该商品"] > ImageView[index=1][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/14723632',
         },
       ],
@@ -93,73 +91,52 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '功能类-闲鱼币',
-      desc: '领取奖励-扱骰子',
+      name: '功能类-领取奖励',
       activityIds: '.webview.WebHybridActivity',
       rules: [
         {
           key: 1,
-          name: '点击x[关闭]-弹窗',
-          matches: 'View[childCount=3] > Image[index=2][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/17606064',
-        },
-        {
-          key: 2,
-          actionDelay: 3000,
-          name: '点击[扱骰子寻宝]',
-          matches: '@View[id="mapDiceBtn"] > View[text.length>1]',
-          snapshotUrls: 'https://i.gkd.li/i/17606060',
-        },
-        {
-          key: 3,
-          actionDelay: 1000,
+          actionDelay: 1200,
           name: '点击[赚骰子]-有领取奖励',
           matches:
             'View[text="领"] <2 @View[index=1] +3 View > View[text="赚"]',
           snapshotUrls: 'https://i.gkd.li/i/17634886',
         },
         {
-          key: 4,
+          key: 2,
           actionMaximum: 1,
           name: '签到',
           matches: 'View[text="签到"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17606057',
         },
         {
-          key: 5,
-          actionDelay: 200,
+          key: 3,
+          actionDelay: 1000,
           name: '领取任务',
-          matches: 'View[index=9 || index=5][text="领取奖励"]',
+          matches: '[id="taskWrap"] >3 [text="领取奖励"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17606051',
             'https://i.gkd.li/i/17606057',
           ],
         },
         {
-          preKeys: [5],
-          key: 6,
+          preKeys: [3],
+          key: 4,
           name: '点击x[关闭底部弹窗]',
           matches:
-            'View[id="taskWrap"] > @View[index=1] +3 View[index=4] >2 View[index=9 || index=5][text!="领取奖励"]',
+            'View[id="taskWrap"] > @View[index=1] +3 View >2 View[text!="领取奖励"]',
           snapshotUrls: 'https://i.gkd.li/i/17606054',
-        },
-        {
-          key: 7,
-          name: '点击[全部收下]',
-          matches: 'View[text^="全部收下"]',
-          snapshotUrls: 'https://i.gkd.li/i/17606050',
         },
       ],
     },
     {
       key: 8,
-      name: '功能类-点击背包使用道具',
-      desc: '使用道具',
+      name: '功能类-背包使用道具',
       activityIds: '.webview.WebHybridActivity',
       rules: [
         {
           key: 1,
-          actionDelay: 2000,
+          actionDelay: 3000,
           name: '点击[背包]',
           matches:
             'View[childCount=5] > View[index=1][childCount=1] +3 View > View[text="赚"] <2 View - View > Image',
@@ -171,11 +148,64 @@ export default defineGkdApp({
         {
           preKeys: [1],
           key: 2,
-          actionDelay: 200,
+          actionDelay: 300,
           name: '使用[道具]',
           matches:
-            'View[index=2] >3 View[index=1 || index=0] > View[index=1][text!="加点卡"] + [text="使用"]',
+            'View[clickable=true] >4 View[index=1][text!="加点卡"] + [text="使用"]',
           snapshotUrls: 'https://i.gkd.li/i/17606047',
+        },
+      ],
+    },
+    {
+      key: 9,
+      name: '功能类-扱骰子',
+      activityIds: '.webview.WebHybridActivity',
+      rules: [
+        {
+          key: 1,
+          name: '点击x[关闭]-弹窗',
+          matches:
+            'View[childCount=3][clickable=true] > Image + View + Image[clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/17606064',
+        },
+        {
+          key: 2,
+          actionDelay: 3000,
+          name: '点击[扱骰子]',
+          matches: '@View[id="mapDiceBtn"] > View[text.length>1]',
+          snapshotUrls: 'https://i.gkd.li/i/17606060',
+        },
+        {
+          key: 3,
+          name: '点击[全部收下]',
+          matches: 'View[text^="全部收下"]',
+          snapshotUrls: 'https://i.gkd.li/i/17606050',
+        },
+      ],
+    },
+    {
+      key: 10,
+      name: '功能类-删除首页[关注上新/俱乐部/闲鱼精选]',
+      activityIds: '.maincontainer.activity.MainActivity',
+      rules: [
+        {
+          key: 0,
+          matches:
+            'ScrollView > @* > [desc="关注上新" || desc$="俱乐部" || desc="闲鱼精选"]',
+          action: 'longClick',
+          snapshotUrls: 'https://i.gkd.li/i/17690274',
+          exampleUrls: 'https://e.gkd.li/da3b020c-b649-434f-a984-35b9e025023b',
+        },
+        {
+          key: 1,
+          matches: '[vid="id_pager"] >9 [desc="删除"]',
+          snapshotUrls: 'https://i.gkd.li/i/17690302',
+        },
+        {
+          preKeys: [1],
+          key: 2,
+          matches: '[desc^="确认删除"] > [desc="取消"] + [desc="确定"]',
+          snapshotUrls: 'https://i.gkd.li/i/17690308',
         },
       ],
     },

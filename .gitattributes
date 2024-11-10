@@ -1,0 +1,25 @@
+# .github/ISSUE_TEMPLATE
+.github/ISSUE_TEMPLATE/bug_report.yml merge=ours
+.github/ISSUE_TEMPLATE/config.yml merge=ours
+.github/ISSUE_TEMPLATE/feature_request.yml merge=ours
+
+# .github/workflows
+.github/workflows/build_release.yml merge=ours
+.github/workflows/check_fix_push.yml merge=ours
+.github/workflows/pull_request_check.yml merge=ours
+
+# dist
+dist/CHANGELOG.md merge=ours
+dist/README.md merge=ours
+
+# scripts
+scripts/check.ts merge=ours
+
+# ts
+src/apps/com.taobao.idlefish.ts merge=ours
+src/apps/com.tencent.mobileqq.ts merge=ours
+src/apps/com.tencent.qqlive.ts merge=ours
+
+package.json merge=ours
+README.md merge=ours
+Template.md merge=ours

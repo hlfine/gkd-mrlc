@@ -726,19 +726,20 @@ export default defineGkdApp({
     },
     {
       key: 26,
-      name: '功能类-QQ自动进入打卡页立即打卡',
+      name: '功能类-QQ打卡',
       desc: '点击打卡-进入-立即打卡',
       activityIds: ['.activity.SplashActivity', '.activity.QQBrowserActivity'],
       rules: [
         {
           key: 1,
-          actionDelay: 600,
+          actionDelay: 500,
           name: '点击[打卡]',
           matches: '@LinearLayout[clickable=true] > TextView[text^="打卡"]',
           snapshotUrls: 'https://i.gkd.li/i/17566121',
         },
         {
           key: 2,
+          actionDelay: 100,
           name: '点击[立即打卡]',
           matches: '[text="立即打卡"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17552369',
@@ -748,7 +749,6 @@ export default defineGkdApp({
           actionDelay: 300,
           name: '点击[返回]',
           matches: 'TextView[desc="返回"][clickable=true]',
-          // 'Button[text="分享"] <<n FrameLayout + RelativeLayout >3 TextView[desc="返回"]',
           snapshotUrls: 'https://i.gkd.li/i/17568038',
         },
       ],
