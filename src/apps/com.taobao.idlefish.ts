@@ -58,10 +58,10 @@ export default defineGkdApp({
       rules: [
         {
           key: 0,
-          actionDelay: 900,
+          actionDelay: 1000,
           action: 'longClick',
           matches: '@View[clickable=true] > [clickable=true][desc$="广告"]',
-          excludeMatches: '@View[clickable=true] > [desc^="反馈成功"]',
+          // excludeMatches: '@View[clickable=true] > [desc^="反馈成功"]',
           snapshotUrls: [
             'https://i.gkd.li/i/14723597',
             'https://i.gkd.li/i/14723718', // excludeMatches
@@ -97,7 +97,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          actionDelay: 2000,
+          actionDelay: 2800,
           name: '点击[赚骰子]-有领取奖励',
           matches:
             'View[text="领"] <2 @View[index=1] +3 View > View[text="赚"]',
@@ -138,10 +138,13 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          actionDelay: 3000,
+          actionDelay: 3500,
           name: '点击[背包]',
-          matches:
-            'View[childCount=5] > View[index=1][childCount=1] +3 View > View[text="赚"] <2 View - View > Image',
+          matches: [
+            'View[childCount=5] > View[index=1] > [index=parent.childCount.minus(1)][text!="领"]',
+            'View[childCount=5] > View[index=4] > View[text="赚"]',
+            'View[childCount=5] > View[index=3] > Image',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/17606060',
             'https://i.gkd.li/i/17606487',
@@ -150,7 +153,6 @@ export default defineGkdApp({
         {
           preKeys: [1],
           key: 2,
-          actionDelay: 300,
           name: '使用[道具]',
           matches:
             'View[clickable=true] >4 View[index=1][text!="加点卡"] + [text="使用"]',
@@ -165,7 +167,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          name: '点击x[关闭]-弹窗',
+          name: '关闭-弹窗',
           matches:
             'View[childCount=3][clickable=true] > Image + View + Image[clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17606064',
@@ -173,26 +175,32 @@ export default defineGkdApp({
         {
           key: 2,
           actionDelay: 2000,
-          name: '点击[扱骰子]',
+          name: '扱骰子',
           matches: '@View[id="mapDiceBtn"] > View[text!="赚"]',
           snapshotUrls: 'https://i.gkd.li/i/17606060',
         },
         {
           key: 3,
-          name: '点击[全部收下]',
+          name: '全部收下',
           matches: 'View[text^="全部收下"]',
           snapshotUrls: 'https://i.gkd.li/i/17606050',
+        },
+        {
+          key: 4,
+          name: '继续寻宝',
+          matches: 'View[text="继续寻宝"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/17695522',
         },
       ],
     },
     {
       key: 10,
-      name: '功能类-删除首页[关注上新/俱乐部/闲鱼精选]',
+      name: '功能类-删除[关注上新/俱乐部/闲鱼精选]',
       activityIds: '.maincontainer.activity.MainActivity',
       rules: [
         {
           key: 0,
-          actionDelay: 1200,
+          actionDelay: 1000,
           matches:
             'ScrollView > @* > [desc="关注上新" || desc$="俱乐部" || desc="闲鱼精选"]',
           action: 'longClick',
