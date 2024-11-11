@@ -26,8 +26,7 @@ export default defineGkdApp({
             left: 'width * 0.8833',
             top: 'width * 0.1388',
           },
-          excludeMatches: '[id="com.douban.frodo:id/_ad_image_"][width=1200]',
-          matches: '[id="com.douban.frodo:id/_ad_image_"]',
+          matches: '[id="com.douban.frodo:id/_ad_image_"][width!=1200]',
           snapshotUrls: [
             'https://i.gkd.li/i/13575257',
             'https://i.gkd.li/i/13575547',
@@ -45,6 +44,12 @@ export default defineGkdApp({
             'https://i.gkd.li/i/13601755',
             'https://i.gkd.li/i/16054268',
           ],
+        },
+        {
+          key: 3,
+          fastQuery: true,
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/17687115',
         },
       ],
     },
