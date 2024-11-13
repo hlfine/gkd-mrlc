@@ -153,6 +153,7 @@ export default defineGkdApp({
         {
           preKeys: [1],
           key: 2,
+          actionDelay: 200,
           name: '使用[道具]',
           matches:
             'View[clickable=true] >4 View[index=1][text!="加点卡"] + [text="使用"]',
@@ -162,6 +163,7 @@ export default defineGkdApp({
     },
     {
       key: 9,
+      fastQuery: true,
       name: '功能类-扱骰子',
       activityIds: '.webview.WebHybridActivity',
       rules: [
@@ -195,28 +197,29 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      name: '功能类-删除[关注上新/俱乐部/闲鱼精选]',
+      fastQuery: true,
+      name: '功能类-删除首页服务号',
       activityIds: '.maincontainer.activity.MainActivity',
       rules: [
         {
-          key: 0,
-          actionDelay: 1000,
+          key: 1,
+          actionDelay: 800,
           matches:
-            'ScrollView > @* > [desc="关注上新" || desc$="俱乐部" || desc="闲鱼精选"]',
+            'ScrollView > @*[childCount=4] > View[desc="闲鱼精选" || desc$="俱乐部" || desc="关注上新"]',
           action: 'longClick',
           snapshotUrls: 'https://i.gkd.li/i/17690274',
           exampleUrls: 'https://e.gkd.li/da3b020c-b649-434f-a984-35b9e025023b',
         },
         {
-          preKeys: [0],
-          key: 1,
-          matches: '[vid="id_pager"] >9 [desc="删除"]',
+          preKeys: [1],
+          key: 2,
+          matches: 'View[desc="删除"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17690302',
         },
         {
-          preKeys: [1],
-          key: 2,
-          matches: '[desc^="确认删除"] > [desc="取消"] + [desc="确定"]',
+          key: 3,
+          matches:
+            'View[childCount=2][desc^="确认删除"] > View[desc="取消"] + View[desc="确定"]',
           snapshotUrls: 'https://i.gkd.li/i/17690308',
         },
       ],

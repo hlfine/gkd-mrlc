@@ -15,7 +15,7 @@ export default defineGkdApp({
         {
           key: 1,
           action: 'clickCenter',
-          matches: '[text*="跳过"][clickable=true]',
+          matches: 'TextView[text="跳过"][clickable=true]',
           snapshotUrls: ['https://i.gkd.li/i/17409509'],
         },
       ],
@@ -44,11 +44,11 @@ export default defineGkdApp({
       key: 4,
       name: '分段广告-卡片广告',
       fastQuery: true,
-      activityIds: '.ona.activity.SplashHomeActivity',
       rules: [
         {
-          key: 0,
+          key: 1,
           name: '首页顶部卡片广告',
+          activityIds: '.ona.activity.SplashHomeActivity',
           matches:
             'RelativeLayout[clickable=true] >2 ImageView +(3,4) ImageView[clickable=true]',
           snapshotUrls: [
@@ -57,15 +57,19 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 1,
+          key: 2,
           name: '首页顶部背景广告',
+          activityIds: '.ona.activity.SplashHomeActivity',
           matches: '[text="关闭广告"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/12700518',
         },
         {
-          key: 2,
+          key: 3,
           name: '个人中心页卡片广告',
-          activityIds: '.ona.offline.client.group.DownloadGroupActivity',
+          activityIds: [
+            '.ona.activity.SplashHomeActivity',
+            '.ona.offline.client.group.DownloadGroupActivity',
+          ],
           matches: 'ViewGroup > ImageView[index=2][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/12700175',
@@ -73,16 +77,28 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 3,
+          key: 4,
+          name: '个人中心点击关闭广告',
+          activityIds: ['.ona.activity.SplashHomeActivity'],
+          matches:
+            'TextView[text^="立即" || text^="了解" || text="去微信看看" || text="下载应用"] <2 View[childCount=2] + View',
+          snapshotUrls: ['https://i.gkd.li/i/17725412'],
+        },
+        {
+          key: 5,
           name: '个人中心页顶部背景广告',
+          activityIds: '.ona.activity.SplashHomeActivity',
           matches:
             'RelativeLayout > FrameLayout + @ImageView[clickable=true] + ImageView + ImageView',
           snapshotUrls: 'https://i.gkd.li/i/12777344',
         },
         {
-          key: 4,
+          key: 6,
           name: '点击右上角[广告]-1',
-          activityIds: '.ona.activity.VideoDetailActivity',
+          activityIds: [
+            '.ona.activity.SplashHomeActivity',
+            '.ona.activity.VideoDetailActivity',
+          ],
           matches:
             'RelativeLayout > @FrameLayout[clickable=true] > ImageView[desc="the ad tag"]',
           snapshotUrls: [
@@ -91,80 +107,66 @@ export default defineGkdApp({
           ],
         },
         {
-          key: 5,
+          key: 7,
           name: '点击右上角[广告]-2',
+          activityIds: '.ona.activity.SplashHomeActivity',
           matches:
-            'RelativeLayout[childCount=3] > ImageView[index=2][clickable=true]',
+            'RelativeLayout[childCount=3] > ImageView + RelativeLayout + ImageView[clickable=true][visibleToUser=true]',
           snapshotUrls: ['https://i.gkd.li/i/17586123'],
         },
         {
-          key: 6,
+          key: 8,
           name: '点击右下角关闭-1',
+          activityIds: '.ona.activity.SplashHomeActivity',
           matches:
-            'TextView[text="立即下载"] < RelativeLayout[childCount=2] + ImageView',
-          snapshotUrls: 'https://i.gkd.li/i/13426421',
+            'TextView[text^="立即" || text^="了解" || text="去微信看看" || text="立即预约" || text="查看详情"] < [childCount=2] + ImageView',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13426421',
+            'https://i.gkd.li/i/17725554',
+            'https://i.gkd.li/i/17725673',
+          ],
         },
         {
-          key: 7,
+          key: 9,
           name: '点击右下角关闭-2',
+          activityIds: '.ona.activity.SplashHomeActivity',
           matches:
             'View[childCount=4] > @View[index=3][clickable=true] - View > TextView[text="立即下载"]',
           snapshotUrls: 'https://i.gkd.li/i/17692384',
         },
-        {
-          key: 8,
-          fastQuery: true,
-          matches: '[id="com.tencent.qqlive:id/feed_icon"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/14318802',
-        },
 
         // 以下是配合本规则组内其他key使用的规则，反馈界面的规则都是一样的
         {
-          preKeys: [8],
-          key: 96,
-          fastQuery: true,
-          matches:
-            '[id="com.tencent.qqlive:id/ad_feed_back_dislike"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/14318811',
-        },
-        {
-          key: 97,
-          name: '广告反馈卡片-点击不感兴趣',
-          matches: '@FrameLayout[clickable=true] >3 [text="不感兴趣"]',
-          snapshotUrls: 'https://i.gkd.li/i/13695084',
-        },
-        {
           key: 98,
           name: '广告反馈卡片-选择原因',
-          fastQuery: true,
           activityIds: [
-            'com.tencent.qqlive.qaduikit.common.dialog.feedback.variable.QAdFeedbackVariableDislikeItemDialog',
-            'com.tencent.qqlive.ona.activity.VideoDetailActivity',
-            'com.tencent.qqlive.ona.offline.client.group.DownloadGroupActivity',
+            '.ona.activity.SplashHomeActivity',
+            '.ona.activity.HotStartSplashActivity',
+            '.ona.activity.VideoDetailActivity',
+            '.ona.offline.client.group.DownloadGroupActivity',
           ],
           matches:
-            '[text="关闭这条广告的原因"] +2 RecyclerView > [text="不感兴趣"]',
+            'TextView[text="关闭这条广告的原因"] +2 RecyclerView > [text="不感兴趣"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/12700303',
-            'https://i.gkd.li/i/12829866',
+            'https://i.gkd.li/i/17725162',
             'https://i.gkd.li/i/13685871',
             'https://i.gkd.li/i/13703219',
+            'https://i.gkd.li/i/17725215',
           ],
         },
         {
           preKeys: [98],
           key: 99,
           name: '广告反馈卡片-确认原因',
-          fastQuery: true,
           activityIds: [
-            'com.tencent.qqlive.qaduikit.common.dialog.feedback.variable.QAdFeedbackVariableDislikeItemDialog',
-            'com.tencent.qqlive.ona.activity.VideoDetailActivity',
-            'com.tencent.qqlive.ona.offline.client.group.DownloadGroupActivity',
+            '.ona.activity.SplashHomeActivity',
+            '.ona.activity.VideoDetailActivity',
+            '.ona.offline.client.group.DownloadGroupActivity',
           ],
           matches:
             '[text="关闭这条广告的原因"] + [text="确认"][clickable=true]',
           snapshotUrls: [
-            'https://i.gkd.li/i/12700210',
+            'https://i.gkd.li/i/17725215',
             'https://i.gkd.li/i/13685877',
             'https://i.gkd.li/i/13703298',
           ],
