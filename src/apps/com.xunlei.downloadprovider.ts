@@ -169,7 +169,7 @@ export default defineGkdApp({
           activityIds:
             'com.bytedance.sdk.openadsdk.stub.activity.Stub_Standard_Portrait_Activity',
           matches:
-            '@Image[childCount=0][text=""] < View[childCount=1] + View +n View > View[childCount=1] > TextView[text$="广告"]',
+            '@Image[childCount=0][text=""][width<60 && height<60] < View[childCount=1] + View +n View > View[childCount=1] > TextView[text$="广告"]',
           snapshotUrls: [
             'https://i.gkd.li/i/12868667',
             'https://i.gkd.li/i/12881946',
@@ -180,12 +180,13 @@ export default defineGkdApp({
         // 腾讯广告
         {
           key: 20,
+          fastQuery: true,
           activityIds: [
             'com.xunlei.downloadprovider.frame.MainTabActivity',
             'com.xunlei.downloadprovider.launch.LaunchActivity',
           ],
           matches:
-            '[id="android:id/content"] >(3,4) FrameLayout[childCount>3] > FrameLayout[childCount=1] > ImageView[childCount=0][text=null]',
+            '@ImageView[childCount=0][text=null][desc=null][id=null][visibleToUser=true][width<90 && height<90] < FrameLayout[childCount=1][text=null][desc=null][id=null][parent.childCount>3] +n FrameLayout >(1,2) [text^="立即" || text="查看详情" || text="了解更多" || text="去微信看看" || text$="应用" || text="进入小程序" || text="领取优惠" || text="跳转微信"]',
           snapshotUrls: [
             'https://i.gkd.li/i/12882132',
             'https://i.gkd.li/i/12901374',
@@ -253,15 +254,6 @@ export default defineGkdApp({
           ],
         },
       ],
-    },
-    {
-      key: 5,
-      name: '局部广告-搜索页面顶部广告',
-      fastQuery: true,
-      activityIds:
-        'com.xunlei.downloadprovider.search.ui.search.SearchOperateActivity',
-      rules: '[id="com.xunlei.downloadprovider:id/search_banner_ad_close"]',
-      snapshotUrls: 'https://i.gkd.li/i/12882892',
     },
     {
       key: 6,
@@ -332,16 +324,25 @@ export default defineGkdApp({
       desc: '点击关闭',
       rules: [
         {
+          key: 0,
           fastQuery: true,
           activityIds: 'com.xunlei.downloadprovider.frame.MainTabActivity',
           matches:
-            '[((text$="领取" || text^="立即") && text.length<5) || text^="此云盘为您的私人云盘"] <n * > [vid="close"]',
+            '[text="立即领取" || text="点击领取" || text^="此云盘为您的私人云盘"] + [vid="close"]',
           snapshotUrls: [
             'https://i.gkd.li/i/12882939',
             'https://i.gkd.li/i/15048352',
             'https://i.gkd.li/i/15048355',
             'https://i.gkd.li/i/15048357',
           ],
+        },
+        {
+          key: 1,
+          fastQuery: true,
+          activityIds: '.search.ui.search.SearchOperateActivity',
+          matches: '[vid="search_banner_ad_close"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/d9e25fc3-249f-4fb9-8606-606ed0c9c893',
+          snapshotUrls: 'https://i.gkd.li/i/17725350',
         },
       ],
     },

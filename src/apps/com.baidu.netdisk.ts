@@ -13,18 +13,16 @@ export default defineGkdApp({
         {
           key: 3,
           activityIds: [
-            'com.baidu.netdisk.business.guide.dialog.lifeproduct.',
-            'com.baidu.netdisk.ui.MainActivity',
-            'com.baidu.netdisk.ui.Navigate',
+            '.business.guide.dialog.lifeproduct.LifeV10GuideDialog',
+            '.ui.MainActivity',
           ],
-          matches: '[vid="iv_close"]',
+          matches: '[id="com.baidu.netdisk:id/iv_close"][clickable=true]',
+          excludeMatches: '[text="选择文件"][visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/12642505',
             'https://i.gkd.li/i/12783106',
             'https://i.gkd.li/i/12923937',
             'https://i.gkd.li/i/13806852',
-            'https://i.gkd.li/i/14730106',
-            'https://i.gkd.li/i/14822799',
           ],
         },
         {

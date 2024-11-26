@@ -29,20 +29,24 @@ export default defineGkdApp({
     {
       key: 13,
       name: '功能类-自动安装/更新应用',
-      desc: '该规则仅适配关闭小米系统[安全守护]的情况',
+      desc: '该规则仅适配关闭[应用安全验证]和[安全守护]的情况，可在安装页面右上角设置里关闭，关闭后的风险自行承担',
       matchRoot: true,
       fastQuery: true,
       rules: [
         {
           key: 0,
           name: '点击[安装]/[更新]',
-          activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
+          activityIds: [
+            'com.miui.packageInstaller.NewInstallerPrepareActivity',
+            'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
+          ],
           matches:
             '@FrameLayout[clickable=true] > LinearLayout[childCount=1] > [text^="继续"][text.length=4]',
           exampleUrls: 'https://e.gkd.li/bd3e2764-4978-44ed-93d3-f176c23c3ec4',
           snapshotUrls: [
             'https://i.gkd.li/i/16487278',
             'https://i.gkd.li/i/16487282',
+            'https://i.gkd.li/i/17691996',
           ],
         },
         {
@@ -82,6 +86,40 @@ export default defineGkdApp({
           matches: '[text="允许"]',
           exampleUrls: 'https://e.gkd.li/4f4ce827-6b74-4b55-8fed-5e009acd4bbd',
           snapshotUrls: 'https://i.gkd.li/i/16487365',
+        },
+      ],
+    },
+    {
+      key: 15,
+      name: '功能类-安装来源不可信',
+      desc: '点击[授权本次安装]',
+      rules: [
+        {
+          fastQuery: true,
+          position: {
+            left: 'width * 0.3511',
+            top: 'height * 0.5',
+          },
+          activityIds:
+            'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
+          matches: '[text$="授权本次安装"]',
+          exampleUrls: 'https://e.gkd.li/e470baf2-56dc-4e3c-8da0-9747eeec602f',
+          snapshotUrls: 'https://i.gkd.li/i/17898736',
+        },
+      ],
+    },
+    {
+      key: 16,
+      name: '功能类-备案信息弹窗',
+      desc: '点击[继续安装]',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds:
+            'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
+          matches: ['[text$="备案信息"]', '[text="继续安装"]'],
+          exampleUrls: 'https://e.gkd.li/d5bc4b1a-e363-4aab-9240-e6d914730935',
+          snapshotUrls: 'https://i.gkd.li/i/17908298',
         },
       ],
     },

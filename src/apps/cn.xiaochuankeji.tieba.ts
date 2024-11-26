@@ -25,7 +25,7 @@ export default defineGkdApp({
         {
           key: 1,
           matches:
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[visibleToUser=true][text=null]',
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null][visibleToUser=true] + TextView[visibleToUser=true][text=null][index=parent.childCount.minus(1)]',
           snapshotUrls: 'https://i.gkd.li/i/15858023',
         },
         {
@@ -53,19 +53,6 @@ export default defineGkdApp({
           matches:
             '[id="cn.xiaochuankeji.tieba:id/btn_ok"][text^="马上升级"] + [id="cn.xiaochuankeji.tieba:id/btn_cancel"][text="取消"]',
           snapshotUrls: 'https://i.gkd.li/i/12660882',
-        },
-      ],
-    },
-    {
-      key: 2,
-      name: '青少年模式',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
-          matches: '[text$="青少年模式"] + [text$="知道了"]',
-          snapshotUrls: 'https://i.gkd.li/i/12660929',
         },
       ],
     },

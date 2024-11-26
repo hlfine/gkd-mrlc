@@ -5,16 +5,6 @@ export default defineGkdApp({
   name: '阿里巴巴',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      priorityTime: 10000,
-      rules: '@[vid="layout_splash_skip"] > TextView[text^="跳过"]',
-      snapshotUrls: 'https://i.gkd.li/i/17626421',
-    },
-    {
       key: 1,
       name: '更新提示',
       fastQuery: true,

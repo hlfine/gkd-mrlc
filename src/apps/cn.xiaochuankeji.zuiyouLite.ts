@@ -16,7 +16,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[visibleToUser=true][text=null]',
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null][visibleToUser=true] + TextView[visibleToUser=true][text=null][index=parent.childCount.minus(1)]',
           snapshotUrls: 'https://i.gkd.li/i/14546304',
         },
         {
@@ -41,18 +41,6 @@ export default defineGkdApp({
             'https://m.gkd.li/57941037/485963ab-07b1-412a-a932-badc50cb2688',
           snapshotUrls: 'https://i.gkd.li/i/13399391',
         },
-      ],
-    },
-    {
-      key: 1,
-      name: '青少年模式',
-      fastQuery: true,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: '[id="cn.xiaochuankeji.zuiyouLite:id/young_close_btn"]',
-      snapshotUrls: [
-        'https://i.gkd.li/i/12745083',
-        'https://i.gkd.li/i/13446652', //activityIds: 'cn.xiaochuankeji.zuiyouLite.ui.main.MainTest',
       ],
     },
     {

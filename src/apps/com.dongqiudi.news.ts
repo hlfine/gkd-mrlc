@@ -16,7 +16,7 @@ export default defineGkdApp({
         {
           key: 0,
           matches:
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[visibleToUser=true][text=null]',
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null][visibleToUser=true] + TextView[visibleToUser=true][text=null][index=parent.childCount.minus(1)]',
           snapshotUrls: [
             'https://i.gkd.li/i/12620568',
             'https://i.gkd.li/i/12621997',
@@ -40,16 +40,6 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/12620577',
         },
       ],
-    },
-    {
-      key: 1,
-      name: '青少年模式',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: '[text*="青少年模式"] + [id="com.dongqiudi.news:id/tv_know"]',
-      snapshotUrls: 'https://i.gkd.li/i/12621980',
     },
     {
       key: 2,

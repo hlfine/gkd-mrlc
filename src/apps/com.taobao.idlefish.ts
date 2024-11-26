@@ -97,15 +97,14 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          actionDelay: 2800,
-          name: '点击[赚骰子]-有领取奖励',
+          actionDelay: 2600,
+          name: '点击[赚骰子]-领取奖励',
           matches:
             'View[text="领"] <2 @View[index=1] +3 View > View[text="赚"]',
           snapshotUrls: 'https://i.gkd.li/i/17634886',
         },
         {
           key: 2,
-          actionMaximum: 1,
           name: '签到',
           matches: 'View[text="签到"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17606057',
@@ -113,8 +112,8 @@ export default defineGkdApp({
         {
           key: 3,
           actionDelay: 800,
-          name: '领取任务',
-          matches: '[id="taskWrap"] >3 [text="领取奖励"]',
+          name: '领取奖励',
+          matches: '[id="taskWrap"] >3 View[text="领取奖励"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17606051',
             'https://i.gkd.li/i/17606057',
@@ -123,10 +122,11 @@ export default defineGkdApp({
         {
           preKeys: [3],
           key: 4,
-          actionDelay: 500,
-          name: '点击x[关闭底部弹窗]',
-          matches:
-            'View[id="taskWrap"] > @View[index=1] +3 View >2 View[text!="领取奖励"]',
+          name: '关闭底部弹窗',
+          matches: [
+            '[id="taskWrap"] >3 View[text!="领取奖励"]',
+            '[id="taskWrap"] > View[index=1][clickable=true]',
+          ],
           snapshotUrls: 'https://i.gkd.li/i/17606054',
         },
       ],
@@ -138,7 +138,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          actionDelay: 3500,
+          actionDelay: 3000,
           name: '点击[背包]',
           matches: [
             'View[childCount=5] > View[index=1] > [index=parent.childCount.minus(1)][text!="领"]',
@@ -197,32 +197,47 @@ export default defineGkdApp({
     },
     {
       key: 10,
-      fastQuery: true,
-      name: '功能类-删除首页服务号',
-      activityIds: '.maincontainer.activity.MainActivity',
+      name: '功能类-删除服务号',
       rules: [
         {
           key: 1,
-          actionDelay: 800,
-          matches:
-            'ScrollView > @*[childCount=4] > View[desc="闲鱼精选" || desc$="俱乐部" || desc="关注上新"]',
+          fastQuery: true,
+          actionDelay: 500,
+          matchTime: 500,
           action: 'longClick',
+          activityIds: '.maincontainer.activity.MainActivity',
+          matches:
+            'ScrollView > @*[clickable=true] > View[desc="闲鱼精选" || desc$="俱乐部" || desc="关注上新"]',
           snapshotUrls: 'https://i.gkd.li/i/17690274',
-          exampleUrls: 'https://e.gkd.li/da3b020c-b649-434f-a984-35b9e025023b',
+          exampleUrls: 'https://e.gkd.li/dd338822-4682-4c12-a5f6-d62027e15a28',
         },
         {
           preKeys: [1],
           key: 2,
-          matches: 'View[desc="删除"][clickable=true]',
+          fastQuery: true,
+          actionDelay: 300,
+          activityIds: '.maincontainer.activity.MainActivity',
+          matches: '[vid="id_pager"] >n View[desc="删除"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17690302',
         },
         {
+          preKeys: [2],
           key: 3,
-          matches:
-            'View[childCount=2][desc^="确认删除"] > View[desc="取消"] + View[desc="确定"]',
+          fastQuery: true,
+          activityIds: '.maincontainer.activity.MainActivity',
+          matches: 'View[desc="取消"] + View[desc="确定"]',
           snapshotUrls: 'https://i.gkd.li/i/17690308',
         },
       ],
+    },
+    {
+      key: 11,
+      name: '功能类-启动点击消息页',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: 'FrameLayout[desc="消息"][clickable=true]',
+      snapshotUrls: 'https://i.gkd.li/i/17742310',
+      exampleUrls: 'https://e.gkd.li/3243707a-b27c-49e4-aa39-d818a08f974a',
     },
   ],
 });

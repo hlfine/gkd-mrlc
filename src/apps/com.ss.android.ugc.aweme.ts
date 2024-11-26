@@ -5,6 +5,24 @@ export default defineGkdApp({
   name: '抖音',
   groups: [
     {
+      key: -1,
+      name: '开屏广告',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      priorityTime: 10000,
+      rules: [
+        {
+          fastQuery: true,
+          excludeActivityIds: '.search.activity.SearchResultActivity',
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/202942ce-259c-4b9d-b3b3-06afbac8145f',
+          snapshotUrls: 'https://i.gkd.li/i/13216121',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/17811608',
+        },
+      ],
+    },
+    {
       key: 1,
       name: '局部广告-关闭用户推荐',
       rules: [
@@ -317,11 +335,15 @@ export default defineGkdApp({
         {
           key: 0,
           excludeActivityIds: '.setting.ui.SettingCommonProtocolActivity',
-          matches: ['[text*="青少年模式"]', '[text="关闭" || desc="关闭"]'],
+          matches: [
+            '[text*="青少年" || text*="未成年"][text*="模式"]',
+            '[text="关闭" || desc="关闭"]',
+          ],
           snapshotUrls: [
             'https://i.gkd.li/i/14321107',
             'https://i.gkd.li/i/14473006',
             'https://i.gkd.li/i/14567078',
+            'https://i.gkd.li/i/17726070',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/14917848',
