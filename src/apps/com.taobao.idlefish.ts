@@ -111,7 +111,6 @@ export default defineGkdApp({
         },
         {
           key: 3,
-          actionDelay: 800,
           name: '领取奖励',
           matches: '[id="taskWrap"] >3 View[text="领取奖励"]',
           snapshotUrls: [
@@ -122,10 +121,10 @@ export default defineGkdApp({
         {
           preKeys: [3],
           key: 4,
+          actionDelay: 800,
           name: '关闭底部弹窗',
           matches: [
-            '[id="taskWrap"] >3 View[text!="领取奖励"]',
-            '[id="taskWrap"] > View[index=1][clickable=true]',
+            'View[id="taskWrap"] > @View[index=1] +3 View[index=4] >2 View[index=9 || index=5][text!="领取奖励"]',
           ],
           snapshotUrls: 'https://i.gkd.li/i/17606054',
         },
@@ -198,33 +197,27 @@ export default defineGkdApp({
     {
       key: 10,
       name: '功能类-删除服务号',
+      fastQuery: true,
+      activityIds: '.maincontainer.activity.MainActivity',
       rules: [
         {
           key: 1,
-          fastQuery: true,
-          actionDelay: 500,
-          matchTime: 500,
           action: 'longClick',
-          activityIds: '.maincontainer.activity.MainActivity',
           matches:
-            'ScrollView > @*[clickable=true] > View[desc="闲鱼精选" || desc$="俱乐部" || desc="关注上新"]',
+            'View[desc="闲鱼精选" || desc$="俱乐部" || desc="关注上新"] <n *[longClickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17690274',
           exampleUrls: 'https://e.gkd.li/dd338822-4682-4c12-a5f6-d62027e15a28',
         },
         {
           preKeys: [1],
           key: 2,
-          fastQuery: true,
-          actionDelay: 300,
-          activityIds: '.maincontainer.activity.MainActivity',
-          matches: '[vid="id_pager"] >n View[desc="删除"][clickable=true]',
+          action: 'longClick',
+          matches: 'View[desc="删除"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17690302',
         },
         {
           preKeys: [2],
           key: 3,
-          fastQuery: true,
-          activityIds: '.maincontainer.activity.MainActivity',
           matches: 'View[desc="取消"] + View[desc="确定"]',
           snapshotUrls: 'https://i.gkd.li/i/17690308',
         },
