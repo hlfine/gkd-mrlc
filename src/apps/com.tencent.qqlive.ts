@@ -81,7 +81,7 @@ export default defineGkdApp({
           name: '个人中心点击关闭广告',
           activityIds: ['.ona.activity.SplashHomeActivity'],
           matches:
-            'TextView[text.length=4 || text.length=5] < View + View[clickable=true]',
+            'View[childCount=4] >2 TextView[text.length=4 || text.length=5] < View + View[clickable=true]',
           snapshotUrls: ['https://i.gkd.li/i/17959231'],
         },
         {
