@@ -112,6 +112,7 @@ export default defineGkdApp({
         {
           key: 3,
           name: '领取奖励',
+          actionDelay: 1000,
           matches: '[id="taskWrap"] >3 View[text="领取奖励"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17606051',
@@ -121,7 +122,6 @@ export default defineGkdApp({
         {
           preKeys: [3],
           key: 4,
-          actionDelay: 800,
           name: '关闭底部弹窗',
           matches: [
             'View[id="taskWrap"] > @View[index=1] +3 View[index=4] >2 View[index=9 || index=5][text!="领取奖励"]',

@@ -81,9 +81,8 @@ export default defineGkdApp({
           name: '个人中心点击关闭广告',
           activityIds: ['.ona.activity.SplashHomeActivity'],
           matches:
-            // 'TextView[text^="立即" || text^="了解" || text="去微信看看" || text="下载应用"] <2 View[childCount=2] + View',
-            'TextView[text.length=4 || text="去微信看看"] <2 View[childCount=2] + View[clickable=true]',
-          snapshotUrls: ['https://i.gkd.li/i/17725412'],
+            'TextView[text.length=4 || text.length=5] < View + View[clickable=true]',
+          snapshotUrls: ['https://i.gkd.li/i/17959231'],
         },
         {
           key: 5,
@@ -120,8 +119,7 @@ export default defineGkdApp({
           name: '点击右下角关闭-1',
           activityIds: '.ona.activity.SplashHomeActivity',
           matches:
-            // 'TextView[text^="立即" || text^="了解" || text$="应用" || text="去微信看看" || text="立即预约" || text="查看详情"] < [childCount=2] + ImageView',
-            'TextView[text.length=4 || text="去微信看看"] < [childCount=2] + ImageView[clickable=true]',
+            'TextView[text.length=4 || text.length=5] < [childCount=2] + ImageView[clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/13426421',
             'https://i.gkd.li/i/17725554',
