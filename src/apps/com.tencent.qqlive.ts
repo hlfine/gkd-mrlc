@@ -119,9 +119,10 @@ export default defineGkdApp({
           name: '点击右下角关闭-1',
           activityIds: '.ona.activity.SplashHomeActivity',
           matches:
-            'TextView[text.length=4 || text.length=5] < [childCount=2] + ImageView[clickable=true]',
+            'TextView[text.length=4 || text.length=5] < LinearLayout + ImageView[clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/13426421',
+            'https://i.gkd.li/i/17986394',
             'https://i.gkd.li/i/17725554',
             'https://i.gkd.li/i/17725673',
           ],
@@ -219,6 +220,13 @@ export default defineGkdApp({
           key: 4,
           name: '居中广告-2',
           matches: '[id="com.tencent.qqlive:id/pause_ad_close"]',
+          snapshotUrls: 'https://i.gkd.li/i/14318385',
+        },
+        {
+          key: 5,
+          name: '底部弹窗广告',
+          matches:
+            'ViewGroup > @View[clickable=true] +4 LinearLayout > [text="看广告免费看剧"]',
           snapshotUrls: 'https://i.gkd.li/i/14318385',
         },
       ],
