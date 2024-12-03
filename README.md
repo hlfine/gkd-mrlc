@@ -20,7 +20,7 @@ npmmirror源
 https://registry.npmmirror.com/gkd-mrlc/latest/files
 ```
 
-当前版本: v19
+当前版本: v20
 
 当前订阅文件已适配 804 个应用，共有 1877 应用规则组，3 全局规则组
 
