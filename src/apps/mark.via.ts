@@ -12,14 +12,22 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
+          name: '居中广告-弹窗广告',
           matches: 'TextView + Button[index=1]',
           snapshotUrls: 'https://i.gkd.li/i/17690798',
           exampleUrls: 'https://e.gkd.li/c12f1e9f-792a-4f5a-8222-e3c9d3ce4db2',
         },
         {
           key: 2,
+          name: '底部弹窗-打开QQ浏览器',
           matches: '@TextView +2 [text="立即打开"]',
           snapshotUrls: 'https://i.gkd.li/i/17690798',
+        },
+        {
+          key: 3,
+          name: '底部弹窗-限时惊喜',
+          matches: '@TextView +2 [text="立即打开"]',
+          snapshotUrls: 'https://i.gkd.li/i/17986529',
         },
       ],
     },
