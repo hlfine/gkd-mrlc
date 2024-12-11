@@ -17,8 +17,11 @@ scripts/check.ts merge=ours
 
 # ts
 src/apps/com.taobao.idlefish.ts merge=ours
-src/apps/com.tencent.mobileqq.ts merge=ours
+src/apps/com.baidu.netdisk.ts merge=ours
 src/apps/com.tencent.qqlive.ts merge=ours
+src/apps/com.tencent.mobileqq.ts merge=ours
+src/apps/com.mfcloudcalculate.networkdisk.ts merge=ours
+src/apps/mark.via.ts merge=ours
 
 package.json merge=ours
 README.md merge=ours

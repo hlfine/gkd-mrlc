@@ -8,6 +8,7 @@ export default defineGkdApp({
       key: 7,
       name: '功能类-放弃开启安全守护',
       fastQuery: true,
+      actionMaximum: 1,
       activityIds:
         'com.miui.packageInstaller.ui.normalmode.InstallProgressActivity',
       rules: [
@@ -32,6 +33,7 @@ export default defineGkdApp({
       desc: '该规则仅适配关闭[应用安全验证]和[安全守护]的情况，可在安装页面右上角设置里关闭，关闭后的风险自行承担',
       matchRoot: true,
       fastQuery: true,
+      actionMaximum: 1,
       rules: [
         {
           key: 0,
@@ -65,6 +67,7 @@ export default defineGkdApp({
       key: 14,
       name: '功能类-自动允许应用安装软件',
       fastQuery: true,
+      actionMaximum: 1,
       activityIds: 'com.miui.packageInstaller.ui.InstallPrepareAlertActivity',
       rules: [
         {
@@ -93,6 +96,7 @@ export default defineGkdApp({
       key: 15,
       name: '功能类-安装来源不可信',
       desc: '点击[授权本次安装]',
+      actionMaximum: 1,
       rules: [
         {
           fastQuery: true,
@@ -112,6 +116,7 @@ export default defineGkdApp({
       key: 16,
       name: '功能类-备案信息弹窗',
       desc: '点击[继续安装]',
+      actionMaximum: 1,
       rules: [
         {
           fastQuery: true,
@@ -120,6 +125,43 @@ export default defineGkdApp({
           matches: ['[text$="备案信息"]', '[text="继续安装"]'],
           exampleUrls: 'https://e.gkd.li/d5bc4b1a-e363-4aab-9240-e6d914730935',
           snapshotUrls: 'https://i.gkd.li/i/17908298',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '功能类-无视风险继续安装',
+      fastQuery: true,
+      actionMaximum: 1,
+      activityIds: 'com.miui.packageInstaller.NewInstallerPrepareActivity',
+      rules: [
+        {
+          key: 0,
+          matches: '@[clickable=true] >2 [text="无视风险继续安装"]',
+          exampleUrls: 'https://e.gkd.li/46f06948-5ec1-4054-8aa3-a8f39e5d1f26',
+          snapshotUrls: 'https://i.gkd.li/i/18002566',
+        },
+        {
+          preKeys: [0],
+          key: 1,
+          matches: '[text="继续"]',
+          exampleUrls: 'https://e.gkd.li/375fc2ec-841a-4af6-be99-9391ebeb7dc5',
+          snapshotUrls: 'https://i.gkd.li/i/18002704',
+        },
+        {
+          preKeys: [1],
+          key: 2,
+          matches:
+            '@[clickable=true][desc="更多"] > [vid="action_menu_item_child_icon"]',
+          exampleUrls: 'https://e.gkd.li/de8fb9c9-ea4e-4c03-93bd-047bf31cd4c8',
+          snapshotUrls: 'https://i.gkd.li/i/18002708',
+        },
+        {
+          preKeys: [2],
+          key: 3,
+          matches: '@[clickable=true] > [text="单次安装授权"]',
+          exampleUrls: 'https://e.gkd.li/0e8afdd7-04d3-46fd-9095-b61123d041b2',
+          snapshotUrls: 'https://i.gkd.li/i/18002712',
         },
       ],
     },

@@ -25,16 +25,10 @@ export default defineGkdApp({
         },
         {
           key: 3,
-          name: '底部弹窗-限时惊喜',
+          name: '限时惊喜-弹窗广告',
           matches:
-            'TextView[text*="QQ浏览器"] < View - @[text*="关闭"][clickable=true]',
+            'TextView[text*="QQ浏览器"] <2 View - @[text$="关闭"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17986529',
-        },
-        {
-          key: 4,
-          name: '搜索页广告',
-          matches: '[text="广告"] + Image[clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/17986727',
         },
       ],
     },

@@ -17,7 +17,7 @@ export default defineGkdApp({
             'com.zhihu.android.ContentActivity',
           ],
           matches:
-            '@ImageView[clickable=true][visibleToUser=true] -(1,2) TextView[childCount=0][id=null][text=null][desc=null] <n * >n [text*="广告"][childCount=0][id=null][desc=null]',
+            '@[clickable=true][visibleToUser=true] -(1,2) TextView[childCount=0][id=null][text=null][desc=null] <n * >n [text*="广告"][childCount=0][id=null][desc=null]',
           snapshotUrls: [
             'https://i.gkd.li/i/13849671',
             'https://i.gkd.li/i/14645530',
@@ -27,6 +27,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/14178980',
             'https://i.gkd.li/i/14206949',
             'https://i.gkd.li/i/14206988',
+            'https://i.gkd.li/i/18008867',
           ],
           excludeSnapshotUrls: [
             'https://i.gkd.li/i/17002118',
@@ -89,26 +90,16 @@ export default defineGkdApp({
     {
       key: 10,
       name: '权限提示-通知权限',
-      desc: '点击x按钮',
+      desc: '点击关闭',
       fastQuery: true,
       actionMaximum: 1,
       resetMatch: 'app',
-      actionMaximumKey: 0,
       rules: [
         {
-          key: 0,
-          matches:
-            '[id="com.zhihu.android:id/guide_title"] - [id="com.zhihu.android:id/guide_image_exit"][clickable=true]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/25cfef06-fe50-4250-bf45-1f6210f95063',
-          snapshotUrls: 'https://i.gkd.li/i/12647583',
-        },
-        {
           key: 1,
+          activityIds: '.app.ui.activity.MainActivity',
           matches: ['[text$="内容推送"]', '[vid="btn_close"]'],
-          exampleUrls:
-            'https://m.gkd.li/57941037/1d1fee24-3ba0-4cf1-a0d5-696f4f62a5e0',
-          snapshotUrls: 'https://i.gkd.li/i/14917866',
+          snapshotUrls: 'https://i.gkd.li/i/18057057',
         },
       ],
     },
@@ -265,6 +256,10 @@ export default defineGkdApp({
       fastQuery: true,
       resetMatch: 'app',
       actionMaximum: 1,
+      activityIds: [
+        '.app.ui.activity.MainActivity',
+        '.feature.short_container_feature.ui.ShortContainerHostActivity',
+      ],
       rules: [
         {
           key: 0,
@@ -278,7 +273,7 @@ export default defineGkdApp({
           ],
         },
         {
-          preKeys: 0,
+          preKeys: [0],
           key: 1,
           name: '点击[取消]',
           matches: ['[text="去应用市场"]', '[text="取消"]'],
@@ -308,6 +303,7 @@ export default defineGkdApp({
       desc: '自动点击展开',
       rules: [
         {
+          fastQuery: true,
           activityIds:
             'com.zhihu.android.mixshortcontainer.MixShortContainerActivity',
           matches:

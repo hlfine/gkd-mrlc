@@ -108,6 +108,14 @@ export default defineGkdApp({
           exampleUrls: 'https://e.gkd.li/86e4a797-5366-4579-81ee-bc5354e95568',
           snapshotUrls: 'https://i.gkd.li/i/17177377',
         },
+        {
+          key: 2,
+          activityIds: '.app.MediaActivity',
+          matches:
+            '@[text="退出页面"][visibleToUser=true] + View > [text="你的会员已过期"]',
+          exampleUrls: 'https://e.gkd.li/f32ed6b7-e396-45a5-9849-f8a8ae99cb99',
+          snapshotUrls: 'https://i.gkd.li/i/18070974',
+        },
       ],
     },
     {
@@ -156,15 +164,38 @@ export default defineGkdApp({
       desc: '点击关闭',
       rules: [
         {
-          fastQuery: true,
           matchTime: 10000,
           actionMaximum: 1,
           resetMatch: 'app',
           activityIds: 'com.kugou.android.app.MediaActivity',
           matches:
-            '@ImageView[clickable=true][visibleToUser=true][index=1] <2 FrameLayout[childCount=2] < FrameLayout <2 FrameLayout < FrameLayout < FrameLayout - FrameLayout >8 [desc="底部导航"] + [text="我的"]',
+            'ViewGroup > FrameLayout >2 FrameLayout[childCount=2] > FrameLayout > FrameLayout[childCount=2] > ImageView[index=1][clickable=true][childCount=0][width<80&&height<80]',
           exampleUrls: 'https://e.gkd.li/2b240676-4dac-4375-b238-2d570962efd1',
-          snapshotUrls: 'https://i.gkd.li/i/17004903',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17004903',
+            'https://i.gkd.li/i/18057265',
+          ],
+        },
+      ],
+    },
+    {
+      key: 6,
+      name: '全屏广告-签到弹窗',
+      desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          position: {
+            left: 'width * 0.9287',
+            top: 'width * 0.8935',
+          },
+          activityIds: '.app.flexowebview.uploadvideo.ContributeWebActivity',
+          matches:
+            '@FrameLayout > WebView > WebView[text="金币中心"] > View[id="body"] > TextView[id="root"][childCount=0]',
+          exampleUrls: 'https://e.gkd.li/f2a44161-d0a2-421d-a5e7-26fcf005daf2',
+          snapshotUrls: 'https://i.gkd.li/i/18071067',
         },
       ],
     },
