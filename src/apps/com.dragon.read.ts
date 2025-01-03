@@ -15,8 +15,13 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          matches: '@ImageView - LinearLayout TextView[text="广告"]',
-          snapshotUrls: 'https://i.gkd.li/i/12908734',
+          fastQuery: true,
+          matches:
+            '@ImageView[childCount=0][clickable=true][visibleToUser=true] - LinearLayout >(2,3) [text="广告" || text="立享优惠"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12908734',
+            'https://i.gkd.li/i/18138903',
+          ],
         },
         {
           key: 2,
@@ -61,9 +66,12 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: '.update',
+          activityIds: ['.update', '.pages.main.MainFragmentActivity'],
           matches: '@[text="以后再说"] + [text="优先体验"]',
-          snapshotUrls: 'https://i.gkd.li/i/12716477',
+          snapshotUrls: [
+            'https://i.gkd.li/i/12716477',
+            'https://i.gkd.li/i/18175292',
+          ],
         },
       ],
     },

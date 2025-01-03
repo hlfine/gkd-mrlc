@@ -92,15 +92,15 @@ export default defineGkdApp({
     },
     {
       key: 7,
-      name: '功能类-领取奖励',
+      name: '功能类-闲鱼币',
       activityIds: '.webview.WebHybridActivity',
       rules: [
         {
           key: 1,
-          actionDelay: 2600,
-          name: '点击[赚骰子]-领取奖励',
-          matches:
-            'View[text="领"] <2 @View[index=1] +3 View > View[text="赚"]',
+          actionDelay: 2000,
+          name: '点击[赚骰子]-有领取奖励',
+          // matches: 'View[text="领"] <2 @View[index=1] +3 View > View[text="赚"]',
+          matches: 'View[text="领"] <2 @View[index=1]',
           snapshotUrls: 'https://i.gkd.li/i/17634886',
         },
         {
@@ -112,22 +112,22 @@ export default defineGkdApp({
         {
           key: 3,
           name: '领取奖励',
-          actionDelay: 1000,
+          actionDelay: 1500,
           matches: '[id="taskWrap"] >3 View[text="领取奖励"]',
           snapshotUrls: [
             'https://i.gkd.li/i/17606051',
             'https://i.gkd.li/i/17606057',
           ],
         },
-        {
-          preKeys: [3],
-          key: 4,
-          name: '关闭底部弹窗',
-          matches: [
-            'View[id="taskWrap"] > @View[index=1] +3 View[index=4] >2 View[index=9 || index=5][text!="领取奖励"]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/17606054',
-        },
+        // {
+        //   preKeys: [3],
+        //   key: 4,
+        //   name: '关闭底部弹窗',
+        //   matches: [
+        //     'View[id="taskWrap"] > @View[index=1] +3 View[index=4] >2 View[index=9 || index=5][text!="领取奖励"]',
+        //   ],
+        //   snapshotUrls: 'https://i.gkd.li/i/17606054',
+        // },
       ],
     },
     {
@@ -137,7 +137,7 @@ export default defineGkdApp({
       rules: [
         {
           key: 1,
-          actionDelay: 3000,
+          actionDelay: 3500,
           name: '点击[背包]',
           matches: [
             'View[childCount=5] > View[index=1] > [index=parent.childCount.minus(1)][text!="领"]',
@@ -163,7 +163,7 @@ export default defineGkdApp({
     {
       key: 9,
       fastQuery: true,
-      name: '功能类-扱骰子',
+      name: '功能类-扱骰子寻宝',
       activityIds: '.webview.WebHybridActivity',
       rules: [
         {
@@ -175,7 +175,7 @@ export default defineGkdApp({
         },
         {
           key: 2,
-          actionDelay: 2000,
+          actionDelay: 6000,
           name: '扱骰子',
           matches: '@View[id="mapDiceBtn"] > View[text!="赚"]',
           snapshotUrls: 'https://i.gkd.li/i/17606060',

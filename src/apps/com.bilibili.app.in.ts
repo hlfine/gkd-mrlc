@@ -5,6 +5,38 @@ export default defineGkdApp({
   name: 'bilibili',
   groups: [
     {
+      key: 4,
+      name: '通知提示-全程赛程',
+      desc: '点击关闭',
+      matchTime: 10000,
+      actionMaximum: 1,
+      resetMatch: 'app',
+      fastQuery: true,
+      activityIds: 'com.bilibili.bililive.room.ui.roomv3.LiveRoomActivityV3',
+      rules: [
+        {
+          key: 1,
+          matches: '@[vid="iv_close"] - LinearLayout >2 [text^="一键预约"]',
+          snapshotUrls: ['https://i.gkd.li/i/18300934'],
+        },
+        {
+          key: 2,
+          matches: '[vid="live_multiview_dropview"] > [text="收起"]',
+          snapshotUrls: ['https://i.gkd.li/i/18300934'],
+        },
+        {
+          key: 3,
+          matches: '[text="订阅"] < LinearLayout + [vid="match_close"]',
+          snapshotUrls: ['https://i.gkd.li/i/18300934'],
+        },
+        {
+          key: 4,
+          matches: '[text^="关注主播"] +2 [vid="iv_close"]',
+          snapshotUrls: ['https://i.gkd.li/i/18300949'],
+        },
+      ],
+    },
+    {
       key: 5,
       name: '评价提示-评论区满意度评价',
       matchTime: 10000,

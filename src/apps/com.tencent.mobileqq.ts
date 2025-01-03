@@ -702,11 +702,29 @@ export default defineGkdApp({
         {
           key: 3,
           name: '好友动态详情页广告',
-          activityIds: 'com.qzone.reborn.base.QZoneTransparentShellActivity',
+          activityIds: [
+            'com.qzone.reborn.base.QZoneTransparentShellActivity',
+            'com.qzone.reborn.base.QZoneShellActivity',
+          ],
           fastQuery: true,
-          matches: '@[desc="关闭广告"][visibleToUser=true] -3 [text^="活动"]',
+          matches:
+            '@[desc="关闭广告"][visibleToUser=true] <4 RelativeLayout <2 LinearLayout <2 LinearLayout < FrameLayout <n RecyclerView < FrameLayout - FrameLayout >2 [text="详情"]',
           exampleUrls: 'https://e.gkd.li/b78a3e44-3bd9-445d-9199-e989269c2be3',
-          snapshotUrls: 'https://i.gkd.li/i/17009847',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17009847',
+            'https://i.gkd.li/i/17815694',
+            'https://i.gkd.li/i/17827969',
+          ],
+        },
+        {
+          key: 4,
+          name: '推荐你试试这些玩法',
+          activityIds:
+            'com.qzone.reborn.feedx.activity.QZoneFriendFeedXActivity',
+          fastQuery: true,
+          matches: '@[desc="关闭"] - [text="推荐你试试这些玩法"]',
+          exampleUrls: 'https://e.gkd.li/6cf71a22-0e21-4877-86a7-69d84353ad5a',
+          snapshotUrls: 'https://i.gkd.li/i/18236745',
         },
       ],
     },
@@ -727,6 +745,21 @@ export default defineGkdApp({
     },
     {
       key: 26,
+      name: '其他-联系人页面-顶部可能认识的人推荐',
+      desc: '点击关闭',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.activity.SplashActivity',
+          matches:
+            '@ImageView[childCount=0][clickable=true][visibleToUser=true] -2 [text="开启推荐，发现可能认识的人。"]',
+          exampleUrls: 'https://e.gkd.li/7922ab73-cc99-4559-b18c-5ab54dd9633a',
+          snapshotUrls: 'https://i.gkd.li/i/18237415',
+        },
+      ],
+    },
+    {
+      key: 27,
       name: '功能类-QQ打卡',
       desc: '点击打卡-进入-立即打卡',
       activityIds: ['.activity.SplashActivity', '.activity.QQBrowserActivity'],

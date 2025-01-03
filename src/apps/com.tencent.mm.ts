@@ -203,38 +203,40 @@ export default defineGkdApp({
     },
     {
       key: 5,
-      name: '功能类-微信红包自动领取',
+      name: '功能类-自动领取微信红包',
       desc: '自动领取私聊红包,群聊红包',
+      fastQuery: true,
       rules: [
         {
-          name: '从红包结算界面返回',
-          preKeys: [1, 2],
-          activityIds:
-            'com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyBeforeDetailUI',
-          matches: 'ImageView[desc="返回"]',
-          snapshotUrls: 'https://i.gkd.li/i/12567696',
-        },
-        {
-          key: 1,
-          name: '点击红包-开',
-          activityIds:
-            'com.tencent.mm.plugin.luckymoney.ui.LuckyMoneyNotHookReceiveUI',
-          // Button[desc="开"] 会在出现金币动画时会消失
-          matches: 'ImageButton[desc="开"] + Button[desc="开"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12567697',
-            'https://i.gkd.li/i/12567698', // 额外增加,金币动画的快照,规则不在这个快照上运行
+          key: 3,
+          name: '点击别人发的红包',
+          activityIds: '.ui.LauncherUI',
+          matches:
+            'LinearLayout[childCount=1] >2 @FrameLayout[clickable=true] >2 LinearLayout[getChild(1).childCount=1] +2 RelativeLayout > [text="微信红包"]',
+          snapshotUrls: 'https://i.gkd.li/i/18134826',
+          excludeSnapshotUrls: [
+            'https://i.gkd.li/i/18134823', // 自己发的， LinearLayout[childCount=1] 区分
+            'https://i.gkd.li/i/18134833', // 已领取的， getChild(1).childCount=1 区分
           ],
         },
         {
-          key: 2,
-          name: '点击别人发的红包',
-          activityIds: 'com.tencent.mm.ui.LauncherUI',
-          // 第一个 LinearLayout[childCount=1] 区分是自己发的红包还是别人发的
-          // 第二个 LinearLayout[childCount=1] 区分这个红包是否被领取过
-          matches:
-            'LinearLayout[childCount=1] >5 LinearLayout[childCount=1] - ImageView < LinearLayout + View + RelativeLayout > TextView[text="微信红包"][id!=null]',
-          snapshotUrls: 'https://i.gkd.li/i/12567637',
+          preKeys: [3],
+          key: 4,
+          name: '点击红包-开',
+          activityIds: '.plugin.luckymoney.ui.LuckyMoneyNotHookReceiveUI',
+          matches: '@Button[desc="开"] -3 LinearLayout >2 [text$="红包"]',
+          snapshotUrls: 'https://i.gkd.li/i/18134828',
+          excludeSnapshotUrls: 'https://i.gkd.li/i/12567698', // 金币动画的快照
+        },
+        {
+          preKeys: [3, 4],
+          name: '从红包结算界面返回',
+          activityIds: '.plugin.luckymoney.ui.LuckyMoneyDetailUI',
+          matches: '@ImageView[desc="返回"] +2 LinearLayout >8 [text$="红包"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/18134829',
+            'https://i.gkd.li/i/18135031',
+          ],
         },
       ],
     },
@@ -351,16 +353,14 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: [
-            'com.tencent.mm.plugin.finder.ui.',
-            'com.tencent.mm.ui.LauncherUI',
-          ],
+          activityIds: ['.plugin.finder.', '.ui.LauncherUI'],
           matches: ['[text*="青少年模式"]', '[text="我知道了"]'],
           snapshotUrls: [
             'https://i.gkd.li/i/13538145',
             'https://i.gkd.li/i/13575195',
             'https://i.gkd.li/i/14735456',
             'https://i.gkd.li/i/14896723',
+            'https://i.gkd.li/i/18135103',
           ],
         },
       ],
@@ -701,6 +701,36 @@ export default defineGkdApp({
             'https://i.gkd.li/i/16920797',
           ],
           excludeSnapshotUrls: 'https://i.gkd.li/i/16958795',
+        },
+      ],
+    },
+    {
+      key: 38,
+      name: '功能类-自动语音转文字',
+      desc: '点击语音旁边的转文字/长按语音后点击转文字',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.ui.LauncherUI',
+          matches: '@[clickable=true] >(1,2) [text="转文字"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14497389',
+            'https://i.gkd.li/i/14538322',
+          ],
+        },
+      ],
+    },
+    {
+      key: 39,
+      name: '功能类-语音通话呼入10秒后自动点击接听',
+      rules: [
+        {
+          matchTime: 15000,
+          actionDelay: 10000,
+          activityIds: '.plugin.voip.ui.VideoActivity',
+          matches: 'Button[desc="接听"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/fbfea6ba-ce43-4641-a919-9c21fa49dc73',
+          snapshotUrls: 'https://i.gkd.li/i/18225086',
         },
       ],
     },
