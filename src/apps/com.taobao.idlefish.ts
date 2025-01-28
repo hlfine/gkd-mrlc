@@ -100,20 +100,20 @@ export default defineGkdApp({
           actionDelay: 2000,
           name: '点击[赚骰子]-有领取奖励',
           // matches: 'View[text="领"] <2 @View[index=1] +3 View > View[text="赚"]',
-          matches: 'View[text="领"] <2 @View[index=1]',
+          matches: '[text="领"] < View',
           snapshotUrls: 'https://i.gkd.li/i/17634886',
         },
         {
           key: 2,
           name: '签到',
-          matches: 'View[text="签到"][clickable=true]',
+          matches: '[text="签到"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17606057',
         },
         {
           key: 3,
           name: '领取奖励',
           actionDelay: 1500,
-          matches: '[id="taskWrap"] >3 View[text="领取奖励"]',
+          matches: '[text="领取奖励"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/17606051',
             'https://i.gkd.li/i/17606057',
@@ -177,7 +177,7 @@ export default defineGkdApp({
           key: 2,
           actionDelay: 6000,
           name: '扱骰子',
-          matches: '@View[id="mapDiceBtn"] > View[text!="赚"]',
+          matches: '@View[id="mapDiceBtn"] > TextView[text!="赚"]',
           snapshotUrls: 'https://i.gkd.li/i/17606060',
         },
         {

@@ -8,9 +8,6 @@ export default defineGkdApp({
       key: 4,
       name: '通知提示-全程赛程',
       desc: '点击关闭',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
       fastQuery: true,
       activityIds: 'com.bilibili.bililive.room.ui.roomv3.LiveRoomActivityV3',
       rules: [

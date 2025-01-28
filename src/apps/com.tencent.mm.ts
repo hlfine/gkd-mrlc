@@ -211,28 +211,24 @@ export default defineGkdApp({
           key: 3,
           name: '点击别人发的红包',
           activityIds: '.ui.LauncherUI',
-          matches:
-            'LinearLayout[childCount=1] >2 @FrameLayout[clickable=true] >2 LinearLayout[getChild(1).childCount=1] +2 RelativeLayout > [text="微信红包"]',
+          matches: '@[vid="b4t"][childCount=2] > LinearLayout[childCount=1]',
           snapshotUrls: 'https://i.gkd.li/i/18134826',
-          excludeSnapshotUrls: [
-            'https://i.gkd.li/i/18134823', // 自己发的， LinearLayout[childCount=1] 区分
-            'https://i.gkd.li/i/18134833', // 已领取的， getChild(1).childCount=1 区分
-          ],
         },
         {
           preKeys: [3],
           key: 4,
           name: '点击红包-开',
           activityIds: '.plugin.luckymoney.ui.LuckyMoneyNotHookReceiveUI',
-          matches: '@Button[desc="开"] -3 LinearLayout >2 [text$="红包"]',
+          action: 'clickCenter',
+          matches: '[vid="iyr"] +2 [vid="j6h"]',
           snapshotUrls: 'https://i.gkd.li/i/18134828',
           excludeSnapshotUrls: 'https://i.gkd.li/i/12567698', // 金币动画的快照
         },
         {
-          preKeys: [3, 4],
+          preKeys: [4],
           name: '从红包结算界面返回',
           activityIds: '.plugin.luckymoney.ui.LuckyMoneyDetailUI',
-          matches: '@ImageView[desc="返回"] +2 LinearLayout >8 [text$="红包"]',
+          matches: '@ImageView <3 [vid="izy"]',
           snapshotUrls: [
             'https://i.gkd.li/i/18134829',
             'https://i.gkd.li/i/18135031',
