@@ -72,6 +72,20 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 3,
+      name: '功能类-签到',
+      fastQuery: true,
+      rules: [
+        {
+          key: 1,
+          activityIds: '.ui.cloudp2p.RichMediaActivity',
+          matches: '[text^="已连续签到"] +3 [text^="签到"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18762226',
+          exampleUrls: 'https://e.gkd.li/89b963b3-f46c-426b-9439-8244f4ac4836',
+        },
+      ],
+    },
+    {
       key: 6,
       name: '更新提示',
       fastQuery: true,
