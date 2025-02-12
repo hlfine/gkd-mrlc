@@ -170,15 +170,12 @@ export default defineGkdApp({
       name: '权限提示-通知权限',
       desc: '自动点击暂不开启',
       fastQuery: true,
-      actionMaximum: 1,
-      resetMatch: 'app',
       rules: [
         {
           key: 0,
           activityIds: '.notifyguidev2.NotifyGuideV2Activity',
-          matches:
-            '@[id="com.sina.weibo:id/bt_cancel"][text="暂不开启"] + [id="com.sina.weibo:id/bt_confirm"]',
-          snapshotUrls: 'https://i.gkd.li/i/12705979',
+          matches: '[text="暂不开启"][visibleToUser=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18342279',
         },
         {
           key: 1,
@@ -459,6 +456,20 @@ export default defineGkdApp({
             'Button[text^="关闭验证"][clickable=true][visibleToUser=true]',
           exampleUrls: 'https://e.gkd.li/7a8ed873-a6e8-4260-9f5c-3ff05d5788db',
           snapshotUrls: 'https://i.gkd.li/i/16827853',
+        },
+      ],
+    },
+    {
+      key: 25,
+      name: '功能类-关主页自动切换到[关注的人]TAB',
+      actionMaximum: 1,
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.flowbusiness.commonpage.FlowCommonPageActivity',
+          matches: '@[clickable=true] >2 [text="关注的人"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/6ef5bbf7-bb11-4cbb-b46b-bdc7c333a617',
+          snapshotUrls: 'https://i.gkd.li/i/18423013',
         },
       ],
     },

@@ -112,7 +112,7 @@ export default defineGkdApp({
         {
           key: 3,
           name: '领取奖励',
-          actionDelay: 1300,
+          actionDelay: 1500,
           matches: '[text="领取奖励"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/17606051',

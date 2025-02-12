@@ -130,6 +130,18 @@ export default defineGkdApp({
           exampleUrls: 'https://e.gkd.li/47107dd3-b19a-4486-a0d1-6d9aa62ee722',
           snapshotUrls: 'https://i.gkd.li/i/17057551',
         },
+        {
+          key: 2,
+          fastQuery: true,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: '.activity.AppStarterActivity',
+          matches:
+            '@ImageView[childCount=0][visibleToUser=true] <3 FrameLayout[childCount=3] <2 FrameLayout < FrameLayout < FrameLayout < FrameLayout < [id="android:id/content"]',
+          exampleUrls: 'https://e.gkd.li/881cddd2-e4ec-472e-8bf8-00f26f61cbc4',
+          snapshotUrls: 'https://i.gkd.li/i/18439138',
+        },
       ],
     },
     {
@@ -186,12 +198,22 @@ export default defineGkdApp({
       desc: '点击关闭',
       rules: [
         {
-          fastQuery: true,
           key: 0,
+          fastQuery: true,
           activityIds: 'com.tencent.qqmusic.activity.AppStarterActivity',
           matches:
             '@ViewGroup[childCount=0][clickable=true] <2 ViewGroup[childCount=2] < FrameLayout < FrameLayout < [id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/13806782',
+        },
+        {
+          key: 1,
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          activityIds: '.activity.AppStarterActivity',
+          matches: '[desc$="不再提示"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/e3d904e1-dfe5-4d12-b8c8-b1eead8459c9',
+          snapshotUrls: 'https://i.gkd.li/i/18428240',
         },
       ],
     },
@@ -261,6 +283,21 @@ export default defineGkdApp({
           matches:
             '[id="android:id/content"] > FrameLayout > FrameLayout > ViewGroup[childCount=2] > ViewGroup > ViewGroup[clickable=true][childCount=0]',
           snapshotUrls: 'https://i.gkd.li/i/15443191',
+        },
+      ],
+    },
+    {
+      key: 11,
+      name: '其他-播放页[猜你也会喜欢]推荐',
+      desc: '点击关闭',
+      rules: [
+        {
+          fastQuery: true,
+          activityIds: '.business.playernew.view.NewPlayerActivity',
+          matches:
+            '@ImageView[childCount=0][clickable=true] -2 [text="猜你也会喜欢"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/40846baf-4638-4740-970a-30924cbd9414',
+          snapshotUrls: 'https://i.gkd.li/i/18410610',
         },
       ],
     },

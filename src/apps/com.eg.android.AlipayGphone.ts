@@ -47,9 +47,19 @@ export default defineGkdApp({
       resetMatch: 'app',
       rules: [
         {
-          activityIds: 'com.eg.android.AlipayGphone.AlipayLogin',
-          matches: '@[desc="关闭"] - * >4 [text*="开启定位权限"]',
-          snapshotUrls: 'https://i.gkd.li/i/12792688',
+          key: 0,
+          activityIds: '.AlipayLogin',
+          matches: '@[desc="取消"] + [text*="位置权限"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/caa96cc4-9943-40d8-8cb6-8c89aa60b20f',
+          snapshotUrls: 'https://i.gkd.li/i/18549931',
+        },
+        {
+          key: 1,
+          activityIds: '.AlipayLogin',
+          matches:
+            '@[desc="关闭"] - LinearLayout >2 [text^="定位到"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/c153cd53-16a1-4d77-bf99-9cac8821ccf8',
+          snapshotUrls: 'https://i.gkd.li/i/18551258',
         },
       ],
     },
@@ -198,7 +208,7 @@ export default defineGkdApp({
     {
       key: 13,
       name: '全屏广告-弹窗广告',
-      desc: '点击X',
+      desc: '点击关闭',
       rules: [
         {
           key: 0,
@@ -216,6 +226,16 @@ export default defineGkdApp({
             'WebView > View > View > View > View > @TextView[clickable=true][visibleToUser=true][text=""] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
           exampleUrls: 'https://e.gkd.li/ebbd606a-0e21-4fc5-b0c3-49e4d87d065c',
           snapshotUrls: 'https://i.gkd.li/i/16812751',
+        },
+        {
+          key: 2,
+          fastQuery: true,
+          activityIds:
+            'com.alipay.mobile.nebulax.xriver.activity.XRiverActivity',
+          matches:
+            '@[text*="跳过"] + [visibleToUser=true][text^="账单分期还"] <<n [id="com.alipay.mobile.nebula:id/h5_pc_container"]',
+          exampleUrls: 'https://e.gkd.li/cc064c84-75a9-4447-b01b-9d5597515093',
+          snapshotUrls: 'https://i.gkd.li/i/18409779',
         },
       ],
     },

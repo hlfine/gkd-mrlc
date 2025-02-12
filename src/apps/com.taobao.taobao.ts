@@ -56,6 +56,17 @@ export default defineGkdApp({
           exampleUrls: 'https://e.gkd.li/5c77eaf1-b4dc-48c9-96af-131ae9644ffa',
           snapshotUrls: 'https://i.gkd.li/i/18218537',
         },
+        {
+          key: 2,
+          activityIds: 'com.taobao.browser.BrowserActivity',
+          matches:
+            'WebView[text="红包签到"] > [id="ice-container"] >(3,4) View[childCount=3] > [name$="Image" || name$="Button"][text*="jpg" || text="关闭"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/c7c06d50-a384-4869-a14f-95d219d9d08c',
+          snapshotUrls: [
+            'https://i.gkd.li/i/18587158',
+            'https://i.gkd.li/i/18587159',
+          ],
+        },
       ],
     },
     {
@@ -102,11 +113,12 @@ export default defineGkdApp({
             'com.taobao.tao.welcome.Welcome',
           ],
           matches:
-            '[text^="开启系统通知"] + @Image[visibleToUser=true] <<n [vid="poplayer_inner_view"]',
+            '@Image[visibleToUser=true][text!=null] +2 View > [visibleToUser=true][text="消息通知" || text="发货通知"] <<n [vid="poplayer_inner_view"]',
           snapshotUrls: [
             'https://i.gkd.li/i/13446901',
             'https://i.gkd.li/i/13455424',
             'https://i.gkd.li/i/15104645',
+            'https://i.gkd.li/i/18407606',
           ],
         },
       ],
