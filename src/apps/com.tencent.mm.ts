@@ -239,63 +239,46 @@ export default defineGkdApp({
     {
       key: 7,
       name: '功能类-自动选中发送原图',
-      desc: '自动选中底部中间的发送原图，可手动取消勾选',
+      desc: '自动选中原图，可手动取消勾选',
       actionMaximum: 1,
       activityIds: [
-        'com.tencent.mm.plugin.gallery.ui.AlbumPreviewUI',
-        'com.tencent.mm.plugin.gallery.ui.ImagePreviewUI',
+        '.plugin.gallery.ui.AlbumPreviewUI',
+        '.plugin.gallery.ui.ImagePreviewUI',
       ],
       rules: [
         {
           key: 1,
           fastQuery: true,
-          excludeVersionNames: '8.0.15',
-          matches:
-            '@ImageButton[desc="未选中,原图,复选框"][visibleToUser=true] + [text="原图"]',
-          exampleUrls: [
-            'https://e.gkd.li/32dc0943-e85f-416d-bb01-6ed610d4bdd8',
-            'https://e.gkd.li/93d41161-ab69-4c2d-83bb-637d7292f5e6',
-          ],
+          action: 'clickCenter',
+          matches: '@ImageButton[clickable=true] + TextView',
           snapshotUrls: [
             'https://i.gkd.li/i/16987145', // 未选中
-            'https://i.gkd.li/i/16987144', // 未选中
+            'https://i.gkd.li/i/18764301', // 已选中
             'https://i.gkd.li/i/16987141', // 已选中
-            'https://i.gkd.li/i/16987147', // 已选中
           ],
-        },
-        {
-          key: 2,
-          versionNames: '8.0.15',
-          matches: '@[desc="未选中,原图,复选框"] + [text="原图"]',
-          snapshotUrls: 'https://i.gkd.li/i/14661734',
+          exampleUrls: [
+            'https://e.gkd.li/354ca046-80ca-41d0-a31f-931a19a4695f',
+          ],
         },
       ],
     },
     {
       key: 9,
       name: '功能类-自动查看原图',
-      desc: '自动点击底部左侧[查看原图]按钮',
+      desc: '自动点击[查看原图]',
+      actionMaximum: 1,
       activityIds: ['.ui.chatting.gallery.ImageGalleryUI', '.ui.LauncherUI'],
       rules: [
         {
           key: 0,
           fastQuery: true,
-          excludeVersionNames: '8.0.15',
-          matches: 'Button[text^="查看原图"][clickable=true]',
+          matches: 'RelativeLayout[childCount=1] > Button[clickable=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/6bb9e68a-43f5-4482-96b1-899cc86fef32',
           snapshotUrls: [
             'https://i.gkd.li/i/13523031',
             'https://i.gkd.li/i/17698956',
           ],
-        },
-        {
-          key: 1,
-          versionNames: '8.0.15',
-          matches: '[text^="查看原图"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/1a946d04-8a2d-4570-bd8c-38ab112f43a9',
-          snapshotUrls: 'https://i.gkd.li/i/14661736',
         },
       ],
     },
