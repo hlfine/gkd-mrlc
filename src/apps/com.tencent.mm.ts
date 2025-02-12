@@ -272,6 +272,7 @@ export default defineGkdApp({
         {
           key: 0,
           fastQuery: true,
+          action: 'clickCenter',
           matches: 'RelativeLayout[childCount=1] > Button[clickable=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/6bb9e68a-43f5-4482-96b1-899cc86fef32',
