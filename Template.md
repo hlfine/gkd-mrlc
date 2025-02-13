@@ -4,21 +4,18 @@
 
 **本仓库仅供本人学习使用，其他人的任何行为与本人无关**
 
-精力有限，随心更新
-
-## 更新策略
-
-同步[AIsouler](https://github.com/AIsouler/GKD_subscription)订阅更新为主
+同步[AIsouler](https://github.com/AIsouler/GKD_subscription)订阅更新为主 随缘更新
 
 ## 订阅
 
-**仅启用 `开屏广告` 一类规则，其它所有规则均需手动打开，规则类别里可以批量开启某一类规则**
+**本链接是为了学习研发，不得进行任何形式的转发、发布、传播**
 
-npmmirror源
+npmmirror源（国内npm源）
 
 ```txt
 https://registry.npmmirror.com/gkd-mrlc/latest/files
 ```
+##
 
 当前版本: v--VERSION--
 
@@ -26,15 +23,15 @@ https://registry.npmmirror.com/gkd-mrlc/latest/files
 
 查看 [适配 APP 列表](./dist/README.md)
 
-使用 [GKD订阅模板](https://github.com/gkd-kit/subscription-template) 快速构建自己的订阅
-
-## 教程
+## 相关
 
 在 [GKD官网](https://gkd.li/) 查看 [GKD基础使用教程](https://gkd.li/guide/) 、[常见问题](https://gkd.li/guide/faq) 以及 [API说明](https://gkd.li/api/)
 
 查看 [规则编写教程](https://github.com/Snoopy1866/blogs/blob/main/software/gkd/gkd-rule-tutorial/gkd-rule-tutorial.md) 
 
-## 贡献
+使用 [GKD订阅模板](https://github.com/gkd-kit/subscription-template) 快速构建自己的订阅
+
+## 感谢以下项目贡献
 
 [gkd-kit/subscription](https://github.com/gkd-kit/subscription)
 

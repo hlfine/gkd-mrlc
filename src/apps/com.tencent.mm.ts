@@ -36,10 +36,9 @@ export default defineGkdApp({
           preKeys: [1],
           key: 2,
           name: '点击[关闭该广告]',
-          fastQuery: true,
           action: 'clickCenter',
           matches:
-            'RelativeLayout > TextView + TextView + @TextView[clickable=true] + FrameLayout',
+            'RelativeLayout > TextView + TextView + @TextView[clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/12907642', // 关闭该广告
             'https://i.gkd.li/i/13926578', // 关闭广告
@@ -51,7 +50,6 @@ export default defineGkdApp({
           preKeys: [1],
           key: 3,
           name: '点击[Close Ad]',
-          fastQuery: true,
           action: 'clickCenter',
           matches:
             'LinearLayout[childCount=2] > FrameLayout > TextView[clickable=true]',
@@ -61,7 +59,6 @@ export default defineGkdApp({
           preKeys: [1],
           key: 4,
           name: '点击[关闭当前广告]',
-          fastQuery: true,
           action: 'clickCenter',
           matches:
             'LinearLayout[childCount=2] > LinearLayout[clickable=true] + FrameLayout[clickable=true]',
@@ -614,8 +611,12 @@ export default defineGkdApp({
       rules: [
         {
           fastQuery: true,
-          activityIds: '.ui.chatting.gallery.ImageGalleryUI',
-          matches: '[text^="查看原视频"][visibleToUser=true]',
+          action: 'clickCenter',
+          activityIds: [
+            '.ui.chatting.gallery.ImageGalleryUI',
+            '.ui.LauncherUI',
+          ],
+          matches: '[vid="cna"] > Button',
           exampleUrls: 'https://e.gkd.li/5332aff9-05bb-4b44-b832-5e2d9b1c1270',
           snapshotUrls: 'https://i.gkd.li/i/16833732',
         },
