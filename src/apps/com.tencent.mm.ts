@@ -36,9 +36,10 @@ export default defineGkdApp({
           preKeys: [1],
           key: 2,
           name: '点击[关闭该广告]',
+          fastQuery: true,
           action: 'clickCenter',
           matches:
-            'RelativeLayout > TextView + TextView + @TextView[clickable=true]',
+            'RelativeLayout > TextView + TextView + @TextView[clickable=true] + FrameLayout',
           snapshotUrls: [
             'https://i.gkd.li/i/12907642', // 关闭该广告
             'https://i.gkd.li/i/13926578', // 关闭广告
@@ -50,6 +51,7 @@ export default defineGkdApp({
           preKeys: [1],
           key: 3,
           name: '点击[Close Ad]',
+          fastQuery: true,
           action: 'clickCenter',
           matches:
             'LinearLayout[childCount=2] > FrameLayout > TextView[clickable=true]',
@@ -59,6 +61,7 @@ export default defineGkdApp({
           preKeys: [1],
           key: 4,
           name: '点击[关闭当前广告]',
+          fastQuery: true,
           action: 'clickCenter',
           matches:
             'LinearLayout[childCount=2] > LinearLayout[clickable=true] + FrameLayout[clickable=true]',
@@ -229,7 +232,8 @@ export default defineGkdApp({
           key: 0,
           fastQuery: true,
           action: 'clickCenter',
-          matches: 'RelativeLayout[childCount=1] > Button[clickable=true]',
+          matches:
+            'RelativeLayout[childCount=1] > Button[clickable=true][width>230]',
           exampleUrls:
             'https://m.gkd.li/57941037/6bb9e68a-43f5-4482-96b1-899cc86fef32',
           snapshotUrls: [

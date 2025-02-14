@@ -18,7 +18,7 @@ body:
     id: bug-1
     attributes:
       label: |
-        请提供 误触界面/出现问题界面 的快照，也可补充说明
+        请提供 误触界面/出现问题的 记录、快照，也补充说明
       description: |
         快照是一个 zip 文件，快照链接是类似 "https://i.gkd.li/i/XXXXXXXX" 的文本，按照如下方式可获得快照信息
 
