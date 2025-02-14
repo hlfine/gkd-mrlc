@@ -4,13 +4,13 @@
 
 **本仓库仅供本人学习使用，其他人的任何行为与本人无关**
 
-同步[AIsouler](https://github.com/AIsouler/GKD_subscription)订阅更新为主 随缘更新
+同步[AIsouler](https://github.com/AIsouler/GKD_subscription)订阅更新为主  **随缘更新**
 
 ## 订阅
 
 **本链接是为了学习研发，不得进行任何形式的转发、发布、传播**
 
-npmmirror源（国内npm源）
+npmmirror源 **（国内npm源）**
 
 ```txt
 https://registry.npmmirror.com/gkd-mrlc/latest/files
