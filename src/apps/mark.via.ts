@@ -13,7 +13,8 @@ export default defineGkdApp({
         {
           key: 1,
           name: '居中广告-弹窗广告',
-          matches: 'TextView + Button[index=1]',
+          matches:
+            'View[childCount=2] > TextView[text=""] + Button[clickable=true][text=""]',
           snapshotUrls: 'https://i.gkd.li/i/17690798',
           exampleUrls: 'https://e.gkd.li/c12f1e9f-792a-4f5a-8222-e3c9d3ce4db2',
         },

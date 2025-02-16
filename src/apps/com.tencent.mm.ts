@@ -200,23 +200,31 @@ export default defineGkdApp({
       name: '功能类-自动选中发送原图',
       desc: '自动选中原图，可手动取消勾选',
       actionMaximum: 1,
-      activityIds: [
-        '.plugin.gallery.ui.AlbumPreviewUI',
-        '.plugin.gallery.ui.ImagePreviewUI',
-      ],
       rules: [
         {
-          key: 1,
+          key: 1, // 8.0.56
           fastQuery: true,
           action: 'clickCenter',
-          matches: '@ImageButton[clickable=true] + TextView',
+          activityIds: '.plugin.gallery.ui.AlbumPreviewUI',
+          matches:
+            'FrameLayout[vid!=""] + RelativeLayout > RelativeLayout[childCount=2] > @ImageButton[clickable=true] + TextView',
           snapshotUrls: [
-            'https://i.gkd.li/i/16987145', // 未选中
             'https://i.gkd.li/i/18764301', // 已选中
-            'https://i.gkd.li/i/16987141', // 已选中
           ],
           exampleUrls: [
             'https://e.gkd.li/354ca046-80ca-41d0-a31f-931a19a4695f',
+          ],
+        },
+        {
+          key: 2, // 8.0.50
+          fastQuery: true,
+          action: 'clickCenter',
+          activityIds: '.plugin.gallery.ui.ImagePreviewUI',
+          matches:
+            'RelativeLayout[vid!=""] > RelativeLayout[childCount=2] > @ImageButton[clickable=true] + TextView[text="原图"]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/16987145', // 未选中
+            'https://i.gkd.li/i/16987141', // 已选中
           ],
         },
       ],
@@ -225,15 +233,21 @@ export default defineGkdApp({
       key: 9,
       name: '功能类-自动查看原图',
       desc: '自动点击[查看原图]',
+      activityIds: ['.ui.LauncherUI', '.ui.chatting.gallery.ImageGalleryUI'],
       actionMaximum: 1,
-      activityIds: ['.ui.chatting.gallery.ImageGalleryUI', '.ui.LauncherUI'],
       rules: [
         {
-          key: 0,
+          key: 0, // 8.0.56
           fastQuery: true,
-          action: 'clickCenter',
           matches:
-            'RelativeLayout[childCount=1] > Button[clickable=true][width>230]',
+            '@Button[clickable=true][left<150 && left>30][width<500] < RelativeLayout[childCount=1] < LinearLayout + FrameLayout + FrameLayout',
+          snapshotUrls: 'https://i.gkd.li/i/18813644',
+        },
+        {
+          key: 1, // 8.0.53
+          fastQuery: true,
+          matches:
+            '@Button[text^="查看原图"][clickable=true][left<150 && left>30][width<500] < RelativeLayout[childCount=1] + FrameLayout + FrameLayout + FrameLayout',
           exampleUrls:
             'https://m.gkd.li/57941037/6bb9e68a-43f5-4482-96b1-899cc86fef32',
           snapshotUrls: [
