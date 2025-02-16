@@ -239,6 +239,7 @@ export default defineGkdApp({
         {
           key: 0, // 8.0.56
           fastQuery: true,
+          action: 'clickCenter',
           matches:
             '@Button[clickable=true][left<150 && left>30][width<500] < RelativeLayout[childCount=1] < LinearLayout + FrameLayout + FrameLayout',
           snapshotUrls: 'https://i.gkd.li/i/18813644',
