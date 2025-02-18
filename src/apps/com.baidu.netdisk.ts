@@ -11,6 +11,12 @@ export default defineGkdApp({
       fastQuery: true,
       rules: [
         {
+          key: 2,
+          activityIds: '.module.sharelink.ChainInfoActivity',
+          matches: '[text="为你推荐"] + [desc="关闭"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18815407',
+        },
+        {
           key: 3,
           activityIds: [
             '.business.guide.dialog.lifeproduct.LifeV10GuideDialog',
@@ -80,7 +86,8 @@ export default defineGkdApp({
         {
           key: 1,
           activityIds: '.ui.cloudp2p.RichMediaActivity',
-          matches: '[text^="连续签到7天后"] +2 TextView[clickable=true]',
+          matches:
+            '[text^="连续签到7天后"] +2 TextView[clickable=true][text^="签到"]',
           snapshotUrls: 'https://i.gkd.li/i/18762226',
           exampleUrls: 'https://e.gkd.li/89b963b3-f46c-426b-9439-8244f4ac4836',
         },

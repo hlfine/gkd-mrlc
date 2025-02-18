@@ -16,39 +16,60 @@ export default defineGkdApp({
       rules: [
         // 点击广告
         {
+          key: -1,
+          fastQuery: true,
+          matches:
+            '@LinearLayout[clickable=true] > [text="广告" || text="廣告" || text="Sponsored"][visibleToUser=true]',
+          exampleUrls: 'https://e.gkd.li/d1941064-d4e9-4bb2-99ab-ba30e0ce8126',
+          snapshotUrls: [
+            'https://i.gkd.li/i/13000395',
+            'https://i.gkd.li/i/12905837',
+            'https://i.gkd.li/i/13791200',
+            'https://i.gkd.li/i/16568338',
+          ],
+        },
+        {
+          key: 0,
+          matches:
+            'RelativeLayout >5 LinearLayout[childCount=2] > TextView[text!=null] + LinearLayout[visibleToUser=true][clickable=true][childCount=0]',
+          snapshotUrls: 'https://i.gkd.li/i/14647413',
+        },
+        {
           key: 1,
           fastQuery: true,
           action: 'clickCenter',
           matches:
-            '@LinearLayout[clickable=true] >(1,2) TextView[clickable=true] + ImageView[clickable=true]',
-          exampleUrls: 'https://e.gkd.li/d1941064-d4e9-4bb2-99ab-ba30e0ce8126',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13000395',
-            'https://i.gkd.li/i/12905837', // 英文
-            'https://i.gkd.li/i/13791200',
-            'https://i.gkd.li/i/16568338',
-            'https://i.gkd.li/i/14647413',
-          ],
+            'LinearLayout >2 LinearLayout[clickable=true] > @TextView[clickable=true] + ImageView[clickable=true]',
+          snapshotUrls: ['https://i.gkd.li/i/18838746'],
         },
 
         // 第二段
         {
-          preKeys: [1],
+          preKeys: [-1, 0],
           key: 2,
-          name: '点击[关闭该广告]',
+          name: '第二段点击[关闭该广告]',
           fastQuery: true,
-          action: 'clickCenter',
           matches:
-            'RelativeLayout > TextView + TextView + @TextView[clickable=true] + FrameLayout',
+            'LinearLayout[childCount=2] > ImageView[vid!=""] + RelativeLayout[vid!=""] > TextView + TextView + TextView[clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/12907642', // 关闭该广告
-            'https://i.gkd.li/i/13926578', // 关闭广告
             'https://i.gkd.li/i/14207480', // Close the ad
             'https://i.gkd.li/i/12663984', // 直接关闭
           ],
         },
         {
-          preKeys: [1],
+          preKeys: [-1, 0, 1],
+          key: 7,
+          name: '第二段点击[关闭该广告]',
+          fastQuery: true,
+          action: 'clickCenter',
+          matches:
+            '@TextView[text="关闭广告"] < FrameLayout <2 LinearLayout < LinearLayout <2 LinearLayout',
+          snapshotUrls: 'https://i.gkd.li/i/13926578', // 关闭广告
+        },
+
+        {
+          preKeys: [-1, 0],
           key: 3,
           name: '点击[Close Ad]',
           fastQuery: true,
@@ -64,8 +85,9 @@ export default defineGkdApp({
           fastQuery: true,
           action: 'clickCenter',
           matches:
-            'LinearLayout[childCount=2] > LinearLayout[clickable=true] + FrameLayout[clickable=true]',
+            '@LinearLayout[clickable=true][index=1] <2 LinearLayout < FrameLayout <3 RelativeLayout <2 LinearLayout',
           snapshotUrls: [
+            'https://i.gkd.li/i/18817451', // 关闭该广告
             'https://i.gkd.li/i/14647839', // 关闭当前广告
             'https://i.gkd.li/i/14783820',
             'https://i.gkd.li/i/12905838', // 英文
@@ -75,12 +97,13 @@ export default defineGkdApp({
 
         // 第三段
         {
-          preKeys: [2],
+          preKeys: [4],
           key: 5,
           action: 'clickCenter',
-          name: '点击[关闭广告]',
-          matches: 'ViewGroup > TextView[clickable=true][index=0]',
-          snapshotUrls: 'https://i.gkd.li/i/14647940',
+          name: '第三段点击[关闭广告]',
+          matches:
+            '@TextView[clickable=true] <2 ViewGroup < FrameLayout <4 RelativeLayout',
+          snapshotUrls: 'https://i.gkd.li/i/18817508',
         },
 
         // 第四段
@@ -88,10 +111,13 @@ export default defineGkdApp({
           preKeys: [5],
           key: 6,
           action: 'clickCenter',
-          name: '点击[确认]',
+          name: '第四段点击[关闭]',
           matches:
-            'RelativeLayout > TextView + TextView + @TextView[clickable=true] + FrameLayout',
-          snapshotUrls: 'https://i.gkd.li/i/14647940',
+            '@TextView[clickable=true] <3 RelativeLayout <2 LinearLayout',
+          snapshotUrls: [
+            'https://i.gkd.li/i/14647940',
+            'https://i.gkd.li/i/18817564',
+          ],
         },
       ],
     },
@@ -207,7 +233,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: '.plugin.gallery.ui.AlbumPreviewUI',
           matches:
-            'FrameLayout[vid!=""] + RelativeLayout > RelativeLayout[childCount=2] > @ImageButton[clickable=true] + TextView',
+            'FrameLayout[vid!=""] + RelativeLayout > RelativeLayout[childCount=2] > @ImageButton[clickable=true][width!=height] + TextView',
           snapshotUrls: [
             'https://i.gkd.li/i/18764301', // 已选中
           ],
@@ -221,7 +247,7 @@ export default defineGkdApp({
           action: 'clickCenter',
           activityIds: '.plugin.gallery.ui.ImagePreviewUI',
           matches:
-            'RelativeLayout[vid!=""] > RelativeLayout[childCount=2] > @ImageButton[clickable=true] + TextView[text="原图"]',
+            'RelativeLayout[vid!=""] > RelativeLayout[childCount=2] > @ImageButton[clickable=true][width!=height] + TextView[text="原图"]',
           snapshotUrls: [
             'https://i.gkd.li/i/16987145', // 未选中
             'https://i.gkd.li/i/16987141', // 已选中

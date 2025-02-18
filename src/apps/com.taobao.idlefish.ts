@@ -91,6 +91,19 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 12,
+      name: '功能类-自动选中发送原图',
+      actionMaximum: 1,
+      rules: [
+        {
+          activityIds:
+            'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
+          matches: 'View[childCount=2] > @View[clickable=true] + [desc="原图"]',
+          snapshotUrls: 'https://i.gkd.li/i/18824808',
+        },
+      ],
+    },
+    {
       key: 7,
       name: '功能类-闲鱼币',
       activityIds: '.webview.WebHybridActivity',

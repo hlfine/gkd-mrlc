@@ -25,6 +25,7 @@ export default defineGkdApp({
         },
         {
           key: 3,
+          action: 'clickCenter',
           matches: 'View[childCount=7] > View[index=0] > Image',
           snapshotUrls: 'https://i.gkd.li/i/18809427',
         },
@@ -43,6 +44,7 @@ export default defineGkdApp({
       activityIds: [
         'tools.random_joke.RandomJokeActivity',
         'tools.alipay_effect.AlipayEffectActivity',
+        'tools.random_earthy_love_story.RandomEarthyLoveStoryActivity',
       ],
       rules: [
         {
@@ -56,7 +58,7 @@ export default defineGkdApp({
         {
           preKeys: 1,
           key: 2,
-          matches: '[text="不感兴趣"][visibleToUser=true]',
+          matches: '@LinearLayout[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: 'https://i.gkd.li/i/18809388',
         },
       ],
