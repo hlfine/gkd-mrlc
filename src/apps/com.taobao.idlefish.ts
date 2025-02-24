@@ -118,6 +118,7 @@ export default defineGkdApp({
         {
           key: 2,
           name: '签到',
+          actionMaximum: 1,
           matches: '[text="签到"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17606057',
         },
