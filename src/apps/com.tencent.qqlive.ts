@@ -189,6 +189,13 @@ export default defineGkdApp({
           ],
         },
         {
+          key: -1,
+          name: '右下角悬浮广告',
+          matches:
+            '@ImageView <2 FrameLayout < FrameLayout <3 FrameLayout <4 [id="android:id/content"]',
+          snapshotUrls: 'https://i.gkd.li/i/18942191',
+        },
+        {
           key: 1,
           name: '左下角悬浮广告',
           matches:
@@ -206,22 +213,29 @@ export default defineGkdApp({
           key: 3,
           name: '居中广告-1',
           matches:
-            '@ImageView <2 FrameLayout < FrameLayout < FrameLayout <11 ViewGroup < FrameLayout < FrameLayout < FrameLayout < FrameLayout < ViewGroup <4 ViewGroup < FrameLayout <2 [id="android:id/content"]',
+            '[text$="应用" || text^="立即"] -2 ImageView[clickable=true]',
           snapshotUrls: ['https://i.gkd.li/i/18939689'],
         },
         {
           key: 4,
           name: '居中广告-2',
           matches:
-            '@ImageView <3 FrameLayout < LinearLayout < FrameLayout < FrameLayout <15 ViewGroup < FrameLayout < FrameLayout < FrameLayout < FrameLayout < ViewGroup <3 ViewGroup < FrameLayout <2 [id="android:id/content"]',
+            '@ImageView[clickable=true] - FrameLayout >3 [text$="应用" || text^="立即"]',
           snapshotUrls: ['https://i.gkd.li/i/18939695'],
         },
         {
           key: 5,
-          name: '底部弹窗广告',
+          name: '底部弹窗广告-1',
           matches:
             'ViewGroup > @View[clickable=true] +4 LinearLayout > [text="看广告免费看剧"]',
           snapshotUrls: 'https://i.gkd.li/i/14318385',
+        },
+        {
+          key: 6,
+          name: '居中广告-讨论区广告',
+          matches:
+            'RelativeLayout > FrameLayout > RelativeLayout[childCount=4] > ImageView[index=2]',
+          snapshotUrls: 'https://i.gkd.li/i/18942191',
         },
       ],
     },
