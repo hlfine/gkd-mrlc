@@ -112,7 +112,6 @@ export default defineGkdApp({
           key: 1,
           actionDelay: 2000,
           name: '点击[赚骰子]-有领取奖励',
-          // matches: 'View[text="领"] <2 @View[index=1] +3 View > View[text="赚"]',
           matches: '[text="领"] < View',
           snapshotUrls: 'https://i.gkd.li/i/17634886',
         },
