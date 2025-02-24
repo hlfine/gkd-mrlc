@@ -7,7 +7,8 @@ export default defineGkdApp({
     {
       key: 0,
       name: '分段广告-朋友圈广告',
-      desc: '点击/关闭该广告/Close Ad/确认关闭',
+      desc: '点击/关闭广告',
+      actionDelay: 300,
       activityIds: [
         '.plugin.sns.ui.improve.ImproveSnsTimelineUI',
         '.plugin.sns.ui.SnsTimeLineUI',
@@ -18,8 +19,9 @@ export default defineGkdApp({
         {
           key: -1,
           fastQuery: true,
+          name: '第一段key:-1，点击',
           matches:
-            '@LinearLayout[clickable=true] > [text="广告" || text="廣告" || text="Sponsored"][visibleToUser=true]',
+            'TextView + @LinearLayout[clickable=true][childCount=3] > ImageView + [text="广告" || text="廣告" || text="Sponsored"][clickable=true] + ImageView[clickable=true]',
           exampleUrls: 'https://e.gkd.li/d1941064-d4e9-4bb2-99ab-ba30e0ce8126',
           snapshotUrls: [
             'https://i.gkd.li/i/13000395',
@@ -36,18 +38,19 @@ export default defineGkdApp({
         },
         {
           key: 1,
+          name: '第一段key:1，点击',
           fastQuery: true,
           action: 'clickCenter',
           matches:
             'LinearLayout >2 LinearLayout[clickable=true] > @TextView[clickable=true] + ImageView[clickable=true]',
-          snapshotUrls: ['https://i.gkd.li/i/18838746'],
+          snapshotUrls: 'https://i.gkd.li/i/18838746',
         },
 
         // 第二段
         {
           preKeys: [-1, 0],
           key: 2,
-          name: '第二段点击[关闭该广告]',
+          name: '第二段 key: 2,点击[关闭该广告]',
           fastQuery: true,
           matches:
             'LinearLayout[childCount=2] > ImageView[vid!=""] + RelativeLayout[vid!=""] > TextView + TextView + TextView[clickable=true]',
@@ -60,7 +63,7 @@ export default defineGkdApp({
         {
           preKeys: [-1, 0, 1],
           key: 7,
-          name: '第二段点击[关闭该广告]',
+          name: '第二段 key: 7,点击[关闭该广告]',
           fastQuery: true,
           action: 'clickCenter',
           matches:
@@ -71,7 +74,7 @@ export default defineGkdApp({
         {
           preKeys: [-1, 0],
           key: 3,
-          name: '点击[Close Ad]',
+          name: '第二段 key: 3,点击[Close Ad]',
           fastQuery: true,
           action: 'clickCenter',
           matches:
@@ -81,11 +84,11 @@ export default defineGkdApp({
         {
           preKeys: [1],
           key: 4,
-          name: '点击[关闭当前广告]',
+          name: '第二段 key: 4,点击[关闭该广告]',
           fastQuery: true,
           action: 'clickCenter',
           matches:
-            '@LinearLayout[clickable=true][index=1] <2 LinearLayout < FrameLayout <3 RelativeLayout <2 LinearLayout',
+            '[id="com.tencent.mm:id/n2i"][clickable=true] + [vid="n2t"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/18817451', // 关闭该广告
             'https://i.gkd.li/i/14647839', // 关闭当前广告

@@ -252,7 +252,7 @@ export default defineGkdApp({
         },
         {
           key: 4,
-          matches: '[text="暂不需要，稍后领取"][visibleToUser=true]',
+          matches: '[text="暂不需要，稍后领取"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17525567',
         },
         {

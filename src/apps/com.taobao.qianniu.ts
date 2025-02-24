@@ -32,5 +32,17 @@ export default defineGkdApp({
         },
       ],
     },
+    {
+      key: 2,
+      name: '全屏广告-弹窗广告',
+      fastQuery: true,
+      rules: [
+        {
+          key: 1,
+          matches:
+            'LinearLayout[childCount=2] > [vid="img_pic"] + [vid="btn_close"]',
+        },
+      ],
+    },
   ],
 });
