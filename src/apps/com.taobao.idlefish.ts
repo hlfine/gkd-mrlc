@@ -156,7 +156,7 @@ export default defineGkdApp({
         {
           preKeys: [1],
           key: 2,
-          actionDelay: 200,
+          actionDelay: 300,
           name: '使用[道具]',
           matches:
             'View[clickable=true] >4 View[index=1][text!="加点卡"] + [text="使用"]',
