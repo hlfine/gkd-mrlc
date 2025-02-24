@@ -25,7 +25,7 @@ export default defineGkdApp({
       name: '青少年模式',
       actionMaximum: 1,
       resetMatch: 'app',
-      rules: 'TextView[text*="青少年模式"] +3 TextView[text="我知道了"]',
+      rules: '[text*="青少年模式"] +3 [text="我知道了"]',
       snapshotUrls: 'https://i.gkd.li/i/12700145',
     },
     {
@@ -206,18 +206,15 @@ export default defineGkdApp({
           key: 3,
           name: '居中广告-1',
           matches:
-            'ViewGroup[childCount>10] > FrameLayout[index=10] >4 ImageView[clickable=true][visibleToUser=true][index=1 || index=3]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13695067',
-            'https://i.gkd.li/i/13946107',
-            'https://i.gkd.li/i/14001277',
-          ],
+            '@ImageView <2 FrameLayout < FrameLayout < FrameLayout <11 ViewGroup < FrameLayout < FrameLayout < FrameLayout < FrameLayout < ViewGroup <4 ViewGroup < FrameLayout <2 [id="android:id/content"]',
+          snapshotUrls: ['https://i.gkd.li/i/18939689'],
         },
         {
           key: 4,
           name: '居中广告-2',
-          matches: '[id="com.tencent.qqlive:id/pause_ad_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/14318385',
+          matches:
+            '@ImageView <3 FrameLayout < LinearLayout < FrameLayout < FrameLayout <15 ViewGroup < FrameLayout < FrameLayout < FrameLayout < FrameLayout < ViewGroup <3 ViewGroup < FrameLayout <2 [id="android:id/content"]',
+          snapshotUrls: ['https://i.gkd.li/i/18939695'],
         },
         {
           key: 5,
@@ -252,7 +249,7 @@ export default defineGkdApp({
         },
         {
           key: 4,
-          matches: '[text="暂不需要，稍后领取"][clickable=true]',
+          matches: '[text^="暂不需要"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17525567',
         },
         {
