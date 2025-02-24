@@ -125,22 +125,13 @@ export default defineGkdApp({
         {
           key: 3,
           name: '领取奖励',
-          actionDelay: 1500,
+          actionDelay: 1700,
           matches: '[text="领取奖励"][clickable=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/17606051',
             'https://i.gkd.li/i/17606057',
           ],
         },
-        // {
-        //   preKeys: [3],
-        //   key: 4,
-        //   name: '关闭底部弹窗',
-        //   matches: [
-        //     'View[id="taskWrap"] > @View[index=1] +3 View[index=4] >2 View[index=9 || index=5][text!="领取奖励"]',
-        //   ],
-        //   snapshotUrls: 'https://i.gkd.li/i/17606054',
-        // },
       ],
     },
     {
