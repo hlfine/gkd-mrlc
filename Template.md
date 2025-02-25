@@ -6,7 +6,7 @@
 
 ## 订阅
 
-**本订阅是本人学习研发，不得以任何形式的转发、发布、传播、以及展示**
+**本订阅链接是本人学习研发，不得进行任何形式的转发、发布、传播、以及展示**
 
 ##
 
@@ -22,7 +22,7 @@
 
 ## 感谢以下项目贡献
 
-本仓库使用的是[AIsouler](https://github.com/AIsouler/GKD_subscription) fork构建的订阅
+本仓库使用的是 [AIsouler](https://github.com/AIsouler/GKD_subscription) fork构建的订阅
 
 [gkd-kit/subscription](https://github.com/gkd-kit/subscription)
 

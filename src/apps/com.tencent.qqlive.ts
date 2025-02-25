@@ -213,14 +213,14 @@ export default defineGkdApp({
           key: 3,
           name: '居中广告-1',
           matches:
-            '[text$="应用" || text^="立即"] -2 ImageView[clickable=true]',
+            '[text$="应用" || text^="摇动" || text^="了解" || text$="咨询" || text^="下载"] -2 ImageView[clickable=true]',
           snapshotUrls: ['https://i.gkd.li/i/18939689'],
         },
         {
           key: 4,
           name: '居中广告-2',
           matches:
-            '@ImageView[clickable=true] - FrameLayout >3 [text$="应用" || text^="立即"]',
+            '@ImageView[clickable=true] - FrameLayout >3 [text$="应用" || text^="摇动" || text^="了解" || text$="咨询" || text^="下载"]',
           snapshotUrls: ['https://i.gkd.li/i/18939695'],
         },
         {
@@ -236,6 +236,13 @@ export default defineGkdApp({
           matches:
             'RelativeLayout > FrameLayout > RelativeLayout[childCount=4] > ImageView[index=2]',
           snapshotUrls: 'https://i.gkd.li/i/18942191',
+        },
+        {
+          key: 7,
+          name: '弹窗广告-开通会员',
+          action: 'clickCenter',
+          matches: '[text^="开通"] + [text="关闭按钮"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/18956020',
         },
       ],
     },
