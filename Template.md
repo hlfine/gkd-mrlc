@@ -6,7 +6,13 @@
 
 ## 订阅
 
-**本订阅链接是本人学习研发，不得进行任何形式的转发、发布、传播、以及展示**
+**本订阅链接是本人学习研发，不得以任何形式的转发、发布、传播、以及展示**
+
+npmmirror源（国内源）
+
+```txt
+https://registry.npmmirror.com/gkd-mrlc/latest/files
+```
 
 ##
 

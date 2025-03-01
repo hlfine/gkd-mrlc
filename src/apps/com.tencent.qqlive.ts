@@ -250,7 +250,10 @@ export default defineGkdApp({
       key: 6,
       fastQuery: true,
       name: '全屏广告-首页-弹窗广告',
-      activityIds: '.ona.activity.SplashHomeActivity',
+      activityIds: [
+        '.ona.activity.SplashHomeActivity',
+        '.ona.activity.VideoDetailActivity',
+      ],
       rules: [
         {
           key: 1,
@@ -270,7 +273,8 @@ export default defineGkdApp({
         },
         {
           key: 4,
-          matches: '[text^="暂不需要"][clickable=true]',
+          matches:
+            '[text^="立即免费"] < FrameLayout + [text^="暂不需要"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17525567',
         },
         {

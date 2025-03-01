@@ -64,7 +64,10 @@ export default defineGkdApp({
       name: '功能类-帖子收藏抽空在看',
       desc: '下次浏览帖子会取消收藏',
       actionMaximum: 1,
-      activityIds: '.module.bbs.post.ui.activitys.WebNewsPostPageActivity',
+      activityIds: [
+        '.module.bbs.post.ui.activitys.WebNewsPostPageActivity',
+        '.module.bbs.post.ui.activitys.PicturePostPageActivity',
+      ],
       rules: [
         {
           key: 1,
