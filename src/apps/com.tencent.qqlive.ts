@@ -70,7 +70,8 @@ export default defineGkdApp({
             '.ona.activity.SplashHomeActivity',
             '.ona.offline.client.group.DownloadGroupActivity',
           ],
-          matches: 'ViewGroup > ViewGroup > ImageView[index=2][clickable=true]',
+          matches:
+            'ViewGroup > FrameLayout + ViewGroup > ImageView[index=2][clickable=true]',
           snapshotUrls: ['https://i.gkd.li/i/12700175'],
         },
         {

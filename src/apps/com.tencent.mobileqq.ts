@@ -764,6 +764,7 @@ export default defineGkdApp({
     {
       key: 27,
       name: '功能类-QQ打卡',
+      actionMaximum: 1,
       desc: '点击打卡-进入-立即打卡',
       activityIds: ['.activity.SplashActivity', '.activity.QQBrowserActivity'],
       rules: [
@@ -782,7 +783,7 @@ export default defineGkdApp({
         },
         {
           preKeys: [2],
-          actionDelay: 350,
+          actionDelay: 200,
           name: '点击[返回]',
           matches: 'TextView[desc="返回"][clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/17568038',
