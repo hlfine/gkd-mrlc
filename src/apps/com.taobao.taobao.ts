@@ -99,6 +99,20 @@ export default defineGkdApp({
       ],
     },
     {
+      key: 4,
+      name: '功能类-自动选中发送原图',
+      actionMaximum: 1,
+      rules: [
+        {
+          activityIds:
+            'com.taobao.taopai.business.image.album.ImageGalleryActivity',
+          matches:
+            '[text="预览"] + [text="原图"][clickable=true][width!=height]',
+          snapshotUrls: 'https://i.gkd.li/i/19126601',
+        },
+      ],
+    },
+    {
       key: 8,
       name: '权限提示-通知权限',
       desc: '点击关闭',
