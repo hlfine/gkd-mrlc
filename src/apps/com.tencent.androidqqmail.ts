@@ -71,11 +71,16 @@ export default defineGkdApp({
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
+      activityIds: 'com.tencent.qqmail.fragment.base.MailFragmentActivity',
       rules: [
         {
-          activityIds: 'com.tencent.qqmail.fragment.base.MailFragmentActivity',
+          key: 1,
           matches: '[text="立刻开启"] - [text="以后再说"]',
           snapshotUrls: 'https://i.gkd.li/i/13043069',
+        },
+        {
+          key: 2,
+          matches: '[text^="邮箱会员"] + [vid="close"][clickable=true]',
         },
       ],
     },
