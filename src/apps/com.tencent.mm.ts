@@ -431,18 +431,19 @@ export default defineGkdApp({
     {
       key: 26,
       name: '功能类-付款后自动点击完成/返回商家',
+      fastQuery: true,
+      activityIds: '.framework.app.UIPageFragmentActivity',
       rules: [
         {
-          fastQuery: true,
-          activityIds: 'com.tencent.mm.framework.app.UIPageFragmentActivity',
           matches:
-            '[vid="kinda_button_impl_wrapper"][desc="完成" || desc="返回商家"]',
+            'ViewGroup[childCount=1] >2 Button[childCount=2][clickable=true] > ImageView + TextView[text!=null]',
           exampleUrls:
             'https://m.gkd.li/57941037/a5177d9d-6745-443f-baf5-af57153430d8',
           snapshotUrls: [
             'https://i.gkd.li/i/14399355',
-            'https://i.gkd.li/i/14662147',
+            'https://i.gkd.li/i/19250738',
           ],
+          // 我的零钱页面
           excludeSnapshotUrls: 'https://i.gkd.li/i/14532946',
         },
       ],
