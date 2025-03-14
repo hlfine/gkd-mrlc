@@ -62,6 +62,18 @@ export default defineGkdApp({
             'https://i.gkd.li/i/17908078',
           ],
         },
+        {
+          key: 4,
+          matches: '[text="广告"] <2 LinearLayout[clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/19239323',
+        },
+        {
+          preKeys: [4],
+          key: 5,
+          name: '点击[不感兴趣]',
+          matches: '[text="不感兴趣"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/19239339',
+        },
       ],
     },
     {

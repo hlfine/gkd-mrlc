@@ -126,44 +126,49 @@ export default defineGkdApp({
     },
     {
       key: 1,
-      name: '功能类-电脑微信快捷自动登录',
+      name: '功能类-电脑端登录微信时自动确认登录',
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
+      resetMatch: 'app',
       rules: [
         {
+          key: 1,
+          action: 'clickCenter',
           activityIds: [
-            'com.tencent.mm.plugin.webwx.ui.ExtDeviceWXLoginUI',
-            'com.tencent.mm.ui.LauncherUI',
+            '.plugin.webwx.ui.ExtDeviceWXLoginUI',
+            '.ui.LauncherUI',
           ],
-          matches: 'TextView[text="取消登录"] - Button[text="登录"]',
+          matches:
+            'RelativeLayout[id!=null] + LinearLayout[childCount=2] > @Button[clickable=true] + TextView[clickable=true]',
           snapshotUrls: [
-            'https://i.gkd.li/i/13522625',
             'https://i.gkd.li/i/13522577',
+            'https://i.gkd.li/i/19245204',
           ],
+        },
+        {
+          key: 2,
+          matches: '[text="验证已通过"] +2 [text="确定"][clickable=true]',
+          snapshotUrls: 'https://i.gkd.li/i/19243011',
         },
       ],
     },
     {
       key: 2,
-      name: '功能类-自动授权登录',
+      name: '功能类-自动授权微信号信息',
       desc: '自动允许使用头像昵称等',
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       rules: [
         {
+          key: 1,
           action: 'clickCenter',
-          activityIds: [
-            'com.tencent.mm.plugin.base.stub.UIEntryStub',
-            'com.tencent.mm.ui.LauncherUI',
-            'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
-          ],
-          matches: ['[text^="获取你的"]', '[text="允许"]'],
+          activityIds: ['.plugin.base.stub.UIEntryStub', '.ui.LauncherUI'],
+          matches: ['[text^="获取你的"]', '[text="允许"][clickable=true]'],
           snapshotUrls: [
             'https://i.gkd.li/i/12663602',
             'https://i.gkd.li/i/13065462',
-            'https://i.gkd.li/i/15271716',
           ],
         },
       ],
@@ -173,7 +178,7 @@ export default defineGkdApp({
       name: '功能类-微信读书网页版扫码登录自动授权',
       matchTime: 10000,
       actionMaximum: 1,
-      activityIds: 'com.tencent.mm.plugin.webview.ui.tools.MMWebViewUI',
+      activityIds: '.plugin.webview.ui.tools.MMWebViewUI',
       rules: [
         {
           key: 1,
@@ -317,14 +322,16 @@ export default defineGkdApp({
     },
     {
       key: 11,
-      name: '功能类-网页版文件传输助手扫码自动授权',
+      name: '功能类-网页版文件传输助手扫码后自动打开',
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       rules: [
         {
-          activityIds: 'com.tencent.mm.ui.LauncherUI',
-          matches: '[text="打开网页版文件传输助手"] + * > Button[text="打开"]',
+          action: 'clickCenter',
+          activityIds: '.ui.LauncherUI',
+          matches:
+            'TextView + LinearLayout[childCount=2] > @Button[clickable=true] + TextView[clickable=true]',
           snapshotUrls: 'https://i.gkd.li/i/12793745',
         },
       ],
@@ -672,56 +679,44 @@ export default defineGkdApp({
     },
     {
       key: 37,
-      name: '全屏广告-小程序弹窗广告',
+      name: '全屏广告-小程序广告',
       desc: '点击关闭',
-      matchTime: 20000,
-      // actionMaximum: 1,
-      actionCd: 300, // 有时候需要点击多次
-      actionDelay: 300, // 过早触发有概率无效
+      fastQuery: true,
+      actionMaximum: 2,
+      matchTime: 10000,
+      activityIds: '.plugin.appbrand.ui.AppBrandUI00',
       rules: [
         {
-          fastQuery: true,
-          activityIds: 'com.tencent.mm.plugin.appbrand.ui.AppBrandUI',
-          excludeMatches: '[text="跳过"][visibleToUser=true]', // 防止提前触发
+          key: 1,
+          name: '小程序-弹窗广告',
           matches:
-            '@ImageView[visibleToUser=true][childCount=0][text=null] < FrameLayout[childCount=1] < FrameLayout[childCount=1] <2 FrameLayout[childCount=2] - FrameLayout >4 [text="广告"]',
+            'FrameLayout > TextView + FrameLayout > FrameLayout > ImageView[width=height]',
           exampleUrls: 'https://e.gkd.li/d2b12af6-c204-4da7-8553-4765ef8b8c31',
           snapshotUrls: [
             'https://i.gkd.li/i/13459614',
             'https://i.gkd.li/i/16943989',
             'https://i.gkd.li/i/16920797',
           ],
-          excludeSnapshotUrls: 'https://i.gkd.li/i/16958795',
+        },
+        {
+          key: 2,
+          name: '小程序-开屏广告',
+          matches:
+            'FrameLayout[childCount=3] > TextView + FrameLayout[childCount=3] > TextView + FrameLayout[childCount=2] > TextView + FrameLayout > TextView',
+          snapshotUrls: 'https://i.gkd.li/i/16958795',
         },
       ],
     },
     {
       key: 38,
-      name: '功能类-自动语音转文字',
-      desc: '点击语音旁边的转文字/长按语音后点击转文字',
+      name: '功能类-别人发的语音自动转文字',
+      desc: '长按语音后自动转文字',
       rules: [
         {
           fastQuery: true,
           activityIds: '.ui.LauncherUI',
           matches: '@[clickable=true] >(1,2) [text="转文字"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14497389',
-            'https://i.gkd.li/i/14538322',
-          ],
-        },
-      ],
-    },
-    {
-      key: 39,
-      name: '功能类-语音通话呼入10秒后自动点击接听',
-      rules: [
-        {
-          matchTime: 15000,
-          actionDelay: 10000,
-          activityIds: '.plugin.voip.ui.VideoActivity',
-          matches: 'Button[desc="接听"][visibleToUser=true]',
-          exampleUrls: 'https://e.gkd.li/fbfea6ba-ce43-4641-a919-9c21fa49dc73',
-          snapshotUrls: 'https://i.gkd.li/i/18225086',
+          snapshotUrls: ['https://i.gkd.li/i/19246070'],
         },
       ],
     },

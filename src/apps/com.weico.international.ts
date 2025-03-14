@@ -38,7 +38,6 @@ export default defineGkdApp({
       desc: '出现在主页,搜索页',
       fastQuery: true,
       activityIds: [
-        'com.google.android.material.bottomsheet.BottomSheetDialog',
         '.activity.MainFragmentActivity',
         '.ui.search.SearchActivity',
         '.ui.detail.StatusDetailV3Activity',
@@ -58,12 +57,12 @@ export default defineGkdApp({
           preKeys: [0],
           key: 1,
           name: '点击不感兴趣',
+          action: 'clickCenter',
           matches: '@View[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/12505755',
-            'https://i.gkd.li/i/12505764',
             'https://i.gkd.li/i/14798365',
             'https://i.gkd.li/i/16667202',
+            'https://i.gkd.li/i/19226502',
           ],
         },
       ],
