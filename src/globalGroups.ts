@@ -305,7 +305,7 @@ export default defineGkdGlobalGroups([
   {
     key: 6,
     name: '通知提示',
-    desc: '该规则会自动拒绝 APP 一些申请通知提示，如果有影响请关闭',
+    desc: '关闭通用的通知提示，如果有影响请关闭',
     enable: false,
     order: NOTIFICATION_PROMPT_ORDER,
     matchTime: 10000,
