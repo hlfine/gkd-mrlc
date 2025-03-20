@@ -57,10 +57,9 @@ export default defineGkdApp({
           preKeys: [0],
           key: 1,
           name: '点击不感兴趣',
-          action: 'clickCenter',
-          matches: '@View[clickable=true] > [text="不感兴趣"]',
+          matches:
+            '[text="不感兴趣"] < @View[clickable=true] <<n [vid="design_bottom_sheet"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/14798365',
             'https://i.gkd.li/i/16667202',
             'https://i.gkd.li/i/19226502',
           ],

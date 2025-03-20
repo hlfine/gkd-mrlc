@@ -6,16 +6,15 @@ export default defineGkdApp({
   groups: [
     {
       key: 0,
-      name: '开屏广告',
+      name: '更新提示',
       fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
-      resetMatch: 'app',
       rules: [
         {
-          activityIds: '.StartPageActivity',
-          matches: 'TextView[text^="跳过"][text.length<=6][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/18919206',
+          activityIds: '.HomeActivity',
+          matches: ['[text^="新功能"]', '[desc="暂不开启"][clickable=true]'],
+          snapshotUrls: 'https://i.gkd.li/i/19372365',
         },
       ],
     },
