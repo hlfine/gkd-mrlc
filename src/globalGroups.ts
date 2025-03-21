@@ -43,14 +43,14 @@ export default defineGkdGlobalGroups([
         key: 0,
         // 防止在应用的搜索页面误触
         excludeMatches:
-          '[text*="搜索" || text^="猜你" || text="历史记录" || text$="在搜"][text.length>3 && text.length<6][visibleToUser=true]',
+          '[text^="温馨" || text*="搜索" || text^="猜你" || text="历史记录" || text$="在搜"][text.length>3 && text.length<6][visibleToUser=true]',
         matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
       },
       {
         key: 1,
         // 防止在应用的搜索页面误触
         excludeMatches:
-          '[text*="搜索" || text^="猜你" || text="历史记录" || text$="在搜"][text.length>3 && text.length<6][visibleToUser=true]',
+          '[text^="温馨" || text*="搜索" || text^="猜你" || text="历史记录" || text$="在搜"][text.length>3 && text.length<6][visibleToUser=true]',
         matches:
           '[(text.length<10 && (text*="跳过" || text*="跳過" || text~="(?is).*skip.*")) || vid~="(?is).*skip.*" || id$="tt_splash_skip_btn" || (desc.length<10 && (desc*="跳过" || desc*="跳過" || desc~="(?is).*skip.*"))]',
       },

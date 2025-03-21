@@ -5,22 +5,6 @@ export default defineGkdApp({
   name: '腾讯视频',
   groups: [
     {
-      key: 1,
-      name: '开屏广告',
-      fastQuery: true,
-      actionMaximum: 1,
-      matchTime: 10000,
-      resetMatch: 'app',
-      rules: [
-        {
-          key: 1,
-          action: 'clickCenter',
-          matches: 'TextView[text="跳过"][clickable=true]',
-          snapshotUrls: ['https://i.gkd.li/i/17409509'],
-        },
-      ],
-    },
-    {
       key: 2,
       name: '青少年模式',
       actionMaximum: 1,
@@ -72,15 +56,15 @@ export default defineGkdApp({
           ],
           matches:
             'ViewGroup > FrameLayout + ViewGroup > ImageView[index=2][clickable=true]',
-          snapshotUrls: ['https://i.gkd.li/i/12700175'],
+          snapshotUrls: 'https://i.gkd.li/i/12700175',
         },
         {
           key: 4,
           name: '个人中心点击关闭广告',
-          activityIds: ['.ona.activity.SplashHomeActivity'],
+          activityIds: '.ona.activity.SplashHomeActivity',
           matches:
             'View[childCount=4] >2 TextView[text.length=4 || text.length=5] < View + View[clickable=true]',
-          snapshotUrls: ['https://i.gkd.li/i/17959231'],
+          snapshotUrls: 'https://i.gkd.li/i/17959231',
         },
         {
           key: 5,
@@ -110,7 +94,7 @@ export default defineGkdApp({
           activityIds: '.ona.activity.SplashHomeActivity',
           matches:
             'RelativeLayout[childCount=3] > ImageView + RelativeLayout + ImageView[clickable=true][visibleToUser=true]',
-          snapshotUrls: ['https://i.gkd.li/i/17586123'],
+          snapshotUrls: 'https://i.gkd.li/i/17586123',
         },
         {
           key: 8,
@@ -222,7 +206,7 @@ export default defineGkdApp({
           name: '居中广告-2',
           matches:
             '@ImageView[clickable=true] - FrameLayout >3 [text$="应用" || text^="摇动" || text^="了解" || text$="咨询" || text^="下载"]',
-          snapshotUrls: ['https://i.gkd.li/i/18939695'],
+          snapshotUrls: 'https://i.gkd.li/i/18939695',
         },
         {
           key: 5,

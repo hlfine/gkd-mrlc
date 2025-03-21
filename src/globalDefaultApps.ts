@@ -308,11 +308,40 @@ export const whiteListAppIDs: string[] = [];
 export const openAdWhiteListAppIDs = new Set([
   ...whiteListAppIDs,
   'com.bbk.appstore', // vivo应用商店
+  'com.vivo.browser', // vivo浏览器
   'com.miui.player', // 小米音乐
   'com.tencent.southpole.appstore', // 黑鲨应用市场
   'com.heytap.browser', // 一加浏览器
   'com.heytap.themestore', // oppo主题商店
   'com.vivo.wallet', // 钱包
+  'ctrip.android.view', // 携程旅行
+  'com.zmzx.college.search', // 大学搜题酱
+  'com.autonavi.minimap', // 高德地图
+  'com.hihonor.android.thememanager', // 主题
+  'com.bbk.theme', // i 主题
+  'com.cctv.cctv5ultimate', // 央视体育
+  'com.cctv.yangshipin.app.androidp', // 央视频
+  'com.ct.client', // 中国电信
+  'com.greenpoint.android.mc10086.activity', // 中国移动
+  'com.baidu.input_huawei', // 百度输入法定制版
+  'com.huawei.browser', // 华为浏览器
+  'com.huawei.hwread.dz', // 华为阅读
+  'com.ifeng.news2', // 凤凰新闻
+  'com.mci.smagazine', // 三是阅读
+  'com.sf.activity', // 顺丰速运
+  'com.ss.android.article.news', // 今日头条
+  'com.ss.android.article.video', // 西瓜视频
+  'com.ss.android.ugc.aweme', // 抖音
+  'com.taobao.movie.android', // 淘票票
+  'com.taou.maimai', // 脉脉
+  'com.tencent.djcity', // 掌上道聚城
+  'com.tencent.qt.qtl', // 掌上英雄联盟
+  'com.tipsoon.android', // 简讯
+  'com.ximalaya.ting.android', // 喜马拉雅
+  'com.zhishan.washer', // 悠洗
+  'com.zhongduomei.rrmj.society', // 人人视频
+  'com.zjwh.android_wh_physicalfitness', // 运动世界校园
+  'com.tencent.qqlive', // 腾讯视频
 ]);
 
 // 更新提示白名单
