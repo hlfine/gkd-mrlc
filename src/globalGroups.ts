@@ -24,11 +24,6 @@ export default defineGkdGlobalGroups([
     rules: [
       {
         key: 0,
-        action: 'clickCenter',
-        anyMatches: '[text*="跳过" && text.length<10 && clickable=true]',
-      },
-      {
-        key: 1,
         // 防止在应用的搜索页面误触
         excludeMatches: `${Prevent_application_miscontact}`,
         action: 'clickCenter',
@@ -38,14 +33,14 @@ export default defineGkdGlobalGroups([
         ],
       },
       {
-        key: 2, // 字节SDK
+        key: 1, // 字节SDK
         anyMatches: [
           '@View[clickable=true][text=null] + TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*="翻转手机" || text*="前倾手机" || text*="第三方应用" || text*="转动手机" || text*="扭动手机" || text*="点击或上滑" && visibleToUser=true]',
           'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null] + TextView[index=parent.childCount.minus(1) && text=null && visibleToUser=true]',
         ],
       },
       {
-        key: 3,
+        key: 2,
         matches: '[text$="s"] + [text="|"] + ImageView[clickable=true]',
       },
     ],

@@ -72,6 +72,7 @@ export const blackListAppIDs: string[] = [
   'dev.anilbeesetti.nextplayer', // Next Player
   'org.kde.kdeconnect_tp', // KDE Connect
   'xyz.adproqwq.GKDTool', // GKDTool
+  'com.alibaba.wireless', // 阿里巴巴
   'com.alibaba.aliyun', // 阿里云
   'com.alicloud.databox', // 阿里云盘 开屏广告在 https://i.gkd.li/i/15144565 误触导致自动签到规则执行中断
   'xyz.nextalone.nagram', // Nagram
@@ -252,6 +253,7 @@ function filterAppsByGroup(apps: RawApp[], groupNamePrefix: string): string[] {
 // 在应用中单独禁用某个全局规则F
 // 开屏广告黑名单
 export const openAdBlackListAppIDs = new Set([
+  ...blackListAppIDs,
   'com.taptap', // TapTap
   'com.sankuai.meituan', // 美团 误触 https://i.gkd.li/i/17827264
   ...filterAppsByGroup(apps, '开屏广告'),
