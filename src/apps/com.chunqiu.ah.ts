@@ -5,38 +5,6 @@ export default defineGkdApp({
   name: 'AH视频',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionMaximumKey: 0,
-      priorityTime: 10000,
-      rules: [
-        {
-          key: 0,
-          fastQuery: true,
-          matches: '[text^="跳过"][text.length<10]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13264387',
-            'https://i.gkd.li/i/13264381',
-          ],
-        },
-        {
-          key: 1,
-          fastQuery: true,
-          matches: '@ImageView - [text="|"]',
-          snapshotUrls: 'https://i.gkd.li/i/13264377',
-        },
-        {
-          key: 2,
-          matches:
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null][visibleToUser=true] + TextView[visibleToUser=true][text=null][index=parent.childCount.minus(1)]',
-          snapshotUrls: 'https://i.gkd.li/i/15258457',
-        },
-      ],
-    },
-    {
       key: 1,
       name: '全屏广告-弹窗广告',
       matchTime: 10000,

@@ -5,32 +5,6 @@ export default defineGkdApp({
   name: '汽水音乐',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionMaximumKey: 0,
-      priorityTime: 10000,
-      rules: [
-        {
-          key: 0,
-          matches:
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null][visibleToUser=true] + TextView[visibleToUser=true][text=null][index=parent.childCount.minus(1)]',
-          snapshotUrls: 'https://i.gkd.li/i/14232395',
-        },
-        {
-          key: 1,
-          fastQuery: true,
-          matches: '[text^="跳过"][text.length<10][visibleToUser=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/15087528',
-            'https://i.gkd.li/i/15148298', // 避免误触
-          ],
-        },
-      ],
-    },
-    {
       key: 1,
       name: '更新提示',
       fastQuery: true,

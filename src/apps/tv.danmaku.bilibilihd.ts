@@ -5,21 +5,6 @@ export default defineGkdApp({
   name: '哔哩哔哩HD',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      fastQuery: true,
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      priorityTime: 10000,
-      rules: [
-        {
-          matches: '[id="tv.danmaku.bilibilihd:id/count_down"]',
-          snapshotUrls: 'https://i.gkd.li/i/13031261',
-        },
-      ],
-    },
-    {
       key: 2,
       name: '分段广告-首页、视频播放页广告',
       desc: '点击[更多]-点击[不感兴趣]',

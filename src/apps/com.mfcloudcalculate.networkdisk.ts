@@ -5,35 +5,6 @@ export default defineGkdApp({
   name: '123云盘',
   groups: [
     {
-      key: 2,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionMaximumKey: 0,
-      priorityTime: 10000,
-      rules: [
-        {
-          key: 0,
-          matches:
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][visibleToUser=true] + TextView[visibleToUser=true][text=null]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/14018247',
-            'https://i.gkd.li/i/13259303',
-            'https://i.gkd.li/i/13695497',
-          ],
-        },
-        {
-          key: 1,
-          matches: '[text^="跳过"][text.length<=4]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12846434',
-            'https://i.gkd.li/i/13059834',
-          ],
-        },
-      ],
-    },
-    {
       key: 1,
       name: '全屏广告-弹窗广告',
       rules: [

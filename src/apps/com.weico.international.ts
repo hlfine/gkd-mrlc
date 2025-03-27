@@ -24,10 +24,11 @@ export default defineGkdApp({
         {
           key: 1,
           action: 'clickNode',
-          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
+          matches: '[text*="跳过" && text.length<10 && visibleToUser=true]',
           snapshotUrls: [
             'https://i.gkd.li/i/14661654',
             'https://i.gkd.li/i/14661622',
+            'https://i.gkd.li/i/19434425',
           ],
         },
       ],

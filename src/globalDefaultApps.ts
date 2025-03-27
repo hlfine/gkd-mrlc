@@ -249,10 +249,9 @@ function filterAppsByGroup(apps: RawApp[], groupNamePrefix: string): string[] {
     .map((a) => a.id);
 }
 
-// 在应用中单独禁用某个全局规则
+// 在应用中单独禁用某个全局规则F
 // 开屏广告黑名单
 export const openAdBlackListAppIDs = new Set([
-  ...blackListAppIDs,
   'com.taptap', // TapTap
   'com.sankuai.meituan', // 美团 误触 https://i.gkd.li/i/17827264
   ...filterAppsByGroup(apps, '开屏广告'),
@@ -275,46 +274,28 @@ export const yongBlackListAppIDs = new Set([
   ...filterAppsByGroup(apps, '青少年模式'),
 ]);
 
-// 全屏广告黑名单
-export const fullAdBlackListAppIDs = new Set([
-  ...blackListAppIDs,
-  ...filterAppsByGroup(apps, '全屏广告'),
-]);
-
-// 局部广告黑名单
-export const partialAdBlackListAppIDs = new Set([
-  ...blackListAppIDs,
-  ...filterAppsByGroup(apps, '局部广告'),
-]);
-
-// 评价提示黑名单
-export const reviewBlackListAppIDs = new Set([
-  ...blackListAppIDs,
-  ...filterAppsByGroup(apps, '评价提示'),
-]);
-
-// 通知提示黑名单
-export const notificationBlackListAppIDs = new Set([
-  ...blackListAppIDs,
-  ...filterAppsByGroup(apps, '通知提示'),
-]);
-
 // 全局规则白名单（由于系统应用默认禁用全局规则，所以对系统应用启用白名单模式）
-// 在一些系统软件中启用所有全局规则
-export const whiteListAppIDs: string[] = [];
 
-// 在应用中单独启用某个全局规则
-// 开屏广告白名单
-export const openAdWhiteListAppIDs = new Set([
-  ...whiteListAppIDs,
+// 在一些软件中启用开屏广告规则
+export const openAdwhiteListAppIDs: string[] = [
+  'com.hihonor.appmarket', // 荣耀应用市场
   'com.bbk.appstore', // vivo应用商店
   'com.vivo.browser', // vivo浏览器
+  'com.vivo.wallet', // vivo钱包
   'com.miui.player', // 小米音乐
   'com.tencent.southpole.appstore', // 黑鲨应用市场
   'com.heytap.browser', // 一加浏览器
+  'com.huawei.android.thememanager', // 华为主题
   'com.heytap.themestore', // oppo主题商店
-  'com.vivo.wallet', // 钱包
+  'com.mipay.wallet', // 钱包
+  'com.huawei.health', // 华为运动健康
+  'com.huawei.himovie', // 华为视频
+  'com.huawei.browser', // 华为浏览器
+  'com.huawei.hwread.dz', // 华为阅读
+  'com.kuaishou.nebula', // 快手极速版
   'ctrip.android.view', // 携程旅行
+  'com.zhihu.android', // 知乎
+  'com.netease.mobimail', // 网易邮箱
   'com.zmzx.college.search', // 大学搜题酱
   'com.autonavi.minimap', // 高德地图
   'com.hihonor.android.thememanager', // 主题
@@ -324,8 +305,6 @@ export const openAdWhiteListAppIDs = new Set([
   'com.ct.client', // 中国电信
   'com.greenpoint.android.mc10086.activity', // 中国移动
   'com.baidu.input_huawei', // 百度输入法定制版
-  'com.huawei.browser', // 华为浏览器
-  'com.huawei.hwread.dz', // 华为阅读
   'com.ifeng.news2', // 凤凰新闻
   'com.mci.smagazine', // 三是阅读
   'com.sf.activity', // 顺丰速运
@@ -337,30 +316,105 @@ export const openAdWhiteListAppIDs = new Set([
   'com.tencent.djcity', // 掌上道聚城
   'com.tencent.qt.qtl', // 掌上英雄联盟
   'com.tipsoon.android', // 简讯
+  'com.tencent.qqlive', // 腾讯视频
+  'app.esou', // 闪电侠
+  'cn.cty.hbzw', // 鄂汇办
+  'cn.lezhi.speedtest', // 网速管家
+  'cn.soulapp.android', // Soul
+  'cn.wsds.gamemaster', // '迅游手游加速器
+  'com.android.bankabc', // 中国农业银行
+  'com.android.mediacenter', // 华为音乐
+  'com.anshibo.activity', // 车e兴
+  'com.app.lantt.xs', // 蓝豚豚
+  'com.babytree.apps.pregnancy', // 宝宝树孕育
+  'com.baidu.duer.superapp', // 小度
+  'com.baidu.input', // 百度输入法
+  'com.baidu.netdisk.samsung', // 百度网盘-三星版本
+  'com.baidu.tieba', // 百度贴吧
+  'com.black.unique', // 全球购骑士特权
+  'com.byfen.market', // 百分网游戏盒子
+  'com.cebbank.mobile.cemb', // 光大银行
+  'com.chunqiu.ah', // AH视频
+  'com.craftvpn.craft', // 小牛加速器
+  'com.cyl.musiccy.ou', // OMOFUN
+  'com.delicloud.app.smartoffice', // 得力e+
+  'com.didapinche.booking', // 嘀嗒出行
+  'com.excean.na', // 99手游加速器
+  'com.handsgo.jiakao.android', // 驾考宝典
+  'com.miui.systemAdSolution', // 智能服务
+  'com.vgjump.jump', // Jump
+  'com.xiachufang', // 下厨房
+  'com.xyhui', // PU口袋校园
+  'com.hanweb.android.sdzwfw.activity', // 爱山东
+  'com.hihonor.baidu.browser', // 荣耀浏览器
+  'com.luna.music', // 汽水音乐
+  'com.mfcloudcalculate.networkdisk', // 123云盘
+  'com.mxchip.petmarvel', // 滴宠生活
+  'com.mygolbs.mybus', // 掌上公交
+  'com.mymoney', // 随手记
+  'com.njh.biubiu', // biubiu加速器
+  'com.nowcoder.app.florida', // 牛客
+  'com.oneshareclap.malaysian', // 水果派
+  'com.paokeji.yiqu', // 喵趣漫画
+  'com.qq.reader', // QQ阅读
+  'com.tencent.qqmusic', // QQ音乐
+  'com.tencent.qqsports', // 腾讯体育
+  'net.csdn.csdnplus', // CSDN
+  'tv.danmaku.bilibilihd', // 哔哩哔哩HD
+  'cn.xiaochuankeji.zuiyouLite', // 皮皮搞笑
   'com.ximalaya.ting.android', // 喜马拉雅
   'com.zhishan.washer', // 悠洗
   'com.zhongduomei.rrmj.society', // 人人视频
   'com.zjwh.android_wh_physicalfitness', // 运动世界校园
-  'com.tencent.qqlive', // 腾讯视频
-]);
+  'com.jihuanshe', // 集换社
+  'com.kuaiduizuoye.scan', // 快对
+  'com.kuangxiangciweimao.novel', // 刺猬猫阅读
+  'com.learn.team.congrong', // 卓聚
+  'com.leixun.taofen8', // 淘粉吧
+  'com.lofter.android', // LOFTER
+  'com.manmanbuy.bijia', // 慢慢买
+  'com.realtech.xiaocan', // 小蚕霸王餐
+  'com.skyworthdigital.picamera', // 创维智慧云
+  'com.sup.android.superb', // 皮皮虾
+  'com.superrhino.rarering', // Nico
+  'com.fan.app', // 十六番旅行
+  'com.feeyo.vz.pro.cdm', // 飞常准业内版
+  'com.firebear.androil', // 小熊油耗
+  'com.flyersoft.seekbooks', // 搜书大师
+  'com.fzfengzheng.fzboyp', // 风筝影评
+  'com.uanmi.miaojiaccount', // 熊猫记账
+  'com.upupoo.apu.mobile', // UPUPOO动态壁纸
+  'com.wacai365', // 挖财记账
+  'com.waimaiii.waimaiii', // 歪麦霸王餐
+  'com.wwwscn.yuexingbao', // 悦通行
+  'com.xiaoenai.app', // 小恩爱
+  'com.xpx365.projphoto', // 工程相机
+  'com.yoloho.dayima', // 大姨妈
+  'com.yunzhi.tiyu', // 云运动
+  'com.zlfcapp.batterymanager', // 电池容量检测管理
+  'io.iftech.android.box', // 小组件盒子
+  'make.more.r2d2.cellular_z', // Cellular-Z
+  'moc.nauxuoyoaixoaix.www', // 晓晓优选
+  'com.diershoubing.erbing', // 二柄
+  'com.dongqiudi.news', // 懂球帝
+  'com.ecellsz.watch.guard', // 乐康守护
+  'com.ksf.yyx', // OMOFUN
+];
+
+// 在应用中单独启用某个全局规则
+// 开屏广告白名单
+export const openAdWhiteListAppIDs = new Set([...openAdwhiteListAppIDs]);
 
 // 更新提示白名单
 export const updateWhiteListAppIDs = new Set([
-  ...whiteListAppIDs,
   'com.hihonor.phoneservice', // 我的荣耀
 ]);
 
 // 青少年模式白名单
-export const yongWhiteListAppIDs = new Set([...whiteListAppIDs]);
-
-// 全屏广告白名单
-export const fullAdWhiteListAppIDs = new Set([...whiteListAppIDs]);
-
-// 局部广告白名单
-export const partialAdWhiteListAppIDs = new Set([...whiteListAppIDs]);
-
-// 评价提示白名单
-export const reviewWhiteListAppIDs = new Set([...whiteListAppIDs]);
-
-// 通知提示白名单
-export const notificationWhiteListAppIDs = new Set([...whiteListAppIDs]);
+export const yongWhiteListAppIDs = new Set([
+  'com.ss.android.ugc.aweme', // 抖音
+  'com.sup.android.superb', // 皮皮虾
+  'com.tencent.qqlive', // 腾讯视频
+  'com.upupoo.apu.mobile', // UPUPOO动态壁纸
+  'com.taptap', // TapTap
+]);

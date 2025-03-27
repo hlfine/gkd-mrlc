@@ -253,33 +253,6 @@ export default defineGkdApp({
       ],
     },
     {
-      key: 20,
-      name: '青少年模式',
-      fastQuery: true,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
-          key: 0,
-          excludeActivityIds: '.setting.ui.SettingCommonProtocolActivity',
-          matches: [
-            '[text*="青少年" || text*="未成年"][text*="模式"]',
-            '[text="关闭" || text="不再提醒"]',
-          ],
-          snapshotUrls: [
-            'https://i.gkd.li/i/14321107',
-            'https://i.gkd.li/i/14473006',
-            'https://i.gkd.li/i/17726070',
-            'https://i.gkd.li/i/18638030',
-          ],
-          excludeSnapshotUrls: [
-            'https://i.gkd.li/i/14917848',
-            'https://i.gkd.li/i/17610958',
-          ],
-        },
-      ],
-    },
-    {
       key: 21,
       name: '权限提示-定位权限',
       desc: '直接关闭所有类似形状窗口',

@@ -5,29 +5,6 @@ export default defineGkdApp({
   name: '电池容量检测管理',
   groups: [
     {
-      key: 1,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionMaximumKey: 0,
-      priorityTime: 10000,
-      rules: [
-        {
-          key: 0,
-          fastQuery: true,
-          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
-          snapshotUrls: 'https://i.gkd.li/i/15140838',
-        },
-        {
-          key: 1,
-          matches:
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null][visibleToUser=true] + TextView[visibleToUser=true][text=null][index=parent.childCount.minus(1)]',
-          snapshotUrls: 'https://i.gkd.li/i/13960341',
-        },
-      ],
-    },
-    {
       key: 2,
       name: '全屏广告-弹窗广告',
       desc: '点击关闭',

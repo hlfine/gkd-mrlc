@@ -5,14 +5,6 @@ export default defineGkdApp({
   name: '腾讯视频',
   groups: [
     {
-      key: 2,
-      name: '青少年模式',
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: '[text*="青少年模式"] +3 [text="我知道了"]',
-      snapshotUrls: 'https://i.gkd.li/i/12700145',
-    },
-    {
       key: 3,
       name: '更新提示',
       matchTime: 10000,
@@ -199,7 +191,7 @@ export default defineGkdApp({
           name: '居中广告-1',
           matches:
             '[text$="应用" || text^="摇动" || text^="了解" || text$="咨询" || text^="下载"] -2 ImageView[clickable=true]',
-          snapshotUrls: ['https://i.gkd.li/i/18939689'],
+          snapshotUrls: 'https://i.gkd.li/i/18939689',
         },
         {
           key: 4,
@@ -259,8 +251,11 @@ export default defineGkdApp({
         {
           key: 4,
           matches:
-            '[text^="立即免费"] < FrameLayout + [text^="暂不需要"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/17525567',
+            '[text="立即免费领取"] < FrameLayout + [text^="暂不需要" || text="放弃福利"][clickable=true]',
+          snapshotUrls: [
+            'https://i.gkd.li/i/17525567',
+            'https://i.gkd.li/i/19400923',
+          ],
         },
         {
           key: 5,

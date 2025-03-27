@@ -55,10 +55,15 @@ export default defineGkdApp({
         },
         {
           key: 1,
-          matches:
-            '@[desc="关闭"][clickable=true] - LinearLayout >2 [text="去开启" || text^="切换至"][clickable=true]',
+          matches: [
+            '[text^="开启定位" || text^="定位到"][childCount=0]',
+            '@[desc="关闭"][clickable=true]',
+          ],
           exampleUrls: 'https://e.gkd.li/c153cd53-16a1-4d77-bf99-9cac8821ccf8',
-          snapshotUrls: 'https://i.gkd.li/i/18551258',
+          snapshotUrls: [
+            'https://i.gkd.li/i/18551258',
+            'https://i.gkd.li/i/19446438',
+          ],
         },
         {
           key: 2,

@@ -53,18 +53,5 @@ export default defineGkdApp({
         },
       ],
     },
-    {
-      key: 4,
-      name: '青少年模式-首页顶部横幅提示',
-      fastQuery: true,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: [
-        {
-          matches: '[text*="青少年模式"] + [vid="iv_close"]',
-          snapshotUrls: 'https://i.gkd.li/i/14209309',
-        },
-      ],
-    },
   ],
 });

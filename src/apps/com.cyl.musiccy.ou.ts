@@ -5,35 +5,6 @@ export default defineGkdApp({
   name: 'OMOFUN',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionMaximumKey: 0,
-      priorityTime: 10000,
-      rules: [
-        {
-          key: 0,
-          fastQuery: true,
-          matches: '[text*="跳过"][text.length<=10]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12775918',
-            'https://i.gkd.li/i/12775926',
-            'https://i.gkd.li/i/13063151',
-            'https://i.gkd.li/i/13063246',
-            'https://i.gkd.li/i/13071599',
-          ],
-        },
-        {
-          key: 1,
-          matches:
-            '[id="com.cyl.musiccy.ou:id/ksad_splash_root_container"] [childCount=3] > @ImageView[clickable=true] - [text="|"]',
-          snapshotUrls: 'https://i.gkd.li/i/12775919',
-        },
-      ],
-    },
-    {
       key: 1,
       name: '通知提示-公告弹窗',
       matchTime: 10000,

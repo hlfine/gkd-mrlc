@@ -5,40 +5,6 @@ export default defineGkdApp({
   name: '百度贴吧',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionMaximumKey: 0,
-      priorityTime: 10000,
-      rules: [
-        {
-          key: 0,
-          fastQuery: true,
-          matches: 'TextView[text^="跳过"][text.length<=10]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/12775906',
-            'https://i.gkd.li/i/12566191',
-            'https://i.gkd.li/i/12870916',
-            'https://i.gkd.li/i/13233500',
-          ],
-        },
-        {
-          key: 1,
-          matches:
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null][visibleToUser=true] + TextView[visibleToUser=true][text=null][index=parent.childCount.minus(1)]',
-          snapshotUrls: 'https://i.gkd.li/i/13322227',
-        },
-        {
-          key: 2,
-          matches:
-            'TextView[text="广告"] - @LinearLayout[clickable=true] > [text="关闭"]',
-          snapshotUrls: 'https://i.gkd.li/i/13168386',
-        },
-      ],
-    },
-    {
       key: 1,
       name: '权限提示-通知权限',
       matchTime: 10000,
