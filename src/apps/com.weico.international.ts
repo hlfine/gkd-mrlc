@@ -28,17 +28,15 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/14661654',
             'https://i.gkd.li/i/14661622',
-            'https://i.gkd.li/i/19434425',
           ],
         },
         {
           key: 2,
-          action: 'clickNode',
           position: {
             left: 'width * 0.8935',
             top: 'width * 0.0870',
           },
-          matches: '[vid="splash_ad_contianer_tqt_gdt" && visibleToUser=true]',
+          matches: '[id="android:id/content"]',
           snapshotUrls: 'https://i.gkd.li/i/19434425',
         },
       ],
