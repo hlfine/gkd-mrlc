@@ -1,5 +1,7 @@
 # Mrlctate/Gkd-Mrlc
 
+## 停止维护
+
 ## 声明
 
 **本仓库仅供本人学习使用，其他人的任何行为与本人无关**
@@ -16,7 +18,7 @@ https://registry.npmmirror.com/gkd-mrlc/latest/files
 
 ##
 
-当前版本: v16
+当前版本: v17
 
 当前订阅文件已适配 760 个应用，共有 1745 应用规则组，3 全局规则组
 
