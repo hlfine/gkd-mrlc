@@ -198,43 +198,5 @@ export default defineGkdApp({
         },
       ],
     },
-    {
-      key: 10,
-      name: '功能类-删除服务号',
-      fastQuery: true,
-      activityIds: '.maincontainer.activity.MainActivity',
-      rules: [
-        {
-          key: 1,
-          action: 'longClick',
-          matches:
-            'View[desc="闲鱼精选" || desc$="俱乐部" || desc="关注上新"] <n *[longClickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/17690274',
-          exampleUrls: 'https://e.gkd.li/dd338822-4682-4c12-a5f6-d62027e15a28',
-        },
-        {
-          preKeys: [1],
-          key: 2,
-          action: 'longClick',
-          matches: 'View[desc="删除"][clickable=true]',
-          snapshotUrls: 'https://i.gkd.li/i/17690302',
-        },
-        {
-          preKeys: [2],
-          key: 3,
-          matches: 'View[desc="取消"] + View[desc="确定"]',
-          snapshotUrls: 'https://i.gkd.li/i/17690308',
-        },
-      ],
-    },
-    {
-      key: 11,
-      name: '功能类-启动点击消息页',
-      actionMaximum: 1,
-      resetMatch: 'app',
-      rules: 'FrameLayout[desc="消息"][clickable=true]',
-      snapshotUrls: 'https://i.gkd.li/i/17742310',
-      exampleUrls: 'https://e.gkd.li/3243707a-b27c-49e4-aa39-d818a08f974a',
-    },
   ],
 });

@@ -16,11 +16,11 @@ export default defineGkdGlobalGroups([
     desc: '关闭打开应用时的开屏广告',
     order: OPEN_AD_ORDER,
     fastQuery: true,
-    matchTime: 3600,
-    actionMaximum: 2,
+    matchTime: 3800,
+    actionMaximum: 1,
     resetMatch: 'app',
     actionMaximumKey: 0,
-    priorityTime: 3600,
+    priorityTime: 3800,
     rules: [
       {
         key: 0,
@@ -28,7 +28,7 @@ export default defineGkdGlobalGroups([
         excludeMatches: `${Prevent_application_miscontact}`,
         action: 'clickCenter',
         anyMatches: [
-          '[text*="跳过" || text*="跳過" || text*="skip" || text*="Skip" || text*="SKIP" && text.length<10]',
+          '[text*="跳过" || text*="跳過" || text*="skip" || text*="Skip" && text.length<10]',
           '[((text*="跳过" || text*="跳過" || text~="(?is).*skip.*") && text.length<10) || (vid~="(?is).*skip.*" && text!="帮助" && text!="取消") || id$="tt_splash_skip_btn" || ((desc*="跳过" || desc*="跳過" || desc~="(?is).*skip.*") && desc.length<10) && childCount=0]',
         ],
       },
