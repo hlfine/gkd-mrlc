@@ -16,8 +16,8 @@ export default defineGkdApp({
         {
           key: 0,
           anyMatches: [
-            '@View[clickable=true][text=null] + TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*="翻转手机" || text*="前倾手机" || text*="第三方应用" || text*="转动手机" || text*="扭动手机" || text*="点击或上滑" && visibleToUser=true]',
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null] + TextView[index=parent.childCount.minus(1) && text=null && visibleToUser=true]',
+            '@View[clickable=true][text=null][visibleToUser=true] + TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*="第三方应用" || text*="扭动手机" || text*="点击或上滑"][visibleToUser=true]',
+            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null][visibleToUser=true] + TextView[index=parent.childCount.minus(1)][text=null][visibleToUser=true]',
           ],
           snapshotUrls: 'https://i.gkd.li/i/15981630',
         },
@@ -51,7 +51,7 @@ export default defineGkdApp({
         {
           key: 3,
           fastQuery: true,
-          matches: '[text*="跳过" && text.length<10 && visibleToUser=true]',
+          matches: '[text*="跳过"][text.length<10][visibleToUser=true]',
           snapshotUrls: 'https://i.gkd.li/i/17687115',
         },
       ],
@@ -68,6 +68,7 @@ export default defineGkdApp({
             '.activity.SplashActivity',
             '.subject.structure.activity.MovieActivity',
             '.group.activity.GroupTopicActivity',
+            '.fangorns.topic.TopicsActivity',
           ],
           matches:
             '[vid="ad_header_new"] > [vid="menu_item"][visibleToUser=true]',
@@ -75,6 +76,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/18424402',
             'https://i.gkd.li/i/18424418',
             'https://i.gkd.li/i/18424924',
+            'https://i.gkd.li/i/19615325',
           ],
         },
         {
@@ -102,12 +104,21 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/18424747',
         },
         {
-          preKeys: [1, 2, 3],
+          key: 4,
+          activityIds: '.group.activity.GroupTopicActivity',
+          matches:
+            '@View[clickable=true][childCount=0][visibleToUser=true] < FrameLayout[desc^="dislike"] -2 FrameLayout >2 [text="广告"]',
+          exampleUrls: 'https://e.gkd.li/11d3ea75-c640-4b91-942e-3bf83b2e5f5e',
+          snapshotUrls: 'https://i.gkd.li/i/19621152',
+        },
+        {
+          preKeys: [1, 2, 3, 4],
           activityIds: [
             '.activity.SplashActivity',
             '.subject.structure.activity.MovieActivity',
             '.group.activity.GroupDetailActivity',
             '.group.activity.GroupTopicActivity',
+            '.fangorns.topic.TopicsActivity',
           ],
           matches: '@[clickable=true] > [text="不感兴趣"]',
           snapshotUrls: [
@@ -116,6 +127,8 @@ export default defineGkdApp({
             'https://i.gkd.li/i/18424568',
             'https://i.gkd.li/i/18424674',
             'https://i.gkd.li/i/18424711',
+            'https://i.gkd.li/i/19615333',
+            'https://i.gkd.li/i/19621163',
           ],
         },
       ],
