@@ -19,13 +19,12 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged",
-    "commit-msg": "pnpm exec commitlint --config commitlint.config.ts --edit ${1}",
     "pre-push": "pnpm run check"
   },
   "lint-staged": {
-    "*.{js,cjs,mjs,ts,jsx,tsx}": [
-      "eslint --cache --fix",
-      "prettier --cache --write"
+    "*.{js,cjs,mjs,ts,cts,mts,jsx,tsx}": [
+      "prettier --cache --write",
+      "eslint --cache --fix"
     ],
     "*.json": [
       "prettier --cache --write"
@@ -39,30 +38,27 @@
     "./dist"
   ],
   "dependencies": {
-    "@commitlint/cli": "19.7.1",
-    "@commitlint/config-conventional": "19.7.1",
-    "@commitlint/types": "19.5.0",
-    "@eslint/js": "9.20.0",
-    "@gkd-kit/api": "0.6.0",
+    "@eslint/js": "9.24.0",
+    "@gkd-kit/api": "0.7.1",
     "@gkd-kit/define": "0.0.1",
-    "@gkd-kit/tools": "0.5.2",
-    "@types/eslint__js": "8.42.3",
-    "@types/node": "22.13.2",
-    "eslint": "9.20.1",
-    "eslint-config-prettier": "10.0.1",
+    "@gkd-kit/tools": "0.6.0",
+    "@types/node": "22.14.0",
+    "eslint": "9.24.0",
+    "eslint-config-prettier": "10.1.1",
     "eslint-plugin-unused-imports": "4.1.4",
     "json5": "2.2.3",
-    "lint-staged": "15.4.3",
-    "prettier": "3.5.1",
-    "simple-git-hooks": "2.11.1",
-    "tsx": "4.19.2",
-    "typescript": "5.7.3",
-    "typescript-eslint": "8.24.0"
+    "lint-staged": "15.5.0",
+    "prettier": "3.5.3",
+    "simple-git-hooks": "2.12.1",
+    "tsx": "4.19.3",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.29.1"
   },
   "volta": {
-    "node": "20.13.1"
+    "node": "22.14.0",
+    "pnpm": "10.8.0"
   },
-  "packageManager": "pnpm@10.3.0",
+  "packageManager": "pnpm@10.8.0",
   "engineStrict": true,
   "engines": {
     "node": ">=22"
