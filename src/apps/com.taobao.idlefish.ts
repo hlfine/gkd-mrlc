@@ -53,25 +53,25 @@ export default defineGkdApp({
     {
       key: 5,
       name: '分段广告-搜索页面广告',
-      activityIds:
+      activityIds: [
+        '.search_implement.SearchResultActivity',
         'com.idlefish.flutterbridge.flutterboost.boost.FishFlutterBoostActivity',
+      ],
       rules: [
         {
           key: 0,
-          actionDelay: 1000,
           action: 'longClick',
-          matches: '@View[clickable=true] > [clickable=true][desc$="广告"]',
-          // excludeMatches: '@View[clickable=true] > [desc^="反馈成功"]',
+          matches:
+            '@FrameLayout[clickable=true] >(1,3) [text="广告" || desc$="广告"]',
           snapshotUrls: [
-            'https://i.gkd.li/i/14723597',
-            'https://i.gkd.li/i/14723718', // excludeMatches
+            'https://i.gkd.li/i/19661658',
+            'https://i.gkd.li/i/19661662',
           ],
         },
         {
           preKeys: [0],
           key: 1,
-          matches:
-            'View[desc.length=25][desc^="不喜欢该商品"] > ImageView[index=1][visibleToUser=true]',
+          matches: '[desc="引起不适"]',
           snapshotUrls: 'https://i.gkd.li/i/14723632',
         },
       ],

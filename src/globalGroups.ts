@@ -26,7 +26,7 @@ export default defineGkdGlobalGroups([
           '[text^="温馨" || text*="搜索" || text^="猜你" || text="历史记录" || text$="在搜" && text.length>3 && text.length<6]',
         anyMatches: [
           '[text*="跳过" || text*="跳過" || text*="skip" || text*="Skip" && text.length<10]',
-          '@View[clickable=true && text=null] + TextView[index=parent.childCount.minus(1) && text=null] <n FrameLayout[childCount>2] >(7,8,9,10) TextView[text!=null && text.length=4]', // 字节SDK
+          '@View[clickable=true && text=null] + TextView[index=parent.childCount.minus(1) && text=null] <n FrameLayout[childCount>2] >(7,8,9,10) TextView[text.length=4]', // 字节SDK
           '@ImageView[clickable=true] - [text$="s"] + [text="|"]',
         ],
       },
