@@ -69,9 +69,8 @@ export default defineGkdApp({
           ],
         },
         {
-          preKeys: [0],
           key: 1,
-          matches: '[desc="引起不适"]',
+          matches: '[desc="引起不适" && desc.length=4 && index=1]',
           snapshotUrls: 'https://i.gkd.li/i/14723632',
         },
       ],
