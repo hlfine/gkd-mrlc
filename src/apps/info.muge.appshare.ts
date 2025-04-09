@@ -5,50 +5,6 @@ export default defineGkdApp({
   name: 'AppShare',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionMaximumKey: 0,
-      priorityTime: 10000,
-      rules: [
-        {
-          key: 0,
-          anyMatches: [
-            '@View[clickable=true][text=null] + TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*="翻转手机" || text*="前倾手机" || text*="第三方应用" || text*="转动手机" || text*="扭动手机" || text*="点击或上滑" && visibleToUser=true]',
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null] + TextView[index=parent.childCount.minus(1) && text=null && visibleToUser=true]',
-          ],
-          snapshotUrls: [
-            'https://i.gkd.li/i/13842826',
-            'https://i.gkd.li/i/13939089',
-            'https://i.gkd.li/i/14260635',
-          ],
-        },
-        {
-          key: 1,
-          fastQuery: true,
-          matches: '[text*="跳过"][visibleToUser=true][text.length<=10]',
-          snapshotUrls: 'https://i.gkd.li/i/14553551',
-        },
-        {
-          // 该开屏广告需要点击坐标在跳过按钮下半部分内才能跳过
-          key: 2,
-          fastQuery: true,
-          position: {
-            left: 'width * 0.5',
-            top: 'width * 0.6984',
-          },
-          matches: '@ViewGroup > [text="跳过"][visibleToUser=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/15269380',
-            'https://i.gkd.li/i/15285908',
-            'https://i.gkd.li/i/15520277',
-          ],
-        },
-      ],
-    },
-    {
       key: 1,
       name: '局部广告-卡片广告',
       desc: '点击关闭',

@@ -24,7 +24,7 @@ export default defineGkdApp({
             'https://i.gkd.li/i/13038560', // 使用 excludeMatches，扫描病毒阶段不进行点击
             'https://i.gkd.li/i/13054204',
             'https://i.gkd.li/i/13038570',
-            'https://i.gkd.li/i/13038570',
+            'https://i.gkd.li/i/19665327',
           ],
         },
         {
@@ -34,6 +34,7 @@ export default defineGkdApp({
           snapshotUrls: [
             'https://i.gkd.li/i/13038664',
             'https://i.gkd.li/i/13054849',
+            'https://i.gkd.li/i/19665319',
           ],
         },
       ],

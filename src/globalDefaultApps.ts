@@ -401,6 +401,11 @@ export const openAdwhiteListAppIDs: string[] = [
   'com.dongqiudi.news', // 懂球帝
   'com.ecellsz.watch.guard', // 乐康守护
   'com.ksf.yyx', // OMOFUN
+  'cn.xiaochuankeji.tieba', // 最右
+  'com.netease.mail', // 网易邮箱大师
+  'com.jd.app.reader', // 京东读书
+  'info.muge.appshare', // AppShare
+  'me.zhouzhuo810.zznote', // 小周便签
 ];
 
 // 在应用中单独启用某个全局规则

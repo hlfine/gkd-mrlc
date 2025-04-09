@@ -5,46 +5,6 @@ export default defineGkdApp({
   name: '京东读书',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionMaximumKey: 0,
-      priorityTime: 10000,
-      rules: [
-        {
-          key: 0,
-          anyMatches: [
-            '@View[clickable=true][text=null] + TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*="翻转手机" || text*="前倾手机" || text*="第三方应用" || text*="转动手机" || text*="扭动手机" || text*="点击或上滑" && visibleToUser=true]',
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null] + TextView[index=parent.childCount.minus(1) && text=null && visibleToUser=true]',
-          ],
-          exampleUrls:
-            'https://m.gkd.li/57941037/6f4561e5-b998-43f9-8848-b6b43d045a3d',
-          snapshotUrls: 'https://i.gkd.li/i/14189228',
-        },
-        {
-          key: 1,
-          fastQuery: true,
-          matches: '[vid="mJumpBtn"][visibleToUser=true]',
-          exampleUrls: 'https://e.gkd.li/28a83ffc-ba28-4d0e-8f28-b48a4a542f23',
-          snapshotUrls: 'https://i.gkd.li/i/16486457',
-        },
-        {
-          key: 2,
-          fastQuery: true,
-          position: {
-            left: 'width * 0.9007',
-            top: 'width * 0.1603',
-          },
-          matches: '[id="com.jd.app.reader:id/animation_view"]',
-          exampleUrls:
-            'https://m.gkd.li/57941037/ab677b66-4681-4672-a1d6-3b5938e7f374',
-          snapshotUrls: 'https://i.gkd.li/i/13264389',
-        },
-      ],
-    },
-    {
       key: 2,
       name: '全屏广告-首页弹窗广告',
       matchTime: 10000,

@@ -5,50 +5,6 @@ export default defineGkdApp({
   name: '网易邮箱大师',
   groups: [
     {
-      key: 0,
-      name: '开屏广告',
-      matchTime: 10000,
-      actionMaximum: 1,
-      resetMatch: 'app',
-      actionMaximumKey: 0,
-      priorityTime: 10000,
-      rules: [
-        {
-          key: 0,
-          fastQuery: true,
-          excludeMatches: '[vid="ad_skip"][clickable=false]',
-          matches: '[text*="跳过" && text.length<10 && visibleToUser=true]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13195662',
-            'https://i.gkd.li/i/16883928',
-            'https://i.gkd.li/i/14900326', // 使用 excludeMatches 防止提前触发规则
-          ],
-        },
-        {
-          key: 1,
-          anyMatches: [
-            '@View[clickable=true][text=null] + TextView[index=parent.childCount.minus(1)][text=null] <n FrameLayout[childCount>2] >(7,8,9,10) [text*="翻转手机" || text*="前倾手机" || text*="第三方应用" || text*="转动手机" || text*="扭动手机" || text*="点击或上滑" && visibleToUser=true]',
-            'FrameLayout > FrameLayout[childCount>2] > @View[clickable=true][text=null] + TextView[index=parent.childCount.minus(1) && text=null && visibleToUser=true]',
-          ],
-          snapshotUrls: 'https://i.gkd.li/i/14046124',
-        },
-        {
-          key: 2,
-          fastQuery: true,
-          position: {
-            left: 'width * 0.9016',
-            top: 'width * 0.1557',
-          },
-          matches: '[id="com.netease.mail:id/animation_view"]',
-          snapshotUrls: [
-            'https://i.gkd.li/i/13207736',
-            'https://i.gkd.li/i/14900326', // 防止提前触发规则
-            'https://i.gkd.li/i/16892947', // 防止提前触发规则
-          ],
-        },
-      ],
-    },
-    {
       key: 2,
       name: '全屏广告-邮件列表广告',
       activityIds: 'com.netease.mail.biz.main.MainITabActivity',
