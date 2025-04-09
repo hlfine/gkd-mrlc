@@ -7,27 +7,30 @@ export default defineGkdApp({
     {
       key: 1,
       name: '功能类-自动安装应用',
+      fastQuery: true,
+      activityIds: [
+        '.InstallStart',
+        '.model.guide.ui.InstallGuideActivity',
+        '.model.finish.InstallFinishActivity',
+      ],
       rules: [
         {
           key: 0,
           name: '点击[继续安装]',
-          activityIds:
-            'com.oplus.appdetail.model.guide.ui.InstallGuideActivity',
           excludeMatches:
             '[id="com.oplus.appdetail:id/view_scanning_and_tip_view_tv_title"][text^="正在扫描"]',
-          matches:
-            '[id="com.oplus.appdetail:id/view_bottom_guide_continue_install_btn"]',
+          matches: '[text="继续安装" && text.length=4]',
           snapshotUrls: [
             'https://i.gkd.li/i/13038560', // 使用 excludeMatches，扫描病毒阶段不进行点击
             'https://i.gkd.li/i/13054204',
+            'https://i.gkd.li/i/13038570',
             'https://i.gkd.li/i/13038570',
           ],
         },
         {
           key: 1,
           name: '点击[完成]',
-          activityIds: 'com.oplus.appdetail.model.finish.InstallFinishActivity',
-          matches: '[text="完成"]',
+          matches: '[text="完成" && text.length=2]',
           snapshotUrls: [
             'https://i.gkd.li/i/13038664',
             'https://i.gkd.li/i/13054849',
