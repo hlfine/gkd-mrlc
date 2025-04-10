@@ -5,6 +5,21 @@ export default defineGkdApp({
   name: 'Google Play 商店',
   groups: [
     {
+      key: 0,
+      name: '功能类-关闭提升使用体验提示',
+      desc: '点击[以后再说]',
+      rules: [
+        {
+          activityIds: 'com.google.android.finsky.activities.MainActivity',
+          matches: [
+            '[text="提升您的使用体验"]',
+            '@View[clickable=true && childCount=2] > TextView[text="以后再说" || desc="以后再说"] + Button',
+          ],
+          snapshotUrls: ['https://i.gkd.li/i/19676811'],
+        },
+      ],
+    },
+    {
       key: 1,
       name: '功能类-Play保护机制弹窗',
       desc: '点击[不发送]/[拒绝]',
