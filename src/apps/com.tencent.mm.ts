@@ -23,29 +23,26 @@ export default defineGkdApp({
             '@LinearLayout[clickable=true && left>850] <2 LinearLayout < LinearLayout - ImageView[desc!=null] < LinearLayout[childCount=2 && index=0]',
           exampleUrls: 'https://e.gkd.li/d1941064-d4e9-4bb2-99ab-ba30e0ce8126',
           snapshotUrls: [
-            'https://i.gkd.li/i/12905837',
             'https://i.gkd.li/i/13791200',
             'https://i.gkd.li/i/16568338',
             'https://i.gkd.li/i/19644924',
           ],
         },
-
         // 第二，三段
         {
           key: 1,
           name: '第二，三段 点击[关闭广告]',
-          anyMatches: [
-            '@*[clickable=true && index<=2] <<(3,4,6) * - ImageView[text=null] < LinearLayout[childCount=2 && index=0]',
-          ],
+          matches:
+            '@*[clickable=true && index<3] <<(3,4,6) *[childCount>3] - ImageView[text=null] < LinearLayout[childCount=2 && index=0]',
           snapshotUrls: [
-            'https://i.gkd.li/i/12907642', // 关闭该广告
-            'https://i.gkd.li/i/14207480', // Close the ad
-            'https://i.gkd.li/i/12663984', // 直接关闭
             'https://i.gkd.li/i/13926578', // 第二段
-            'https://i.gkd.li/i/15137016',
-            'https://i.gkd.li/i/18817451',
-            'https://i.gkd.li/i/19650367',
+            'https://i.gkd.li/i/15137016', // <<(4)
+            'https://i.gkd.li/i/18817451', // <<(6)
+            'https://i.gkd.li/i/19650367', // <<(6)
             'https://i.gkd.li/i/19650629', // 第三段
+            'https://i.gkd.li/i/12663984', // 直接关闭
+            'https://i.gkd.li/i/14207480', // Close the ad
+            'https://i.gkd.li/i/12907642', // 关闭该广告
           ],
         },
       ],
