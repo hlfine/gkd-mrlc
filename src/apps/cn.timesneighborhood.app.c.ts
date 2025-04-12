@@ -12,7 +12,7 @@ export default defineGkdApp({
       rules: [
         {
           activityIds: 'com.zkty.modules.engine.activity.XEngineWebActivity',
-          matches: '[text="立即签到"]',
+          matches: '[text="立即签到" && clickable=true]',
           exampleUrls:
             'https://m.gkd.li/57941037/e02dac87-41dc-45eb-bf7e-8daa0b69f517',
           snapshotUrls: 'https://i.gkd.li/i/14545251',
