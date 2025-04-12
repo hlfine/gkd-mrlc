@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: feature request
         if: github.event.label.name == 'enhancement'
-        uses: actions-cool/issues-helper@v2.5.0
+        uses: actions-cool/issues-helper@main
         with:
           actions: 'create-comment'
           token: ${{ secrets.GITHUBTOKEN }}
@@ -21,7 +21,7 @@ jobs:
 
       - name: need reproduction
         if: github.event.label.name == 'bug'
-        uses: actions-cool/issues-helper@v2.5.0
+        uses: actions-cool/issues-helper@main
         with:
           actions: 'create-comment'
           token: ${{ secrets.GITHUBTOKEN }}
