@@ -170,8 +170,7 @@ export default defineGkdApp({
         {
           fastQuery: true,
           activityIds: '.view.search.SuperSearchResultActivity',
-          matches:
-            '@[desc="关闭"] <<n [vid="item_view" && clickable=true]',
+          matches: '@[desc="关闭"] <<n [vid="item_view" && clickable=true]',
           exampleUrls: 'https://e.gkd.li/efd366d9-1c66-4c35-b164-6f91a623e2f2',
           snapshotUrls: 'https://i.gkd.li/i/19643150',
         },
