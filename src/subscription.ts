@@ -23,7 +23,7 @@ export default defineGkdSubscription({
   name: 'Mrlc的订阅-不得转发和传播',
   version: 0,
   author: 'Mrlc',
-  checkUpdateUrl: './gkd.version.json5',
+  checkUpdateUrl: './mrlc-gkd-version.json5',
   supportUri: 'https://github.com/mrlctate/gkd-mrlc/issues/new/choose',
   categories,
   globalGroups,
