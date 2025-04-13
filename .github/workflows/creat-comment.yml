@@ -7,7 +7,7 @@ on:
 jobs:
   create-comment:
     runs-on: ubuntu-latest
-    if: github.event.label.name == 'need info'
+    if: github.event.label.name == 'need more info'
     steps:
       - name: Create comment
         uses: actions-cool/issues-helper@v3
