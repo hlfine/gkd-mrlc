@@ -17,7 +17,7 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             Hello @${{ github.event.issue.user.login }}. Your suggestion has been received, and you will be notified in the issue area after the evaluation is completed.
-            你好 @${{ github.event.issue.user.login }}，已收到你的建议，评估完成后将在issue区域通知你。
+            你好 @${{ github.event.issue.user.login }}，已收到你的反馈，维护完成后将在issue区域通知你。
 
       - name: need reproduction
         if: github.event.label.name == 'bug'
