@@ -35,7 +35,7 @@ jobs:
 
       - id: version
         run: |
-          version=$(node -e "import('@gkd-kit/tools').then((m) => m.stdoutGkdVersion());")
+          version=$(node -e "32")
           echo "version=${version}" >> "$GITHUB_OUTPUT"
 
       - id: update_pkg_version
