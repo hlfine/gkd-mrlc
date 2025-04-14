@@ -1,11 +1,13 @@
 name: Issue Labeled
 
+# 新增标签时触发
 on:
   issues:
     types: [labeled]
 
 jobs:
   issue-labeled:
+    # 打标签和提交 issue 的不是同一个人才执行
     if: github.actor != github.event.issue.user.login
     runs-on: ubuntu-latest
     steps:
